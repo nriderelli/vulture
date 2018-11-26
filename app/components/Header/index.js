@@ -22,8 +22,9 @@ class Header extends React.Component {
           paddingLeft="11px"
           width="40px"
           background="#006e82"
+          onClick={this.props.toggelSideBar}
         >
-          <SideBarIcon onClick={this.props.toggelSideBar}>
+          <SideBarIcon>
             <span>
               <i className="fas fa-align-justify" />
             </span>

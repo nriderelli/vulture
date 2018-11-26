@@ -35,10 +35,10 @@ class Routes extends React.PureComponent {
     return (
       <div>
         <AppContainer className="row">
-          <LeftContainer width={this.state.isSideBarOpen ? '17%' : '0px'}>
+          <LeftContainer width={this.state.isSideBarOpen ? '18%' : '0px'}>
             <SideBar isSideBarOpen={this.state.isSideBarOpen} />
           </LeftContainer>
-          <RightContainer width={this.state.isSideBarOpen ? '83%' : '100%'}>
+          <RightContainer width={this.state.isSideBarOpen ? '82%' : '100%'}>
             <Header
               {...this.props}
               toggelSideBar={this.toggelSideBar.bind(this)}

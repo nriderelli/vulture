@@ -25,7 +25,7 @@ export class LeftCard extends React.PureComponent {
                   aria-hidden="true"
                   size="12px"
                 />
-                <Number className="col-4">{val.number}</Number>
+                <Number className="col-3">{val.number}</Number>
                 <Text className="col-7">{val.text}</Text>
               </Container>
             ))}

@@ -23,7 +23,7 @@ class Errors extends React.Component {
           </ErrorContainer>
         </div>
         <div className="col-2">
-          <Button left="60px" height="100%" background="#006e82">
+          <Button float='right' height="100%" background="#006e82">
             <IMG src={Refresh} alt="refresh" />
             &nbsp;&nbsp; My Dashboard
           </Button>

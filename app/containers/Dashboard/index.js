@@ -166,7 +166,6 @@ export class Dashboard extends React.PureComponent {
                 this.table.map((data, index) => (
                   <DashboardTable data={data} key={index} index={index} />
                 ))}
-              })}
               <DashboardCard />
             </div>
             <div className="col-3">

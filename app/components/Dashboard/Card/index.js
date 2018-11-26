@@ -10,6 +10,8 @@ import Text from './Text';
 import Icon from './Icon';
 import TD from './TD';
 import IconContainer from './IconContainer';
+import TH from './TH';
+
 /* eslint-disable react/prefer-stateless-function */
 class DashboardCard extends React.Component {
   render() {
@@ -19,36 +21,36 @@ class DashboardCard extends React.Component {
           <table className="table">
             <thead>
               <tr>
-                <th scope="col">
-                  <Button left="50px" background="#006e82">
+                <TH scope="col">
+                  <Button background="#006e82">
                     ALERTS
                   </Button>
                   <TextHead>#</TextHead>
-                </th>
-                <th scope="col">
+                </TH>
+                <TH scope="col">
                   <TextHead>
                     <select className="form-control" />
                   </TextHead>
                   <TextHead>Company</TextHead>
-                </th>
-                <th scope="col">
+                </TH>
+                <TH scope="col">
                   <TextHead>
                     <select className="form-control" />
                   </TextHead>
                   <TextHead>Result Center</TextHead>
-                </th>
-                <th scope="col">
+                </TH>
+                <TH scope="col">
                   <TextHead />
                   <TextHead># Alerts</TextHead>
-                </th>
-                <th scope="col">
+                </TH>
+                <TH scope="col">
                   <TextHead />
                   <TextHead>Imapct on EBITDA (M CLP)</TextHead>
-                </th>
-                <th scope="col">
+                </TH>
+                <TH scope="col">
                   <TextHead />
                   <TextHead>See Details</TextHead>
-                </th>
+                </TH>
               </tr>
             </thead>
             <tbody>
