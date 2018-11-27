@@ -26,7 +26,7 @@ class Header extends React.Component {
         >
           <SideBarIcon>
             <span>
-              <i className="fas fa-align-justify" />
+              <i className="fa fa-align-justify" />
             </span>
           </SideBarIcon>
         </Button>

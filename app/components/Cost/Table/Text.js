@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export default styled.div`
- 	width: ${props => props.width};
- 	overflow: scroll;
+  float: left;
+  font-size: 11px;
+  font-weight: bold;
 `;

@@ -6,6 +6,7 @@ import Header from 'components/Header';
 import SideBar from 'components/SideBar';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Dashboard from 'containers/Dashboard/Loadable';
+import Cost from 'containers/Cost/Loadable';
 import RightContainer from './RightContainer';
 import LeftContainer from './LeftContainer';
 import AppContainer from './AppContainer';
@@ -46,6 +47,7 @@ class Routes extends React.PureComponent {
             <Container>
               <Switch>
                 <Route path="/dashboard" component={Dashboard} />
+                <Route path="/costs" component={Cost} />
 
                 <Route path="" component={NotFoundPage} />
               </Switch>
