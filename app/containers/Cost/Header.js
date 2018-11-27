@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
 export default styled.div`
- 	width: ${props => props.width};
- 	overflow: scroll;
+  height: 40px;
 `;
