@@ -78,7 +78,7 @@ export default class Dashboard extends React.PureComponent {
     const currentYear = 12; //new Date().getFullYear();
     const currentMonth = new Date().getMonth() + 1;
     const requestURL = `${url.mainUrl}${url.getDashboardIncome}/${currentMonth === 1? currentYear-1 : currentYear}/${currentMonth}`;
-
+    console.log(':: requestURL ',requestURL )
     fetch(
         requestURL,
         {
