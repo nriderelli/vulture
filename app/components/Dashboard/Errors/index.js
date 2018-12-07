@@ -15,12 +15,17 @@ class Errors extends React.Component {
     return (
       <div className="row">
         <div className="col-10">
-          <ErrorContainer>
-            <ErrorText>{this.props.error}</ErrorText>
-            <Button float="right" background="#f88a1a">
-              <Icon className="fa fa-cogs" aria-hidden="true" />
-            </Button>
-          </ErrorContainer>
+          {
+            this.props.error ?
+              <ErrorContainer>
+                <ErrorText>{this.props.error}</ErrorText>
+                <Button float="right" background="#f88a1a">
+                  <Icon className="fa fa-cogs" aria-hidden="true" />
+                </Button>
+              </ErrorContainer>
+            :
+              ''
+          }
         </div>
         <div className="col-2">
           <Button float='right' height="100%" background="#006e82">
