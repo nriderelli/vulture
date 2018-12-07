@@ -5,7 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 import Header from 'components/Header';
 import SideBar from 'components/SideBar';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
-import Dashboard from 'containers/Dashboard/Loadable';
+import Dashboard from 'containers/Dashboard';
 import Cost from 'containers/Cost/Loadable';
 import RightContainer from './RightContainer';
 import LeftContainer from './LeftContainer';

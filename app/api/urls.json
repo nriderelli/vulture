@@ -1,0 +1,4 @@
+{
+  "mainUrl": "http://10.0.1.6:3001/api/v1",
+  "getDashboardIncome": "/income/dashboard"
+}
