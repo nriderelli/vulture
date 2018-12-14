@@ -8,6 +8,6 @@ var router = express.Router();
 /* ==> INCOME */
 router.get('/income/dashboard/:year/:month', controller.dashboard);
 
-router.post('/income/', controller.create);
+router.post('/income', controller.create);
 
 module.exports = router;

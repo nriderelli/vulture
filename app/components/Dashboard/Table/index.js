@@ -9,6 +9,9 @@ import CardContainer from './CardContainer';
 import TextHead from './TextHead';
 import TextTD from './TextTD';
 import Icon from './Icon';
+import IconContainer from './IconContainer';
+import Edit from 'images/icons/edit.png';
+
 /* eslint-disable react/prefer-stateless-function */
 class DashboardTable extends React.Component {
    constructor(props) {
@@ -91,11 +94,9 @@ class DashboardTable extends React.Component {
               :
                 ''
             }
-            <Icon
-              color="#006e82"
-              className="fa fa-pencil-square-o"
-              aria-hidden="true"
-            />
+            <IconContainer>
+              <img src={Edit} />
+            </IconContainer>
             <table className="table">
               <thead>
                 <tr>
@@ -126,26 +127,50 @@ class DashboardTable extends React.Component {
                 <tr>
                   <th scope="row">Income</th>
                   <TextTD>
-                    {results.income.ytd.value}
-                    &nbsp;&nbsp;
-                    <Icon
-                      color={results.income.ytd.color}
-                      className="fa fa-circle col-1"
-                      aria-hidden="true"
-                      size='8px'
-                    >
-                    </Icon>
+                    <div className='row'>
+                      <div className='col-6'>
+                        {
+                          results.income.ytd.value
+                          && results.income.ytd.value.value
+                        }
+                      </div>
+                      <div className='col-4'>
+                        {
+                          results.income.ytd.value
+                          && results.income.ytd.value.percentage
+                        }
+                      </div>
+                      <Icon
+                        color={results.income.ytd.color}
+                        className="fa fa-circle col-1"
+                        aria-hidden="true"
+                        size='8px'
+                      >
+                      </Icon>
+                    </div>
                   </TextTD>
                   <TextTD>
-                    {results.income.forecast.value}
-                    &nbsp;&nbsp;
-                    <Icon
-                      color={results.income.forecast.color}
-                      className="fa fa-circle col-1"
-                      aria-hidden="true"
-                      size='8px'
-                    >
-                    </Icon>
+                    <div className='row'>
+                      <div className='col-6'>
+                        {
+                          results.income.forecast.value
+                          && results.income.forecast.value.value
+                        }
+                      </div>
+                      <div className='col-4'>
+                        {
+                          results.income.forecast.value
+                          && results.income.forecast.value.percentage
+                        }
+                      </div>
+                      <Icon
+                        color={results.income.forecast.color}
+                        className="fa fa-circle col-1"
+                        aria-hidden="true"
+                        size='8px'
+                      >
+                      </Icon>
+                    </div>
                   </TextTD>
                   <TextTD>
                     <p
@@ -181,32 +206,78 @@ class DashboardTable extends React.Component {
                 <tr>
                   <th scope="row">Mg. Contribution</th>
                   <TextTD>
-                    
-                    &nbsp;&nbsp;
-                    <Icon
-                      
-                      className="fa fa-circle col-1"
-                      aria-hidden="true"
-                      size='8px'
+                    <div className='row'>
+                      <div className='col-6'>
+                        {
+                          results.contribution.ytd.value
+                          && results.contribution.ytd.value.value
+                        }
+                      </div>
+                      <div className='col-4'>
+                        {
+                          results.contribution.ytd.value
+                          && results.contribution.ytd.value.percentage
+                        }
+                      </div>
+                      <Icon
+                        color={results.contribution.ytd.color}
+                        className="fa fa-circle col-1"
+                        aria-hidden="true"
+                        size='8px'
+                      >
+                      </Icon>
+                    </div>
+                  </TextTD>
+                  <TextTD>
+                    <div className='row'>
+                      <div className='col-6'>
+                        {
+                          results.contribution.forecast.value
+                          && results.contribution.forecast.value.value
+                        }
+                      </div>
+                      <div className='col-4'>
+                        {
+                          results.contribution.forecast.value
+                          && results.contribution.forecast.value.percentage
+                        }
+                      </div>
+                      <Icon
+                        color={results.contribution.forecast.color}
+                        className="fa fa-circle col-1"
+                        aria-hidden="true"
+                        size='8px'
+                      >
+                      </Icon>
+                    </div>
+                  </TextTD>
+                  <TextTD>
+                    <p
+                      onClick={() => {
+                        this.setState({
+                          graphData: this.monthlyGraph(results.contribution.monthly) 
+                        })
+                      }}
+                      style={{
+                        cursor: 'pointer'
+                      }}
                     >
-                    </Icon>
+                      Check Graph
+                    </p>
                   </TextTD>
                   <TextTD>
-                    
-                    &nbsp;&nbsp;
-                    <Icon
-                      
-                      className="fa fa-circle col-1"
-                      aria-hidden="true"
-                      size='8px'
+                    <p
+                      onClick={() => {
+                        this.setState({
+                          graphData: this.monthlyGraph(results.contribution.annual) 
+                        })
+                      }}
+                      style={{
+                        cursor: 'pointer'
+                      }}
                     >
-                    </Icon>
-                  </TextTD>
-                  <TextTD>
-                    
-                  </TextTD>
-                  <TextTD>
-                    
+                      Check Graph
+                    </p>
                   </TextTD>
 
                 </tr>
@@ -214,32 +285,78 @@ class DashboardTable extends React.Component {
                 <tr>
                   <th scope="row">EBIDA</th>
                   <TextTD>
-                    
-                    &nbsp;&nbsp;
-                    <Icon
-                    
-                      className="fa fa-circle col-1"
-                      aria-hidden="true"
-                      size='8px'
+                    <div className='row'>
+                      <div className='col-6'>
+                        {
+                          results.ebida.ytd.value
+                          && results.ebida.ytd.value.value
+                        }
+                      </div>
+                      <div className='col-4'>
+                        {
+                          results.ebida.ytd.value
+                          && results.ebida.ytd.value.percentage
+                        }
+                      </div>
+                      <Icon
+                        color={results.ebida.ytd.color}
+                        className="fa fa-circle col-1"
+                        aria-hidden="true"
+                        size='8px'
+                      >
+                      </Icon>
+                    </div>
+                  </TextTD>
+                  <TextTD>
+                    <div className='row'>
+                      <div className='col-6'>
+                        {
+                          results.ebida.forecast.value
+                          && results.ebida.forecast.value.value
+                        }
+                      </div>
+                      <div className='col-4'>
+                        {
+                          results.ebida.forecast.value
+                          && results.ebida.forecast.value.percentage
+                        }
+                      </div>
+                      <Icon
+                        color={results.ebida.forecast.color}
+                        className="fa fa-circle col-1"
+                        aria-hidden="true"
+                        size='8px'
+                      >
+                      </Icon>
+                    </div>
+                  </TextTD>
+                  <TextTD>
+                    <p
+                      onClick={() => {
+                        this.setState({
+                          graphData: this.monthlyGraph(results.ebida.monthly) 
+                        })
+                      }}
+                      style={{
+                        cursor: 'pointer'
+                      }}
                     >
-                    </Icon>
+                      Check Graph
+                    </p>
                   </TextTD>
                   <TextTD>
-                    
-                    &nbsp;&nbsp;
-                    <Icon
-                    
-                      className="fa fa-circle col-1"
-                      aria-hidden="true"
-                      size='8px'
+                    <p
+                      onClick={() => {
+                        this.setState({
+                          graphData: this.monthlyGraph(results.ebida.annual) 
+                        })
+                      }}
+                      style={{
+                        cursor: 'pointer'
+                      }}
                     >
-                    </Icon>
-                  </TextTD>
-                  <TextTD>
-                    
-                  </TextTD>
-                  <TextTD>
-                    
+                      Check Graph
+                    </p>
                   </TextTD>
 
                 </tr>
@@ -250,11 +367,9 @@ class DashboardTable extends React.Component {
 
         <CardContainer className="card">
           <div className="card-body">
-            <Icon
-              color="#006e82"
-              className="fa fa-pencil-square-o"
-              aria-hidden="true"
-            />
+            <IconContainer>
+              <img src={Edit} />
+            </IconContainer>
             <table className="table">
               <thead>
                 <tr>
@@ -283,102 +398,81 @@ class DashboardTable extends React.Component {
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row">#Contracts</th>
+                  <th scope="row">Boxes</th>
                   <TextTD>
-               
-                    &nbsp;&nbsp;
-                    <Icon
-               
-                      className="fa fa-circle col-1"
-                      aria-hidden="true"
-                      size='8px'
+                    <div className='row'>
+                      <div className='col-6'>
+                        {
+                          results.boxes.ytd.value
+                          && results.boxes.ytd.value.value
+                        }
+                      </div>
+                      <div className='col-4'>
+                        {
+                          results.boxes.ytd.value
+                          && results.boxes.ytd.value.percentage
+                        }
+                      </div>
+                      <Icon
+                        color={results.boxes.ytd.color}
+                        className="fa fa-circle col-1"
+                        aria-hidden="true"
+                        size='8px'
+                      >
+                      </Icon>
+                    </div>
+                  </TextTD>
+                  <TextTD>
+                    <div className='row'>
+                      <div className='col-6'>
+                        {
+                          results.boxes.forecast.value
+                          && results.boxes.forecast.value.value
+                        }
+                      </div>
+                      <div className='col-4'>
+                        {
+                          results.boxes.forecast.value
+                          && results.boxes.forecast.value.percentage
+                        }
+                      </div>
+                      <Icon
+                        color={results.boxes.forecast.color}
+                        className="fa fa-circle col-1"
+                        aria-hidden="true"
+                        size='8px'
+                      >
+                      </Icon>
+                    </div>
+                  </TextTD>
+                  <TextTD>
+                    <p
+                      onClick={() => {
+                        this.setState({
+                          graphData: this.monthlyGraph(results.boxes.monthly) 
+                        })
+                      }}
+                      style={{
+                        cursor: 'pointer'
+                      }}
                     >
-                    </Icon>
+                      Check Graph
+                    </p>
                   </TextTD>
                   <TextTD>
-               
-                    &nbsp;&nbsp;
-                    <Icon
-               
-                      className="fa fa-circle col-1"
-                      aria-hidden="true"
-                      size='8px'
+                    <p
+                      onClick={() => {
+                        this.setState({
+                          graphData: this.monthlyGraph(results.boxes.annual) 
+                        })
+                      }}
+                      style={{
+                        cursor: 'pointer'
+                      }}
                     >
-                    </Icon>
+                      Check Graph
+                    </p>
                   </TextTD>
-                  <TextTD>
-               
-                  </TextTD>
-                  <TextTD>
-               
-                  </TextTD>
-
-                </tr>
-
-                <tr>
-                  <th scope="row">Metric 1</th>
-                  <TextTD>
-               
-                    &nbsp;&nbsp;
-                    <Icon
-               
-                      className="fa fa-circle col-1"
-                      aria-hidden="true"
-                      size='8px'
-                    >
-                    </Icon>
-                  </TextTD>
-                  <TextTD>
-               
-                    &nbsp;&nbsp;
-                    <Icon
-               
-                      className="fa fa-circle col-1"
-                      aria-hidden="true"
-                      size='8px'
-                    >
-                    </Icon>
-                  </TextTD>
-                  <TextTD>
-               
-                  </TextTD>
-                  <TextTD>
-               
-                  </TextTD>
-
-                </tr>
-
-                <tr>
-                  <th scope="row">Metric 2</th>
-                  <TextTD>
-               
-                    &nbsp;&nbsp;
-                    <Icon
-               
-                      className="fa fa-circle col-1"
-                      aria-hidden="true"
-                      size='8px'
-                    >
-                    </Icon>
-                  </TextTD>
-                  <TextTD>
-               
-                    &nbsp;&nbsp;
-                    <Icon
-               
-                      className="fa fa-circle col-1"
-                      aria-hidden="true"
-                      size='8px'
-                    >
-                    </Icon>
-                  </TextTD>
-                  <TextTD>
-               
-                  </TextTD>
-                  <TextTD>
-                    
-                  </TextTD>
-
                 </tr>
               </tbody>
             </table>

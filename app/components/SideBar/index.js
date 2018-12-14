@@ -100,6 +100,7 @@ class SideBar extends Component {
           role="button"
           aria-expanded="false"
           aria-controls="collapseExample"
+          fontSize='20px'
           onClick={() => {
             const { isOpen } = this.state;
             const index = isOpen.findIndex(option => option === val.name);
@@ -119,7 +120,7 @@ class SideBar extends Component {
             aria-hidden="true"
           />
 
-          <p className="col-8">{val.name}</p>
+          <p className="col-9">{val.name}</p>
           {this.state.isOpen.findIndex(option => option === val.name) !== -1 ? 
             <CircleIcon
               size="10px"
@@ -134,12 +135,12 @@ class SideBar extends Component {
             />
           }
         </SideBarOptionLabel>
-        <CollapseContainer className="collapse" id={`collapseExample-${index}`}>
+        <CollapseContainer className="collapse"  id={`collapseExample-${index}`}>
           {val.options &&
             val.options.length !== 0 &&
             val.options.map((option, i) => (
               <p key={i}>
-                <SideBarOptionLabel color="#fff" href={val.url}>
+                <SideBarOptionLabel fontSize='18px' color="#fff" href={val.url}>
                   <CircleIcon
                     className="fa fa-angle-right"
                     aria-hidden="true"
@@ -174,10 +175,11 @@ class SideBar extends Component {
                         color='#01b9bf'
                         href={val.url}
                         className='row'
+                        fontSize='20px'
                       >
                         <CircleIcon size='7px' className="fa fa-circle col-1" aria-hidden="true"></CircleIcon>
                     
-                        <p className='col-8'>
+                        <p className='col-9'>
                           {val.name}
                         </p>
                       </SideBarOptionLabel>

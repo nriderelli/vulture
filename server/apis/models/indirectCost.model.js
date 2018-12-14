@@ -25,6 +25,7 @@ const IndirectCostSchema = new mongoose.Schema({
     "Value": {
     	type: String
     },
+    createdAt: { type: Date, default: Date.now, required: true }
 });
 
 module.exports = mongoose.model("IndirectCost", IndirectCostSchema);
