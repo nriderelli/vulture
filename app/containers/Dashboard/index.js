@@ -35,8 +35,20 @@ export default class Dashboard extends React.PureComponent {
       error: null,
       incomeYtd: {},
       incomeForecast: {},
-      monthlyGraph: {},
-      annualGraph: {}
+      incomeMonthlyGraph: {},
+      incomeAnnualGraph: {},
+      contributionYtd: {},
+      contributionForecast: {},
+      contributionMonthlyGraph: {},
+      contributionAnnualGraph: {},
+      ebidaYtd: {},
+      ebidaForecast: {},
+      ebidaMonthlyGraph: {},
+      ebidaAnnualGraph: {},
+      boxesYtd: {},
+      boxesForecast: {},
+      boxesMonthlyGraph: {},
+      boxesAnnualGraph: {}
     };
     
 
@@ -98,15 +110,45 @@ export default class Dashboard extends React.PureComponent {
         this.setState({
           error: null,
           incomeYtd: {
-            value: responseData.data.ytd,
+            value: responseData.data.income.ytd,
             color: '#44db5f',
           },
           incomeForecast: {
-            value: responseData.data.forecast,
+            value: responseData.data.income.forecast,
             color: '#44db5f',
           },
-          monthlyGraph: responseData.data.monthlyGraph,
-          annualGraph: responseData.data.annualGraph
+          incomeMonthlyGraph: responseData.data.income.monthlyGraph,
+          incomeAnnualGraph: responseData.data.income.annualGraph,
+          contributionYtd: {
+            value: responseData.data.contribution.ytd,
+            color: '#44db5f',
+          },
+          contributionForecast: {
+            value: responseData.data.contribution.forecast,
+            color: '#44db5f',
+          },
+          contributionMonthlyGraph: responseData.data.contribution.monthlyGraph,
+          contributionAnnualGraph: responseData.data.contribution.annualGraph,
+          ebidaYtd: {
+            value: responseData.data.ebida.ytd,
+            color: '#44db5f',
+          },
+          ebidaForecast: {
+            value: responseData.data.ebida.forecast,
+            color: '#44db5f',
+          },
+          ebidaMonthlyGraph: responseData.data.ebida.monthlyGraph,
+          ebidaAnnualGraph: responseData.data.ebida.annualGraph,
+          boxesYtd: {
+            value: responseData.data.boxes.ytd,
+            color: '#44db5f',
+          },
+          boxesForecast: {
+            value: responseData.data.boxes.forecast,
+            color: '#44db5f',
+          },
+          boxesMonthlyGraph: responseData.data.boxes.monthlyGraph,
+          boxesAnnualGraph: responseData.data.boxes.annualGraph
         })
       }
 
@@ -133,8 +175,26 @@ export default class Dashboard extends React.PureComponent {
                   income: {
                     ytd: this.state.incomeYtd,
                     forecast: this.state.incomeForecast,
-                    monthly: this.state.monthlyGraph,
-                    annual: this.state.annualGraph,
+                    monthly: this.state.incomeMonthlyGraph,
+                    annual: this.state.incomeAnnualGraph,
+                  },
+                  contribution: {
+                    ytd: this.state.contributionYtd,
+                    forecast: this.state.contributionForecast,
+                    monthly: this.state.contributionMonthlyGraph,
+                    annual: this.state.contributionAnnualGraph,
+                  },
+                  ebida: {
+                    ytd: this.state.ebidaYtd,
+                    forecast: this.state.ebidaForecast,
+                    monthly: this.state.ebidaMonthlyGraph,
+                    annual: this.state.ebidaAnnualGraph,
+                  },
+                  boxes: {
+                    ytd: this.state.boxesYtd,
+                    forecast: this.state.boxesForecast,
+                    monthly: this.state.boxesMonthlyGraph,
+                    annual: this.state.boxesAnnualGraph,
                   }
                 }}
               />

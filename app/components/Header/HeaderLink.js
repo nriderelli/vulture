@@ -8,7 +8,7 @@ export default styled(Link)`
   cursor: pointer;
   outline: 0;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 12px;
+  font-size: 18px;
   color: ${props => props.color};
   &:active {
     background: #41addd;
