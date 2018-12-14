@@ -18,7 +18,7 @@ import DashboardTable from 'components/Dashboard/Table';
 import DashboardCard from 'components/Dashboard/Card';
 import LeftCard from 'components/Dashboard/LeftCard';
 import url from 'api/urls.json';
-
+import Loading from '../Loader';
 // import saga from './saga';
 // import { DASHBOARD } from './constants';
 // import { incomeLoaded, dashboardIncome } from './actions';
@@ -32,6 +32,7 @@ export default class Dashboard extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
+      isLoading: false,
       error: null,
       incomeYtd: {},
       incomeForecast: {},
@@ -90,7 +91,9 @@ export default class Dashboard extends React.PureComponent {
     const currentYear = 12; //new Date().getFullYear();
     const currentMonth = new Date().getMonth() + 1;
     const requestURL = `${url.mainUrl}${url.getDashboardIncome}/${currentMonth === 1? currentYear-1 : currentYear}/${currentMonth}`;
-    console.log(':: requestURL ',requestURL )
+    this.setState({
+      isLoading: true,
+    })
     fetch(
         requestURL,
         {
@@ -108,6 +111,7 @@ export default class Dashboard extends React.PureComponent {
         });
       } else {
         this.setState({
+          isLoading: false,
           error: null,
           incomeYtd: {
             value: responseData.data.income.ytd,
@@ -162,6 +166,12 @@ export default class Dashboard extends React.PureComponent {
   render() {
     return (
       <div>
+      {
+        this.state.isLoading ?
+          <Loading />
+        :
+          ''
+      }
         <Helmet>
           <title>Dashboard</title>
           <meta name="Dashboard" content="Dashboard of the application" />
