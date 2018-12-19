@@ -118,6 +118,15 @@ class Header extends React.Component {
             </IconContainer>
             Explore
           </HeaderLink>
+          <HeaderLink
+            color={location.pathname === '/upload' ? '#187e90' : '#646464'}
+            to="/upload"
+          >
+            <IconContainer>
+              <i className="fa fa-upload" aria-hidden="true"></i>
+            </IconContainer>
+            Upload
+          </HeaderLink>
           <Button left="20px" background="#006e82">
             Test
           </Button>

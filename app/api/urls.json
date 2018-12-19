@@ -1,4 +1,11 @@
 {
-  "mainUrl": "/api/v1",
-  "getDashboardIncome": "/income/dashboard"
+  	"mainUrl": "/api/v1",
+ 	"getDashboard": "/dashboard",
+  	"postIncome": "/income",
+	"postAccountGroup": "/accountGroup",
+	"postIncomeOutcome": "/incomeOutcome",
+	"postIndirectCost": "/indirectCost",
+	"postDirectCost": "/directCost",
+	"postMetrics": "/metrics",
+	"postMainMetrics": "/mainMetrics"
 }

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
 export default styled.div`
- 	width: ${props => props.width};
+  padding: 15px;
 `;

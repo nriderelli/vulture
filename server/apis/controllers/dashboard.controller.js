@@ -1,28 +1,27 @@
 'use strict';
 
 const AccountGroup = require('../models/accountGroup.model');
-const Income = require('../models/income.model');
+const Incomes = require('../models/income.model');
 const IncomeOutcome = require('../models/incomeOutcome.model');
 const IndirectCost = require('../models/indirectCost.model');
 const DirectCost = require('../models/directCost.model');
 const Metrics = require('../models/metrics.model');
 const MainMetrics = require('../models/mainMetrics.model');
 
-// get user list
 exports.create = function (req, res) {
     try {
        if(req.body && req.body.income && req.body.income.length !== 0){
-            req.body.income.forEach(val=> {
-                const data = new Income(val);
-                data.save((error, response) => {
-                    if (error) {
-                        console.log(error);
-                        
-                    } else {
-                        console.log('response ',response ? 'done': 'not done')
-                    }
-                });
-            })
+            // req.body.income.forEach(val=> {
+            const data = new Incomes(req.body.income);
+            data.save((error, response) => {
+                if (error) {
+                    console.log(error);
+                    
+                } else {
+                    console.log('response ',response ? 'done': 'not done')
+                }
+            });
+            // })
             res.status(200).json({
                 status: 'done',
                 data: 'done'
@@ -36,8 +35,7 @@ exports.create = function (req, res) {
     }
 };
 
-
-// get income for dashboard
+// get data for dashboard
 exports.dashboard = function (req, res) {
     try {
         if(req.params.year && req.params.month) {
@@ -48,7 +46,7 @@ exports.dashboard = function (req, res) {
             let tempYear = []
             let data = ['', '', '', '', '', ''];
             let list = [
-                Income.find({}, {'Real / Budget': 1, Month: 1, Year: 1, Value: 1}),
+                Incomes.find({}, {'Real / Budget': 1, Month: 1, Year: 1, Value: 1}),
                 IndirectCost.find({}, {'Account Group': 1, 'Real / Budget': 1, Month: 1, Year: 1, Value: 1}),
                 AccountGroup.find({}),
                 DirectCost.find({}, {'Real / Budget': 1, Month: 1, Year: 1, Value: 1}),

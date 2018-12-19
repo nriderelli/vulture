@@ -11,8 +11,8 @@ export default styled(Link)`
   font-size: 18px;
   color: ${props => props.color};
   &:active {
-    background: #41addd;
-    color: #fff;
+    background: transparent;
+    color: #187e90;
   }
   &:hover {
     color: #187e90;
