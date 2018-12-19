@@ -90,7 +90,7 @@ export default class Dashboard extends React.PureComponent {
     // this.props.getDashboardIncome();
     const currentYear = 12; //new Date().getFullYear();
     const currentMonth = new Date().getMonth() + 1;
-    const requestURL = `${url.mainUrl}${url.getDashboardIncome}/${currentMonth === 1? currentYear-1 : currentYear}/${currentMonth}`;
+    const requestURL = `${url.mainUrl}${url.getDashboard}/${currentMonth === 1? currentYear-1 : currentYear}/${currentMonth}`;
     this.setState({
       isLoading: true,
     })
@@ -105,7 +105,14 @@ export default class Dashboard extends React.PureComponent {
     )
     .then(response => response.json())
     .then(responseData => {
-      if(responseData.status !== 'success') {
+      if(!responseData) {
+        this.setState({
+          isLoading: false,
+        })
+        this.setState({
+          error:'Data fetching failed'
+        });
+      }else if(responseData.status !== 'success') {
         this.setState({
           error: responseData.error || 'Data fetching failed'
         });
