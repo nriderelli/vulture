@@ -20,78 +20,79 @@ class Card extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedHeader: 'costosAperturados',
-      selectedSubHeader: 'costosEnElTiempo',
+      selectedHeader: 'métricasOp',
+      selectedSubHeader: 'metricasInDoller',
     };
   }
   renderSubHeader() {
     switch(this.state.selectedHeader) {
-      case 'costosAperturados':
+      case 'métricasOp':
         return (
           <Container>
             <Button
-              background={ this.state.selectedSubHeader === 'costosEnElTiempo'? "#000" : "#e1e1e1"}
-              color={ this.state.selectedSubHeader === 'costosEnElTiempo'? '#fff' : '#000'}
+              background={ this.state.selectedSubHeader === 'metricasInDoller'? "#000" : "#e1e1e1"}
+              color={ this.state.selectedSubHeader === 'metricasInDoller'? '#fff' : '#000'}
               onClick={()=>{
                 this.setState({
-                  selectedSubHeader: 'costosEnElTiempo'
+                  selectedSubHeader: 'metricasInDoller'
                 })
               }}
             >
-              Costos en el tiempo
+              Métricas ($)
             </Button>
             <Button
-              background={ this.state.selectedSubHeader === 'costosEnElTiempoPercent'? "#000" : "#e1e1e1"}
-              color={ this.state.selectedSubHeader === 'costosEnElTiempoPercent'? '#fff' : '#000'}
+              background={ this.state.selectedSubHeader === 'mixPercentMg'? "#000" : "#e1e1e1"}
+              color={ this.state.selectedSubHeader === 'mixPercentMg'? '#fff' : '#000'}
               onClick={()=>{
                 this.setState({
-                  selectedSubHeader: 'costosEnElTiempoPercent'
+                  selectedSubHeader: 'mixPercentMg'
                 })
               }}
             >
-              Costos en el tiempo %
-            </Button>
-            <Button
-              background={ this.state.selectedSubHeader === 'costosAcumulados'? "#000" : "#e1e1e1"}
-              color={ this.state.selectedSubHeader === 'costosAcumulados'? '#fff' : '#000'}
-              onClick={()=>{
-                this.setState({
-                  selectedSubHeader: 'costosAcumulados'
-                })
-              }}
-            >
-              Costos acumulados
+              Mix % mg
             </Button>
           </Container>
         )
         break;
-      case 'productividad':
+      case 'metricas':
         return (
           <Container>
             <Button
-              background={ this.state.selectedSubHeader === 'productividad'? "#000" : "#e1e1e1"}
-              color={ this.state.selectedSubHeader === 'productividad'? '#fff' : '#000'}
+              background={ this.state.selectedSubHeader === 'metricasDeIngresos'? "#000" : "#e1e1e1"}
+              color={ this.state.selectedSubHeader === 'metricasDeIngresos'? '#fff' : '#000'}
               onClick={()=>{
                 this.setState({
-                  selectedSubHeader: 'productividad'
+                  selectedSubHeader: 'metricasDeIngresos'
                 })
               }}
             >
-              Productivadad
+              Métricas de ingresos
             </Button>
             <Button
-              background={ this.state.selectedSubHeader === 'activacionesYDevengo'? "#000" : "#e1e1e1"}
-              color={ this.state.selectedSubHeader === 'activacionesYDevengo'? '#fff' : '#000'}
+              background={ this.state.selectedSubHeader === 'metricasDeCost'? "#000" : "#e1e1e1"}
+              color={ this.state.selectedSubHeader === 'metricasDeCost'? '#fff' : '#000'}
               onClick={()=>{
                 this.setState({
-                  selectedSubHeader: 'activacionesYDevengo'
+                  selectedSubHeader: 'metricasDeCost'
                 })
               }}
             >
-              Activaciones y devengo
+              Métricas de costos
+            </Button>
+            <Button
+              background={ this.state.selectedSubHeader === 'metricasDeMargenes'? "#000" : "#e1e1e1"}
+              color={ this.state.selectedSubHeader === 'metricasDeMargenes'? '#fff' : '#000'}
+              onClick={()=>{
+                this.setState({
+                  selectedSubHeader: 'metricasDeMargenes'
+                })
+              }}
+            >
+              Métricas de márgenes
             </Button>
           </Container>
         )
+        break;
     }
   }
   render() {
@@ -102,35 +103,35 @@ class Card extends React.Component {
             <Header className='row'>
               <div className='col-11'>
                 <DIV
-                  color={ this.state.selectedHeader === 'costosAperturados' ? '#fff' : '#000' }
-                  background={ this.state.selectedHeader === 'costosAperturados' ? '#006e82' : '#fff' }
+                  color={ this.state.selectedHeader === 'métricasOp' ? '#fff' : '#000' }
+                  background={ this.state.selectedHeader === 'métricasOp' ? '#006e82' : '#fff' }
                   onClick={() => {
                     this.setState({
-                      selectedHeader: 'costosAperturados',
-                      selectedSubHeader: 'costosEnElTiempo'
+                      selectedHeader: 'métricasOp',
+                      selectedSubHeader: 'metricasInDoller'
                     })
                   }}
                 >
                   <P
                     borderLeft='0px'
                   >
-                    Costos aperturados
+                    Métricas op
                   </P>
                 </DIV>
                 <DIV
-                  color={ this.state.selectedHeader === 'productividad' ? '#fff' : '#000' }
-                  background={ this.state.selectedHeader === 'productividad' ? '#006e82' : '#fff' }
+                  color={ this.state.selectedHeader === 'metricas' ? '#fff' : '#000' }
+                  background={ this.state.selectedHeader === 'metricas' ? '#006e82' : '#fff' }
                   onClick={() => {
                     this.setState({
-                      selectedHeader: 'productividad',
-                      selectedSubHeader: 'productividad'
+                      selectedHeader: 'metricas',
+                      selectedSubHeader: 'métricasDeIngresos'
                     })
                   }}
                 >
                   <P
                     borderLeft={ this.state.selectedHeader === 'total' ? '0px' : '1px' }
                   >
-                    Productividad
+                    Métricas
                   </P>
                 </DIV>
               </div>
@@ -138,9 +139,7 @@ class Card extends React.Component {
                 edit
               </div>
             </Header>
-            {
-              this.renderSubHeader()
-            }
+            {this.renderSubHeader()}
             
           </div>
         </CardContainer>

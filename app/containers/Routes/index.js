@@ -8,6 +8,9 @@ import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Dashboard from 'containers/Dashboard';
 import Upload from 'containers/Upload';
 import Cost from 'containers/Cost/Loadable';
+import Income from 'containers/Income/Loadable';
+import Margin from 'containers/Margin/Loadable';
+import Metric from 'containers/Metric/Loadable';
 import RightContainer from './RightContainer';
 import LeftContainer from './LeftContainer';
 import AppContainer from './AppContainer';
@@ -49,6 +52,9 @@ class Routes extends React.PureComponent {
               <Switch>
                 <Route path="/dashboard" component={Dashboard} />
                 <Route path="/costs" component={Cost} />
+                <Route path="/income" component={Income} />
+                <Route path="/margins" component={Margin} />
+                <Route path="/metrics" component={Metric} />
                 <Route path="/upload" component={Upload} />
 
                 <Route path="" component={NotFoundPage} />
