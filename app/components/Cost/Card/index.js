@@ -17,8 +17,14 @@ import Row from './Row';
 
 /* eslint-disable react/prefer-stateless-function */
 class Card extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedHeader: 'costosAperturados',
+      selectedSubHeader: 'costosEnElTiempo',
+    };
+  }
   render() {
-    const { active } = this.props;
     return (
       <div>
         <CardContainer className="card" key={this.props.index}>
@@ -26,43 +32,35 @@ class Card extends React.Component {
             <Header className='row'>
               <div className='col-11'>
                 <DIV
-                  color={ active === 'total' ? '#fff' : '#000' }
-                  background={ active === 'total' ? '#006e82' : '#fff' }
+                  color={ this.state.selectedHeader === 'costosAperturados' ? '#fff' : '#000' }
+                  background={ this.state.selectedHeader === 'costosAperturados' ? '#006e82' : '#fff' }
+                  onClick={() => {
+                    this.setState({
+                      selectedHeader: 'costosAperturados',
+                      selectedSubHeader: 'costosEnElTiempo'
+                    })
+                  }}
                 >
                   <P
                     borderLeft='0px'
                   >
-                    TOTAL COSTS
+                    Costos aperturados
                   </P>
                 </DIV>
                 <DIV
-                  color={ active === 'metrics' ? '#fff' : '#000' }
-                  background={ active === 'metrics' ? '#006e82' : '#fff' }
+                  color={ this.state.selectedHeader === 'productividad' ? '#fff' : '#000' }
+                  background={ this.state.selectedHeader === 'productividad' ? '#006e82' : '#fff' }
+                  onClick={() => {
+                    this.setState({
+                      selectedHeader: 'productividad',
+                      selectedSubHeader: 'productividad'
+                    })
+                  }}
                 >
                   <P
-                    borderLeft={ active === 'total' ? '0px' : '1px' }
+                    borderLeft={ this.state.selectedHeader === 'total' ? '0px' : '1px' }
                   >
-                    METRICS
-                  </P>
-                </DIV>
-                <DIV
-                  color={ active === 'average' ? '#fff' : '#000' }
-                  background={ active === 'average' ? '#006e82' : '#fff' }
-                >
-                  <P
-                    borderLeft={ active === 'metrics' ? '0px' : '1px' }
-                  >
-                    AVERAGE TICKET
-                  </P>
-                </DIV>
-                <DIV
-                  color={ active === 'new' ? '#fff' : '#000' }
-                  background={ active === 'new' ? '#006e82' : '#fff' }
-                >
-                  <P
-                    borderLeft={ active === 'average' ? '0px' : '1px' }
-                  >
-                    NEW
+                    Productividad
                   </P>
                 </DIV>
               </div>
@@ -70,190 +68,69 @@ class Card extends React.Component {
                 edit
               </div>
             </Header>
-            
-            <Container>
-              <Button  background="#000" color='#fff'>
-                Growth $
-              </Button>
-              <Button  background="#e1e1e1" color='#000'>
-                Increase %
-              </Button>
-              <Button  background="#e1e1e1" color='#000'>
-                Concertration
-              </Button>
-              <Button  background="#e1e1e1" color='#000'>
-                Change of Mix
-              </Button>
-            </Container>
-          </div>
-        </CardContainer>
-
-        <CardContainer className="card" key={this.props.index}>
-          <div className="card-body row">
-            <COL className='col-2'>
-              <HeaderCol className='col-12'>
-                APRETURA DE NEGOCIO
-              </HeaderCol>
-              <Row className='row'>
-                <div className='col-9'>
-                  <div className='form-group'>
-                    <Select className="form-control">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                    </Select>
-
-                    <Select className="form-control">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                    </Select>
-                  </div>
-                </div>
-                <div className='col-2'>
-                  plus
-                </div>
-              </Row>
-            </COL>
-            <COL className='col-2'>
-              <HeaderCol className='col-12'>
-                APRETURA DE COSTOS
-              </HeaderCol>
-              <Row className='row'>
-                <div className='col-9'>
-                  <div className='form-group'>
-                    <Select className="form-control">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                    </Select>
-
-                    <Select className="form-control">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                    </Select>
-                  </div>
-                </div>
-                <div className='col-2'>
-                  plus
-                </div>
-              </Row>
-            </COL>
-            <COL className='col-2'>
-              <HeaderCol className='col-12'>
-                FILTRO DE NEGOCIO
-              </HeaderCol>
-              <Row className='row'>
-                <div className='col-9'>
-                  <div className='form-group'>
-                    <Select className="form-control">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                    </Select>
-
-                    <Select className="form-control">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                    </Select>
-                  </div>
-                </div>
-                <div className='col-2'>
-                  plus
-                </div>
-              </Row>
-            </COL>
-            <COL className='col-2'>
-              <HeaderCol className='col-12'>
-                FILTRO NEGOCIO
-              </HeaderCol>
-              <Row className='row'>
-                <div className='col-9'>
-                  <div className='form-group'>
-                    <Select className="form-control">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                    </Select>
-
-                    <Select className="form-control">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                    </Select>
-                  </div>
-                </div>
-                <div className='col-2'>
-                  plus
-                </div>
-              </Row>
-            </COL>
-            <COL className='col-2'>
-              <HeaderCol className='col-12'>
-                DATES / FREQUENCY
-              </HeaderCol>
-              <Row className='row'>
-                <div className='form-group col-12'>
-                  <Select className="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </Select>
-
-                  <Select className="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </Select>
-
-                  <Select className="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </Select>
-                </div>
-              </Row>
-            </COL>
-            <COL className='col-2'>
-              <HeaderCol className='col-12'>
-                OPTIONS
-              </HeaderCol>
-              <Row className='row'>
-                <div className='col-12'>
-                  <Select className="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </Select>
-                </div>
-              </Row>
-            </COL>
+            {
+              this.state.selectedHeader === 'costosAperturados'?
+                <Container>
+                  <Button
+                    background={ this.state.selectedSubHeader === 'costosEnElTiempo'? "#000" : "#e1e1e1"}
+                    color={ this.state.selectedSubHeader === 'costosEnElTiempo'? '#fff' : '#000'}
+                    onClick={()=>{
+                      this.setState({
+                        selectedSubHeader: 'costosEnElTiempo'
+                      })
+                    }}
+                  >
+                    Costos en el tiempo
+                  </Button>
+                  <Button
+                    background={ this.state.selectedSubHeader === 'costosEnElTiempoPercent'? "#000" : "#e1e1e1"}
+                    color={ this.state.selectedSubHeader === 'costosEnElTiempoPercent'? '#fff' : '#000'}
+                    onClick={()=>{
+                      this.setState({
+                        selectedSubHeader: 'costosEnElTiempoPercent'
+                      })
+                    }}
+                  >
+                    Costos en el tiempo %
+                  </Button>
+                  <Button
+                    background={ this.state.selectedSubHeader === 'costosAcumulados'? "#000" : "#e1e1e1"}
+                    color={ this.state.selectedSubHeader === 'costosAcumulados'? '#fff' : '#000'}
+                    onClick={()=>{
+                      this.setState({
+                        selectedSubHeader: 'costosAcumulados'
+                      })
+                    }}
+                  >
+                    Costos acumulados
+                  </Button>
+                </Container>
+              :
+                <Container>
+                  <Button
+                    background={ this.state.selectedSubHeader === 'productividad'? "#000" : "#e1e1e1"}
+                    color={ this.state.selectedSubHeader === 'productividad'? '#fff' : '#000'}
+                    onClick={()=>{
+                      this.setState({
+                        selectedSubHeader: 'productividad'
+                      })
+                    }}
+                  >
+                    Productivadad
+                  </Button>
+                  <Button
+                    background={ this.state.selectedSubHeader === 'activacionesYDevengo'? "#000" : "#e1e1e1"}
+                    color={ this.state.selectedSubHeader === 'activacionesYDevengo'? '#fff' : '#000'}
+                    onClick={()=>{
+                      this.setState({
+                        selectedSubHeader: 'activacionesYDevengo'
+                      })
+                    }}
+                  >
+                    Activaciones y devengo
+                  </Button>
+                </Container>
+            }
             
           </div>
         </CardContainer>

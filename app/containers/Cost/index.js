@@ -15,13 +15,13 @@ import Card from 'components/Cost/Card';
 import Button from 'components/Button';
 import Text from './Text';
 import Header from './Header';
-
+import A from './A';
 /* eslint-disable react/prefer-stateless-function */
 export class Cost extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      isOpen: [],
+      isOpen: true,
     };
     this.error =
       'Error! There are itmes not assigned in the area of "Classification of area and accounts"';
@@ -217,11 +217,28 @@ export class Cost extends React.PureComponent {
             <Text>
               Values in M CLP
             </Text>
-            <Button background="#006e82" float='right'>
-              Hide Panels
-            </Button>
+            <A
+              background="#006e82"
+              float='right'
+              data-toggle="collapse"
+              role="button"
+              aria-expanded="true"
+              aria-controls="collapseExample"
+              onClick={() => {
+                this.setState({
+                  isOpen: !this.state.isOpen
+                })
+              }}
+            >
+              {
+                this.state.isOpen?
+                  'Hide Panels'
+                :
+                  'Show Panels'
+              }
+            </A>
           </Header>
-          <div className='row'>
+          <div className={`collapse row ${this.state.isOpen ? 'show' : ''}`} id='collapsePannel'>
             { this.table
               && this.table.length !== 0
               && this.table.map((value, index) => (
