@@ -1,6 +1,7 @@
 // import npm packages
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import { Bar } from 'react-chartjs-2';
 
 // import local files
 import Button from './Button';
@@ -14,6 +15,7 @@ import COL from './COL';
 import HeaderCol from './HeaderCol';
 import Select from './Select';
 import Row from './Row';
+import Edit from 'images/icons/edit.png';
 
 /* eslint-disable react/prefer-stateless-function */
 class Card extends React.Component {
@@ -45,7 +47,7 @@ class Card extends React.Component {
               color={ this.state.selectedSubHeader === 'volumen'? '#fff' : '#000'}
               onClick={()=>{
                 this.setState({
-                  selectedSubHeader: 'volumen'
+                  selectedSubHeader: ''
                 })
               }}
             >
@@ -206,6 +208,70 @@ class Card extends React.Component {
         break;
     }
   }
+  renderGraph() {
+    switch(this.state.selectedSubHeader) {
+      case 'ingresos':
+        return {
+          labels: ['2015', '2016', '2017', 'Promedio'],
+          datasets: [
+            {
+              label: 'El Gobemador',
+              backgroundColor: '#1f3764',
+              borderColor: '#1f3764',
+              borderWidth: 2,
+              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+              // hoverBorderColor: 'rgba(255,99,132,1)',
+              data: [20000, 21000, 22000, 21000],
+            }, {
+              label: 'Santa Digna',
+              backgroundColor: '#8da9db',
+              borderColor: '#8da9db',
+              borderWidth: 2,
+              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+              // hoverBorderColor: 'rgba(255,99,132,1)',
+              data: [39000, 41000, 43000, 41000],
+            }, {
+              label: 'Las Mulas',
+              backgroundColor: '#a4a4a4',
+              borderColor: '#a4a4a4',
+              borderWidth: 2,
+              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+              // hoverBorderColor: 'rgba(255,99,132,1)',
+              data: [57000, 60000, 63000, 60000],
+            }
+          ]
+        };
+        break;
+      case 'volumen':
+        break;
+      case 'cantidad':
+        break;
+      case 'ticket':
+        break;
+      case 'ingresosAcumulados':
+        break;
+      case 'mixPercentIngresos':
+        break;
+      case 'mixPercentVolumen':
+        break;
+      case 'concentraciónDeIngresos':
+        break;
+      case 'concentraciónDeVolumen':
+        break;
+      case 'recurrenciaDeClientes':
+        break;
+      case 'recurrenciaDeIngresos':
+        break;
+      case 'estacionalidad':
+        break;
+      case 'Attrition':
+        break;
+      case 'backlog':
+        break;
+      
+      
+    }
+  }
   render() {
     return (
       <div>
@@ -279,10 +345,25 @@ class Card extends React.Component {
                 </DIV>
               </div>
               <div className='col-1'>
-                edit
+                <img src={Edit} />
               </div>
             </Header>
             {this.renderSubHeader()}
+
+            <Container>
+              {
+                this.renderGraph() ?
+                  <Bar
+                    data={this.renderGraph()}
+                    options={{
+                      maintainAspectRatio: false
+                    }}
+                  />
+                :
+                  ''
+              }
+              
+            </Container>
             
           </div>
         </CardContainer>

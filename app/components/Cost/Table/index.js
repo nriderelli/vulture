@@ -11,7 +11,9 @@ import TD from './TD';
 import TR from './TR';
 import TH from './TH';
 import Text from './Text';
-import P from './P';
+import Img from './Img';
+import Add from 'images/icons/add.png';
+import See from 'images/icons/see_details.png';
 
 /* eslint-disable react/prefer-stateless-function */
 class CostTable extends React.Component {
@@ -85,17 +87,9 @@ class CostTable extends React.Component {
           <div>
             {
               data.isSeeAll ?
-                <P>
-                  See All
-                  <Icon
-                    color='#006e81'
-                    className="fa fa-arrow-circle-o-right"
-                    aria-hidden="true"
-                    size='8px'
-                  />
-                </P>
+                <Img src={See} />
               : 
-                <P>Plus</P>
+                <Img src={Add} />
             }
           </div>
         </CardContainer>

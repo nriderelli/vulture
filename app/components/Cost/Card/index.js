@@ -14,6 +14,7 @@ import COL from './COL';
 import HeaderCol from './HeaderCol';
 import Select from './Select';
 import Row from './Row';
+import Edit from 'images/icons/edit.png';
 
 /* eslint-disable react/prefer-stateless-function */
 class Card extends React.Component {
@@ -135,7 +136,7 @@ class Card extends React.Component {
                 </DIV>
               </div>
               <div className='col-1'>
-                edit
+                <img src={Edit} />
               </div>
             </Header>
             {
