@@ -1,6 +1,7 @@
 // import npm packages
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import { Bar } from 'react-chartjs-2';
 
 // import local files
 import Button from './Button';
@@ -15,6 +16,11 @@ import HeaderCol from './HeaderCol';
 import Select from './Select';
 import Row from './Row';
 import Edit from 'images/icons/edit.png';
+import THead from './THead';
+import TTotal from './TTotal';
+import Add from 'images/icons/add.png';
+import FilterContainer from './FilterContainer';
+import OpcionesContainer from './OpcionesContainer';
 
 /* eslint-disable react/prefer-stateless-function */
 class Card extends React.Component {
@@ -91,17 +97,6 @@ class Card extends React.Component {
             >
               Concentración de mg
             </Button>
-            <Button
-              background={ this.state.selectedSubHeader === 'concentraciónDeVolumen'? "#000" : "#e1e1e1"}
-              color={ this.state.selectedSubHeader === 'concentraciónDeVolumen'? '#fff' : '#000'}
-              onClick={()=>{
-                this.setState({
-                  selectedSubHeader: 'concentraciónDeVolumen'
-                })
-              }}
-            >
-              Concentración de volumen
-            </Button>
           </Container>
         )
         break;
@@ -133,6 +128,358 @@ class Card extends React.Component {
           </Container>
         )
         break;
+    }
+  }
+
+  renderGraph() {
+    switch(this.state.selectedSubHeader) {
+      case 'márgenesInDoller':
+        return {
+          labels: ['2015', '2016', '2017', 'Promedio'],
+          datasets: [
+            {
+              label: 'Las Mulas',
+              backgroundColor: '#1f3764',
+              borderColor: '#1f3764',
+              borderWidth: 2,
+              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+              // hoverBorderColor: 'rgba(255,99,132,1)',
+              data: [10000, 11340, 12100, 11147],
+            }, {
+              label: 'Santa Digna',
+              backgroundColor: '#8da9db',
+              borderColor: '#8da9db',
+              borderWidth: 2,
+              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+              // hoverBorderColor: 'rgba(255,99,132,1)',
+              data: [8550, 9200, 9870, 9207],
+            }, {
+              label: 'El Gobemador',
+              backgroundColor: '#a4a4a4',
+              borderColor: '#a4a4a4',
+              borderWidth: 2,
+              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+              // hoverBorderColor: 'rgba(255,99,132,1)',
+              data: [10800, 11020, 11200, 11007],
+            }
+          ]
+        };
+        break;
+      case 'márgenesInPercent':
+        return {
+          type: 'line',
+          labels: ['2015', '2016', '2017', 'Promedio'],
+          datasets: [
+            {
+              label: 'Las Mulas',
+              backgroundColor: '#1f3764',
+              borderColor: '#1f3764',
+              borderWidth: 2,
+              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+              // hoverBorderColor: 'rgba(255,99,132,1)',
+              data: [51, 54, 55, 53],
+            }, {
+              label: 'Santa Digna',
+              backgroundColor: '#8da9db',
+              borderColor: '#8da9db',
+              borderWidth: 2,
+              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+              // hoverBorderColor: 'rgba(255,99,132,1)',
+              data: [45, 46, 47, 46],
+            }, {
+              label: 'El Gobemador',
+              backgroundColor: '#a4a4a4',
+              borderColor: '#a4a4a4',
+              borderWidth: 2,
+              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+              // hoverBorderColor: 'rgba(255,99,132,1)',
+              data: [60, 58, 56, 58],
+            }
+          ]
+        };
+        break;
+      case 'mgAcumulados':
+        return {
+          labels: ['Las Mulas', 'Santa Digna', 'El Gobemador', 'Total'],
+          datasets: [
+            {
+              label: '',
+              backgroundColor: '#1f3864',
+              borderColor: '#1f3864',
+              borderWidth: 2,
+              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+              // hoverBorderColor: 'rgba(255,99,132,1)',
+              data: [33440, 27620, 33020, 94080],
+            },
+          ]
+        };
+        break;
+      case 'mixPercentMg':
+        return {
+          type: 'line',
+          labels: ['2015', '2016', '2017', 'Promedio'],
+          datasets: [
+            {
+              label: 'Las Mulas',
+              backgroundColor: '#1f3764',
+              borderColor: '#1f3764',
+              borderWidth: 2,
+              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+              // hoverBorderColor: 'rgba(255,99,132,1)',
+              data: [34, 36, 36, 36],
+            }, {
+              label: 'Santa Digna',
+              backgroundColor: '#8da9db',
+              borderColor: '#8da9db',
+              borderWidth: 2,
+              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+              // hoverBorderColor: 'rgba(255,99,132,1)',
+              data: [29, 30, 29, 29],
+            }, {
+              label: 'El Gobemador',
+              backgroundColor: '#a4a4a4',
+              borderColor: '#a4a4a4',
+              borderWidth: 2,
+              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+              // hoverBorderColor: 'rgba(255,99,132,1)',
+              data: [37, 35, 34, 35],
+            }
+          ]
+        };
+        break;
+        break;
+      case 'concentraciónDeMg':
+      case 'recurrenciaDeClientes':
+        return {
+          labels: ['<10%', '10% -< 30%', '30% -< 50%', '50% -< 80%', '80% -< 100%'],
+          datasets: [
+            {
+              label: '',
+              backgroundColor: '#1f3764',
+              borderColor: '#1f3764',
+              borderWidth: 2,
+              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+              // hoverBorderColor: 'rgba(255,99,132,1)',
+              data: [5, 25, 30, 25, 15],
+            }, {
+              label: '',
+              backgroundColor: '#8da9db',
+              borderColor: '#8da9db',
+              borderWidth: 2,
+              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+              // hoverBorderColor: 'rgba(255,99,132,1)',
+              data: [10, 35, 30, 25, 15],
+            }
+          ]
+        };
+        break;
+      case 'recurrenciaDeEBITDA':
+        return {
+          labels: ['80 -< 100%', '80% -< 50%', '50% -< 30%', '30% -< 10%', '-< 10%'],
+          datasets: [
+            {
+              label: '',
+              backgroundColor: '#1f3764',
+              borderColor: '#1f3764',
+              borderWidth: 2,
+              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+              // hoverBorderColor: 'rgba(255,99,132,1)',
+              data: [30000, 40000, 50000, 40000, 20000],
+            }
+          ]
+        };
+        break;
+      
+      
+    }
+  }
+  renderTable() {
+    switch(this.state.selectedSubHeader) {
+      case 'márgenesInDoller':
+        return (
+          <table className="table">
+            <THead>
+              <tr>
+                <th>
+                  Marcas
+                </th>
+                <th>
+                  Var. % 2015 - 2016
+                </th>
+                <th>
+                  Var. % 2016 - 2017
+                </th>
+                <th>
+                  CAGR 2015 - 2017
+                </th>
+              </tr>
+            </THead>
+            <tbody>
+              <tr>
+                <th>Las Mulas</th>
+                <td>13,4%</td>
+                <td>6,7%</td>
+                <td>10,0%</td>
+              </tr>
+              <tr>
+                <th>Santa Digna</th>
+                <td>7,6%</td>
+                <td>7,3%</td>
+                <td>7,4%</td>
+              </tr>
+              <tr>
+                <th>El Gobemador</th>
+                <td>2,0%</td>
+                <td>1,6%</td>
+                <td>1,8%</td>
+              </tr>
+              <TTotal>
+                <th>Total</th>
+                <td>7,5%</td>
+                <td>5,1%</td>
+                <td>6,3%</td>
+              </TTotal>
+            </tbody>
+          </table>
+        );
+        break;
+      case 'márgenesInPercent':
+        return (
+          <table className="table">
+            <THead>
+              <tr>
+                <th>
+                  Marcas
+                </th>
+                <th>
+                  Var. % 2015 - 2016
+                </th>
+                <th>
+                  Var. % 2016 - 2017
+                </th>
+                <th>
+                  CAGR 2015 - 2017
+                </th>
+              </tr>
+            </THead>
+            <tbody>
+              <tr>
+                <th>Las Mulas</th>
+                <td>8,0%</td>
+                <td>1,9%</td>
+                <td>4,9%</td>
+              </tr>
+              <tr>
+                <th>Santa Digna</th>
+                <td>2,2%</td>
+                <td>2,2%</td>
+                <td>2,2%</td>
+              </tr>
+              <tr>
+                <th>El Gobemador</th>
+                <td>-3,3%</td>
+                <td>-3,4%</td>
+                <td>-3,4%</td>
+              </tr>
+              <TTotal>
+                <th>Total</th>
+                <td>2,7%</td>
+                <td>0,1%</td>
+                <td>1,1%</td>
+              </TTotal>
+            </tbody>
+          </table>
+        );
+        break;
+      case 'mgAcumulados':
+        return (
+          <table className="table">
+            <THead>
+              <tr>
+                <th>
+                </th>
+                <th>
+                  Las Mulas
+                </th>
+                <th>
+                  Santa Digna
+                </th>
+                <th>
+                  El Gobemador
+                </th>
+                <th>
+                  Total
+                </th>
+              </tr>
+            </THead>
+            <tbody>
+              <tr>
+                <th>% Del Total</th>
+                <td>36%</td>
+                <td>29%</td>
+                <td>35%</td>
+                <td>100%</td>
+              </tr>
+            </tbody>
+          </table>
+        );
+        break;
+      case 'mixPercentMg':
+        return (
+          <table className="table">
+            <THead>
+              <tr>
+                <th>
+                  Marcas
+                </th>
+                <th>
+                  Var. % 2015 - 2016
+                </th>
+                <th>
+                  Var. % 2016 - 2017
+                </th>
+                <th>
+                  CAGR 2015 - 2017
+                </th>
+              </tr>
+            </THead>
+            <tbody>
+              <tr>
+                <th>Las Mulas</th>
+                <td>5,0%</td>
+                <td>4,8%</td>
+                <td>4,9%</td>
+              </tr>
+              <tr>
+                <th>Santa Digna</th>
+                <td>5,3%</td>
+                <td>5,0%</td>
+                <td>5,1%</td>
+              </tr>
+              <tr>
+                <th>El Gobemador</th>
+                <td>5,6%</td>
+                <td>5,3%</td>
+                <td>5,4%</td>
+              </tr>
+              <TTotal>
+                <th>Total</th>
+                <td>5,3%</td>
+                <td>5,0%</td>
+                <td>5,1%</td>
+              </TTotal>
+            </tbody>
+          </table>
+        );
+        break;
+      case 'concentraciónDeMg':
+        break;
+      case 'recurrenciaDeClientes':
+        break;
+      case 'recurrenciaDeEBITDA':
+        break;
+      
+      
     }
   }
   render() {
@@ -196,6 +543,177 @@ class Card extends React.Component {
               </div>
             </Header>
             {this.renderSubHeader()}
+
+
+            <FilterContainer>
+              <table className="table">
+                <tbody>
+                  <tr>
+                    <th>
+                      Tipo de Mg.
+                    </th>
+                    <th>
+                      Apertura de negocios
+                    </th>
+                    <th>
+                      Flitro de negocios
+                    </th>
+                    <th>
+                      Flitro de costos
+                    </th>
+                    <th>
+                      Plazo
+                    </th>
+                    <th>
+                      Opciones
+                    </th>
+                  </tr>
+                  <tr>
+                    <td className=''>
+                      <div className='row'>
+                        <div className='col-12 row'>
+                          <div className="form-group col-12">
+                            <select className="form-control">
+                              <option>EBITDA</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td className=''>
+                      <div className='row'>
+                        <div className='col-10 row'>
+                          <div className="form-group col-12">
+                            <select className="form-control">
+                              <option>Marca</option>
+                            </select>
+                          </div>
+                          <div className="form-group col-12">
+                            <select className="form-control">
+                              <option>Sel. multiple...</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div className='col-1'>
+                          <img src={Add} />
+                        </div>
+                      </div>
+                    </td>
+                      
+                    <td className=''>
+                      <div className='row'>
+                        <div className='col-10 row'>
+                          <div className="form-group col-12">
+                            <select className="form-control">
+                              <option>Pais</option>
+                            </select>
+                          </div>
+                          <div className="form-group col-12">
+                            <select className="form-control">
+                              <option>Chile, Peru</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div className='col-1'>
+                          <img src={Add} />
+                        </div>
+                      </div>
+                    </td>
+
+                    <td className=''>
+                      <div className='row'>
+                        <div className='col-10 row'>
+                          <div className="form-group col-12">
+                            <select className="form-control">
+                              <option>Centro de costos</option>
+                            </select>
+                          </div>
+                          <div className="form-group col-12">
+                            <select className="form-control">
+                              <option>Todos</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div className='col-1'>
+                          <img src={Add} />
+                        </div>
+                      </div>
+                    </td>
+
+                    <td className=''>
+                      <div className='col-12 row'>
+                        <div className="form-group col-12">
+                          <select className="form-control">
+                            <option>Fencha inicio</option>
+                          </select>
+                        </div>
+                        <div className="form-group col-12">
+                          <select className="form-control">
+                            <option>Fencha termino</option>
+                          </select>
+                        </div>
+                      </div>
+                    </td>
+
+                    <td className=''>
+                      <div className='col-12 row'>
+                        <div className="form-group col-12">
+                          <select className="form-control">
+                            <option>Mensual</option>
+                          </select>
+                        </div>
+                      </div>
+                    </td>
+
+                     <td className=''>
+                      <div className='col-12 row'>
+                        <OpcionesContainer className="col-5">
+                          Exportar PPT
+                        </OpcionesContainer>
+
+                        <OpcionesContainer className="col-5">
+                          Guardar como fav.
+                        </OpcionesContainer>
+                      </div>
+
+                      <div className='col-12 row'>
+                        <OpcionesContainer className="col-5">
+                          Exportar XLS
+                        </OpcionesContainer>
+
+                        <OpcionesContainer className="col-5">
+                          Agregar a mi DB
+                        </OpcionesContainer>
+                      </div>
+                    </td>
+                  </tr>
+
+                  
+
+
+                </tbody>
+              </table>
+            </FilterContainer>
+
+
+
+            <Container>
+              {
+                this.renderGraph() ?
+                  <Bar
+                    data={this.renderGraph()}
+                    options={{
+                      maintainAspectRatio: false
+                    }}
+                  />
+                :
+                  ''
+              }
+            </Container>
+
+            <Container>
+              {this.renderTable()}
+            </Container>
             
           </div>
         </CardContainer>

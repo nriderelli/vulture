@@ -6,16 +6,16 @@ import { Bar } from 'react-chartjs-2';
 // import local files
 import Button from './Button';
 import CardContainer from './CardContainer';
-import Icon from './Icon';
 import Header from './Header';
 import DIV from './DIV';
 import P from './P';
 import Container from './Container';
-import COL from './COL';
-import HeaderCol from './HeaderCol';
-import Select from './Select';
-import Row from './Row';
 import Edit from 'images/icons/edit.png';
+import THead from './THead';
+import TTotal from './TTotal';
+import Add from 'images/icons/add.png';
+import FilterContainer from './FilterContainer';
+import OpcionesContainer from './OpcionesContainer';
 
 /* eslint-disable react/prefer-stateless-function */
 class Card extends React.Component {
@@ -47,7 +47,7 @@ class Card extends React.Component {
               color={ this.state.selectedSubHeader === 'volumen'? '#fff' : '#000'}
               onClick={()=>{
                 this.setState({
-                  selectedSubHeader: ''
+                  selectedSubHeader: 'volumen'
                 })
               }}
             >
@@ -215,7 +215,7 @@ class Card extends React.Component {
           labels: ['2015', '2016', '2017', 'Promedio'],
           datasets: [
             {
-              label: 'El Gobemador',
+              label: 'Las Mulas',
               backgroundColor: '#1f3764',
               borderColor: '#1f3764',
               borderWidth: 2,
@@ -231,7 +231,7 @@ class Card extends React.Component {
               // hoverBorderColor: 'rgba(255,99,132,1)',
               data: [39000, 41000, 43000, 41000],
             }, {
-              label: 'Las Mulas',
+              label: 'El Gobemador',
               backgroundColor: '#a4a4a4',
               borderColor: '#a4a4a4',
               borderWidth: 2,
@@ -243,16 +243,133 @@ class Card extends React.Component {
         };
         break;
       case 'volumen':
+        return {
+          labels: ['2015', '2016', '2017'],
+          datasets: [
+            {
+              label: 'Las Mulas',
+              backgroundColor: '#1f3764',
+              borderColor: '#1f3764',
+              borderWidth: 2,
+              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+              // hoverBorderColor: 'rgba(255,99,132,1)',
+              data: [710, 731, 768],
+            }, {
+              label: 'Santa Digna',
+              backgroundColor: '#8da9db',
+              borderColor: '#8da9db',
+              borderWidth: 2,
+              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+              // hoverBorderColor: 'rgba(255,99,132,1)',
+              data: [528, 520, 549],
+            }, {
+              label: 'El Gobemador',
+              backgroundColor: '#a4a4a4',
+              borderColor: '#a4a4a4',
+              borderWidth: 2,
+              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+              // hoverBorderColor: 'rgba(255,99,132,1)',
+              data: [257, 271, 286],
+            }
+          ]
+        };
         break;
       case 'cantidad':
+        return {
+          labels: ['2015', '2016', '2017', 'Promedio'],
+          datasets: [
+            {
+              label: '',
+              backgroundColor: '#1f3864',
+              borderColor: '#1f3864',
+              borderWidth: 2,
+              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+              // hoverBorderColor: 'rgba(255,99,132,1)',
+              data: [2, 4, 4, 3],
+            },
+          ]
+        };
         break;
       case 'ticket':
         break;
       case 'ingresosAcumulados':
+        return {
+          labels: ['Las Mulas', 'Santa Digna', 'El Gobemador'],
+          datasets: [
+            {
+              backgroundColor: '#1f3864',
+              borderColor: '#1f3864',
+              borderWidth: 2,
+              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+              // hoverBorderColor: 'rgba(255,99,132,1)',
+              data: [63000, 123000, 180000],
+            },
+          ]
+        };
         break;
       case 'mixPercentIngresos':
+        return {
+          labels: ['2015', '2016', '2017', 'Promedio'],
+          datasets: [
+            {
+              label: 'Las Mulas',
+              backgroundColor: '#1f3764',
+              borderColor: '#1f3764',
+              borderWidth: 2,
+              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+              // hoverBorderColor: 'rgba(255,99,132,1)',
+              data: [35, 35, 35, 35],
+            }, {
+              label: 'Santa Digna',
+              backgroundColor: '#8da9db',
+              borderColor: '#8da9db',
+              borderWidth: 2,
+              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+              // hoverBorderColor: 'rgba(255,99,132,1)',
+              data: [33, 33, 33, 33],
+            }, {
+              label: 'El Gobemador',
+              backgroundColor: '#a4a4a4',
+              borderColor: '#a4a4a4',
+              borderWidth: 2,
+              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+              // hoverBorderColor: 'rgba(255,99,132,1)',
+              data: [32, 32, 32, 32],
+            }
+          ]
+        };
         break;
       case 'mixPercentVolumen':
+        return {
+          labels: ['2015', '2016', '2017', 'Promedio'],
+          datasets: [
+            {
+              label: 'Las Mulas',
+              backgroundColor: '#1f3764',
+              borderColor: '#1f3764',
+              borderWidth: 2,
+              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+              // hoverBorderColor: 'rgba(255,99,132,1)',
+              data: [26, 29, 29, 28],
+            }, {
+              label: 'Santa Digna',
+              backgroundColor: '#8da9db',
+              borderColor: '#8da9db',
+              borderWidth: 2,
+              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+              // hoverBorderColor: 'rgba(255,99,132,1)',
+              data: [38, 34, 34, 35],
+            }, {
+              label: 'El Gobemador',
+              backgroundColor: '#a4a4a4',
+              borderColor: '#a4a4a4',
+              borderWidth: 2,
+              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+              // hoverBorderColor: 'rgba(255,99,132,1)',
+              data: [36, 37, 37, 37],
+            }
+          ]
+        };
         break;
       case 'concentraciónDeIngresos':
         break;
@@ -261,12 +378,407 @@ class Card extends React.Component {
       case 'recurrenciaDeClientes':
         break;
       case 'recurrenciaDeIngresos':
+        return {
+          labels: ['80 -< 100%%', '50% -< 80%', '30% -< 50% ', '10 -< 30%', '< 10%'],
+          datasets: [
+            {
+              backgroundColor: '#1f3764',
+              borderColor: '#1f3764',
+              borderWidth: 2,
+              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+              // hoverBorderColor: 'rgba(255,99,132,1)',
+              data: [30000, 40000, 50000, 40000, 20000],
+            }
+          ]
+        };
         break;
       case 'estacionalidad':
         break;
       case 'Attrition':
+        return {
+          labels: ['2 meses', '4 meses', '6 meses', '12 meses'],
+          datasets: [
+            {
+              backgroundColor: '#1f3764',
+              borderColor: '#1f3764',
+              borderWidth: 2,
+              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+              // hoverBorderColor: 'rgba(255,99,132,1)',
+              data: [20, 15, 5, 2],
+            }
+          ]
+        };
         break;
       case 'backlog':
+        return {
+          labels: ['2015', '2016', '2017'],
+          datasets: [
+            {
+              label: 'Ventas',
+              backgroundColor: '#1f3764',
+              borderColor: '#1f3764',
+              borderWidth: 2,
+              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+              // hoverBorderColor: 'rgba(255,99,132,1)',
+              data: [30000, 36000, 43200],
+            }, {
+              label: 'Facturacion',
+              backgroundColor: '#8da9db',
+              borderColor: '#8da9db',
+              borderWidth: 2,
+              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+              // hoverBorderColor: 'rgba(255,99,132,1)',
+              data: [25000, 35000, 35000],
+            }, {
+              label: 'Dif (Ventas - Fact)',
+              backgroundColor: '#a4a4a4',
+              borderColor: '#a4a4a4',
+              borderWidth: 2,
+              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+              // hoverBorderColor: 'rgba(255,99,132,1)',
+              data: [5000, 1000, 8200],
+            }
+          ]
+        };
+        break;
+      
+      
+    }
+  }
+  renderTable() {
+    switch(this.state.selectedSubHeader) {
+      case 'ingresos':
+        return (
+          <table className="table">
+            <THead>
+              <tr>
+                <th>
+                  Marcas
+                </th>
+                <th>
+                  Var. % 2015 - 2016
+                </th>
+                <th>
+                  Var. % 2016 - 2017
+                </th>
+                <th>
+                  CAGR 2015 - 2017
+                </th>
+              </tr>
+            </THead>
+            <tbody>
+              <tr>
+                <th>Las Mulas</th>
+                <td>5,0%</td>
+                <td>4,8%</td>
+                <td>4,9%</td>
+              </tr>
+              <tr>
+                <th>Santa Digna</th>
+                <td>5,3%</td>
+                <td>5,0%</td>
+                <td>5,1%</td>
+              </tr>
+              <tr>
+                <th>El Gobemador</th>
+                <td>5,6%</td>
+                <td>5,3%</td>
+                <td>5,4%</td>
+              </tr>
+              <TTotal>
+                <th>Total</th>
+                <td>5,3%</td>
+                <td>5,0%</td>
+                <td>5,1%</td>
+              </TTotal>
+            </tbody>
+          </table>
+        );
+        break;
+      case 'volumen':
+        return (
+          <table className="table">
+            <THead>
+              <tr>
+                <th>
+                  Marcas
+                </th>
+                <th>
+                  Var. % 2015 - 2016
+                </th>
+                <th>
+                  Var. % 2016 - 2017
+                </th>
+                <th>
+                  CAGR 2015 - 2017
+                </th>
+              </tr>
+            </THead>
+            <tbody>
+              <tr>
+                <th>Las Mulas</th>
+                <td>5,0%</td>
+                <td>4,8%</td>
+                <td>4,9%</td>
+              </tr>
+              <tr>
+                <th>Santa Digna</th>
+                <td>5,3%</td>
+                <td>5,0%</td>
+                <td>5,1%</td>
+              </tr>
+              <tr>
+                <th>El Gobemador</th>
+                <td>5,6%</td>
+                <td>5,3%</td>
+                <td>5,4%</td>
+              </tr>
+              <TTotal>
+                <th>Total</th>
+                <td>5,3%</td>
+                <td>5,0%</td>
+                <td>5,1%</td>
+              </TTotal>
+            </tbody>
+          </table>
+        );
+        break;
+      case 'cantidad':
+        return (
+          <table className="table">
+            <THead>
+              <tr>
+                <th>
+                  Marcas
+                </th>
+                <th>
+                  Var. % 2015 - 2016
+                </th>
+                <th>
+                  Var. % 2016 - 2017
+                </th>
+                <th>
+                  CAGR 2015 - 2017
+                </th>
+              </tr>
+            </THead>
+            <tbody>
+              <tr>
+                <th>Todas</th>
+                <td>5,3%</td>
+                <td>5,0%</td>
+                <td>5,1%</td>
+              </tr>
+            </tbody>
+          </table>
+        );
+        break;
+      case 'ticket':
+        return (
+          <table className="table">
+            <THead>
+              <tr>
+                <th>
+                  Marcas
+                </th>
+                <th>
+                  Var. % 2015 - 2016
+                </th>
+                <th>
+                  Var. % 2016 - 2017
+                </th>
+                <th>
+                  CAGR 2015 - 2017
+                </th>
+              </tr>
+            </THead>
+            <tbody>
+              <tr>
+                <th>Las Mulas</th>
+                <td>5,0%</td>
+                <td>4,8%</td>
+                <td>4,9%</td>
+              </tr>
+              <tr>
+                <th>Santa Digna</th>
+                <td>5,3%</td>
+                <td>5,0%</td>
+                <td>5,1%</td>
+              </tr>
+              <tr>
+                <th>El Gobemador</th>
+                <td>5,6%</td>
+                <td>5,3%</td>
+                <td>5,4%</td>
+              </tr>
+              <TTotal>
+                <th>Total</th>
+                <td>5,3%</td>
+                <td>5,0%</td>
+                <td>5,1%</td>
+              </TTotal>
+            </tbody>
+          </table>
+        );
+        break;
+      case 'ingresosAcumulados':
+        return (
+          <table className="table">
+            <THead>
+              <tr>
+                <th>
+                </th>
+                <th>
+                  Las Mulas
+                </th>
+                <th>
+                  Santa Digna
+                </th>
+                <th>
+                  El Gobemador
+                </th>
+                <th>
+                  Total
+                </th>
+              </tr>
+            </THead>
+            <tbody>
+              <tr>
+                <th>% Den Total</th>
+                <td>35%</td>
+                <td>33%</td>
+                <td>32%</td>
+                <td>100%</td>
+              </tr>
+            </tbody>
+          </table>
+        );
+        break;
+      case 'mixPercentIngresos':
+        return (
+          <table className="table">
+            <THead>
+              <tr>
+                <th>
+                  Marcas
+                </th>
+                <th>
+                  Var. % 2015 - 2016
+                </th>
+                <th>
+                  Var. % 2016 - 2017
+                </th>
+                <th>
+                  CAGR 2015 - 2017
+                </th>
+              </tr>
+            </THead>
+            <tbody>
+              <tr>
+                <th>Las Mulas</th>
+                <td>5,0%</td>
+                <td>4,8%</td>
+                <td>4,9%</td>
+              </tr>
+              <tr>
+                <th>Santa Digna</th>
+                <td>5,3%</td>
+                <td>5,0%</td>
+                <td>5,1%</td>
+              </tr>
+              <tr>
+                <th>El Gobemador</th>
+                <td>5,6%</td>
+                <td>5,3%</td>
+                <td>5,4%</td>
+              </tr>
+              <TTotal>
+                <th>Total</th>
+                <td>5,3%</td>
+                <td>5,0%</td>
+                <td>5,1%</td>
+              </TTotal>
+            </tbody>
+          </table>
+        );
+        break;
+      case 'mixPercentVolumen':
+        return (
+          <table className="table">
+            <THead>
+              <tr>
+                <th>
+                  Marcas
+                </th>
+                <th>
+                  Var. % 2015 - 2016
+                </th>
+                <th>
+                  Var. % 2016 - 2017
+                </th>
+                <th>
+                  CAGR 2015 - 2017
+                </th>
+              </tr>
+            </THead>
+            <tbody>
+              <tr>
+                <th>Las Mulas</th>
+                <td>5,0%</td>
+                <td>4,8%</td>
+                <td>4,9%</td>
+              </tr>
+              <tr>
+                <th>Santa Digna</th>
+                <td>5,3%</td>
+                <td>5,0%</td>
+                <td>5,1%</td>
+              </tr>
+              <tr>
+                <th>El Gobemador</th>
+                <td>5,6%</td>
+                <td>5,3%</td>
+                <td>5,4%</td>
+              </tr>
+              <TTotal>
+                <th>Total</th>
+                <td>5,3%</td>
+                <td>5,0%</td>
+                <td>5,1%</td>
+              </TTotal>
+            </tbody>
+          </table>
+        );
+        break;
+      case 'backlog':
+        return (
+          <table className="table">
+            <THead>
+              <tr>
+                <th>
+                  Marcas
+                </th>
+                <th>
+                  Var. % 2015 - 2016
+                </th>
+                <th>
+                  Var. % 2016 - 2017
+                </th>
+                <th>
+                  CAGR 2015 - 2017
+                </th>
+              </tr>
+            </THead>
+            <tbody>
+              <tr>
+                <th>Dif (ventas-fact)</th>
+                <td>-80,0%</td>
+                <td>720,0%</td>
+                <td>28,1%</td>
+              </tr>
+            </tbody>
+          </table>
+        );
         break;
       
       
@@ -350,6 +862,125 @@ class Card extends React.Component {
             </Header>
             {this.renderSubHeader()}
 
+
+            <FilterContainer>
+              <table className="table">
+                <tbody>
+                  <tr>
+                    <th>
+                      Apertura
+                    </th>
+                    <th>
+                      Filtro
+                    </th>
+                    <th>
+                      Plazo
+                    </th>
+                    <th>
+                      Frecuencia
+                    </th>
+                    <th>
+                      Opciones
+                    </th>
+                  </tr>
+                  <tr>
+                    <td className=''>
+                      <div className='row'>
+                        <div className='col-10 row'>
+                          <div className="form-group col-12">
+                            <select className="form-control">
+                              <option>Marca</option>
+                            </select>
+                          </div>
+                          <div className="form-group col-12">
+                            <select className="form-control">
+                              <option>Sel. multiple...</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div className='col-1'>
+                          <img src={Add} />
+                        </div>
+                      </div>
+                    </td>
+                      
+                    <td className=''>
+                      <div className='row'>
+                        <div className='col-10 row'>
+                          <div className="form-group col-12">
+                            <select className="form-control">
+                              <option>Pais</option>
+                            </select>
+                          </div>
+                          <div className="form-group col-12">
+                            <select className="form-control">
+                              <option>Chile, Peru</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div className='col-1'>
+                          <img src={Add} />
+                        </div>
+                      </div>
+                    </td>
+
+                    <td className=''>
+                      <div className='col-12 row'>
+                        <div className="form-group col-12">
+                          <select className="form-control">
+                            <option>Fencha inicio</option>
+                          </select>
+                        </div>
+                        <div className="form-group col-12">
+                          <select className="form-control">
+                            <option>Fencha termino</option>
+                          </select>
+                        </div>
+                      </div>
+                    </td>
+
+                    <td className=''>
+                      <div className='col-12 row'>
+                        <div className="form-group col-12">
+                          <select className="form-control">
+                            <option>Mensual</option>
+                          </select>
+                        </div>
+                      </div>
+                    </td>
+
+                     <td className=''>
+                      <div className='col-12 row'>
+                        <OpcionesContainer className="col-5">
+                          Exportar PPT
+                        </OpcionesContainer>
+
+                        <OpcionesContainer className="col-5">
+                          Guardar como fav.
+                        </OpcionesContainer>
+                      </div>
+
+                      <div className='col-12 row'>
+                        <OpcionesContainer className="col-5">
+                          Exportar XLS
+                        </OpcionesContainer>
+
+                        <OpcionesContainer className="col-5">
+                          Agregar a mi DB
+                        </OpcionesContainer>
+                      </div>
+                    </td>
+                  </tr>
+
+                  
+
+
+                </tbody>
+              </table>
+            </FilterContainer>
+
+
+
             <Container>
               {
                 this.renderGraph() ?
@@ -362,7 +993,10 @@ class Card extends React.Component {
                 :
                   ''
               }
-              
+            </Container>
+
+            <Container>
+              {this.renderTable()}
             </Container>
             
           </div>
