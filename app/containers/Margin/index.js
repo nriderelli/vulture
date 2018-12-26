@@ -10,13 +10,13 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 
 // import local files
-import CostTable from 'components/Cost/Table';
-import Card from 'components/Cost/Card';
+import Table from 'components/Margin/Table';
+import Card from 'components/Margin/Card';
 import Text from './Text';
 import Header from './Header';
 import A from './A';
 /* eslint-disable react/prefer-stateless-function */
-export class Cost extends React.PureComponent {
+export class Margin extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,7 +27,7 @@ export class Cost extends React.PureComponent {
     this.table = [{
       heading: ['consolidated', 'month', 'ytd', 'forecast'],
       data: [{
-        consolidated: 'Total Costs',
+        consolidated: 'Total Margins',
         month: {
           value: '120 4%',
           color: '#ff2951',
@@ -57,7 +57,7 @@ export class Cost extends React.PureComponent {
         }
         
       }, {
-        consolidated: 'Total Costs',
+        consolidated: 'Total Margins',
         month: {
           value: '120 4%',
           color: '#44db5f',
@@ -175,8 +175,8 @@ export class Cost extends React.PureComponent {
     return (
       <div>
         <Helmet>
-          <title>Costs</title>
-          <meta name="Costs" content="Costs of the application" />
+          <title>Margins</title>
+          <meta name="Margins" content="Margins of the application" />
         </Helmet>
         <div>
           <Header>
@@ -208,7 +208,7 @@ export class Cost extends React.PureComponent {
             { this.table
               && this.table.length !== 0
               && this.table.map((value, index) => (
-                <CostTable data={value} key={index} />
+                <Table data={value} key={index} />
               ))
             }
           </div>
@@ -219,4 +219,4 @@ export class Cost extends React.PureComponent {
   }
 }
 
-export default Cost;
+export default Margin;

@@ -16,7 +16,7 @@ import Add from 'images/icons/add.png';
 import See from 'images/icons/see_details.png';
 
 /* eslint-disable react/prefer-stateless-function */
-class CostTable extends React.Component {
+class Table extends React.Component {
   render() {
     const { data, index } = this.props;
     return (
@@ -98,4 +98,4 @@ class CostTable extends React.Component {
   }
 }
 
-export default CostTable;
+export default Table;

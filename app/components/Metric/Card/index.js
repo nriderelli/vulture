@@ -21,90 +21,90 @@ import TTotal from './TTotal';
 import Add from 'images/icons/add.png';
 import FilterContainer from './FilterContainer';
 import OpcionesContainer from './OpcionesContainer';
-
 /* eslint-disable react/prefer-stateless-function */
 class Card extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedHeader: 'costosAperturados',
-      selectedSubHeader: 'costosEnElTiempo',
+      selectedHeader: 'métricasOp',
+      selectedSubHeader: 'metricasInDoller',
     };
   }
   renderSubHeader() {
     switch(this.state.selectedHeader) {
-      case 'costosAperturados':
+      case 'métricasOp':
         return (
           <Container>
             <Button
-              background={ this.state.selectedSubHeader === 'costosEnElTiempo'? "#000" : "#e1e1e1"}
-              color={ this.state.selectedSubHeader === 'costosEnElTiempo'? '#fff' : '#000'}
+              background={ this.state.selectedSubHeader === 'metricasInDoller'? "#000" : "#e1e1e1"}
+              color={ this.state.selectedSubHeader === 'metricasInDoller'? '#fff' : '#000'}
               onClick={()=>{
                 this.setState({
-                  selectedSubHeader: 'costosEnElTiempo'
+                  selectedSubHeader: 'metricasInDoller'
                 })
               }}
             >
-              Costos en el tiempo
+              Métricas ($)
             </Button>
             <Button
-              background={ this.state.selectedSubHeader === 'costosEnElTiempoPercent'? "#000" : "#e1e1e1"}
-              color={ this.state.selectedSubHeader === 'costosEnElTiempoPercent'? '#fff' : '#000'}
+              background={ this.state.selectedSubHeader === 'mixPercentMg'? "#000" : "#e1e1e1"}
+              color={ this.state.selectedSubHeader === 'mixPercentMg'? '#fff' : '#000'}
               onClick={()=>{
                 this.setState({
-                  selectedSubHeader: 'costosEnElTiempoPercent'
+                  selectedSubHeader: 'mixPercentMg'
                 })
               }}
             >
-              Costos en el tiempo %
-            </Button>
-            <Button
-              background={ this.state.selectedSubHeader === 'costosAcumulados'? "#000" : "#e1e1e1"}
-              color={ this.state.selectedSubHeader === 'costosAcumulados'? '#fff' : '#000'}
-              onClick={()=>{
-                this.setState({
-                  selectedSubHeader: 'costosAcumulados'
-                })
-              }}
-            >
-              Costos acumulados
+              Mix % mg
             </Button>
           </Container>
         )
         break;
-      case 'productividad':
+      case 'metricas':
         return (
           <Container>
             <Button
-              background={ this.state.selectedSubHeader === 'productividad'? "#000" : "#e1e1e1"}
-              color={ this.state.selectedSubHeader === 'productividad'? '#fff' : '#000'}
+              background={ this.state.selectedSubHeader === 'metricasDeIngresos'? "#000" : "#e1e1e1"}
+              color={ this.state.selectedSubHeader === 'metricasDeIngresos'? '#fff' : '#000'}
               onClick={()=>{
                 this.setState({
-                  selectedSubHeader: 'productividad'
+                  selectedSubHeader: 'metricasDeIngresos'
                 })
               }}
             >
-              Productivadad
+              Métricas de ingresos
             </Button>
             <Button
-              background={ this.state.selectedSubHeader === 'activacionesYDevengo'? "#000" : "#e1e1e1"}
-              color={ this.state.selectedSubHeader === 'activacionesYDevengo'? '#fff' : '#000'}
+              background={ this.state.selectedSubHeader === 'metricasDeCost'? "#000" : "#e1e1e1"}
+              color={ this.state.selectedSubHeader === 'metricasDeCost'? '#fff' : '#000'}
               onClick={()=>{
                 this.setState({
-                  selectedSubHeader: 'activacionesYDevengo'
+                  selectedSubHeader: 'metricasDeCost'
                 })
               }}
             >
-              Activaciones y devengo
+              Métricas de costos
+            </Button>
+            <Button
+              background={ this.state.selectedSubHeader === 'metricasDeMargenes'? "#000" : "#e1e1e1"}
+              color={ this.state.selectedSubHeader === 'metricasDeMargenes'? '#fff' : '#000'}
+              onClick={()=>{
+                this.setState({
+                  selectedSubHeader: 'metricasDeMargenes'
+                })
+              }}
+            >
+              Métricas de márgenes
             </Button>
           </Container>
         )
+        break;
     }
   }
 
   renderGraph() {
     switch(this.state.selectedSubHeader) {
-      case 'costosEnElTiempo':
+      case 'metricasInDoller':
         return {
           labels: ['2015', '2016', '2017', 'Promedio'],
           datasets: [
@@ -115,7 +115,7 @@ class Card extends React.Component {
               borderWidth: 2,
               // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
               // hoverBorderColor: 'rgba(255,99,132,1)',
-              data: [4000, 4200, 4400, 4200],
+              data: [10, 12, 13, 12],
             }, {
               label: 'Santa Digna',
               backgroundColor: '#8da9db',
@@ -123,7 +123,7 @@ class Card extends React.Component {
               borderWidth: 2,
               // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
               // hoverBorderColor: 'rgba(255,99,132,1)',
-              data: [3800, 4000, 4200, 4000],
+              data: [12, 15, 12, 13],
             }, {
               label: 'El Gobemador',
               backgroundColor: '#a4a4a4',
@@ -131,14 +131,14 @@ class Card extends React.Component {
               borderWidth: 2,
               // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
               // hoverBorderColor: 'rgba(255,99,132,1)',
-              data: [3600, 3800, 4000, 3800],
+              data: [14, 16, 24, 18],
             }
           ]
         };
         break;
-      case 'costosEnElTiempoPercent':
+      case 'mixPercentMg':
         return {
-          labels: ['2015', '2016', '2017'],
+          labels: ['2015', '2016', '2017', 'Promedio'],
           datasets: [
             {
               label: 'Las Mulas',
@@ -147,7 +147,7 @@ class Card extends React.Component {
               borderWidth: 2,
               // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
               // hoverBorderColor: 'rgba(255,99,132,1)',
-              data: [35, 35, 35],
+              data: [35, 35, 35, 35],
             }, {
               label: 'Santa Digna',
               backgroundColor: '#8da9db',
@@ -155,74 +155,78 @@ class Card extends React.Component {
               borderWidth: 2,
               // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
               // hoverBorderColor: 'rgba(255,99,132,1)',
-              data: [33, 33, 33],
+              data: [33, 33, 33, 33],
             }, {
-              label: 'Deni Amor',
+              label: 'El Gobemador',
               backgroundColor: '#a4a4a4',
               borderColor: '#a4a4a4',
               borderWidth: 2,
               // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
               // hoverBorderColor: 'rgba(255,99,132,1)',
-              data: [32, 32, 32],
+              data: [32, 32, 32, 32],
             }
           ]
         };
         break;
-      case 'costosAcumulados':
-        return {
-          labels: ['Las Mulas', 'Santa Digna', 'El Gobemador', 'Total'],
-          datasets: [
-            {
-              label: '',
-              backgroundColor: '#1f3864',
-              borderColor: '#1f3864',
-              borderWidth: 2,
-              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-              // hoverBorderColor: 'rgba(255,99,132,1)',
-              data: [63000, 60000, 57000, 180000],
-            },
-          ]
-        };
+      case 'metricasDeIngresos':
         break;
-      case 'productividad':
+      case 'metricasDeCost':
         break;
-      case 'activacionesYDevengo':
-        return {
-          labels: ['2015', '2016', '2017', 'Promedio'],
-          datasets: [
-            {
-              label: 'Gasto corriente',
-              backgroundColor: '#1f3764',
-              borderColor: '#1f3764',
-              borderWidth: 2,
-              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-              // hoverBorderColor: 'rgba(255,99,132,1)',
-              data: [10000, 11000, 12100, 11033],
-            }, {
-              label: 'Devengo',
-              backgroundColor: '#8da9db',
-              borderColor: '#8da9db',
-              borderWidth: 2,
-              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-              // hoverBorderColor: 'rgba(255,99,132,1)',
-              data: [5000, 5250, 5513, 5254],
-            }, {
-              label: 'Activaciones',
-              backgroundColor: '#a4a4a4',
-              borderColor: '#a4a4a4',
-              borderWidth: 2,
-              // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-              // hoverBorderColor: 'rgba(255,99,132,1)',
-              data: [3000, 3600, 4320, 3640],
-            }
-          ]
-        };
+      case 'metricasDeMargenes':
         break;
     }
   }
   renderTable() {
     switch(this.state.selectedSubHeader) {
-      case 'costosEnElTiempo':
+      case 'metricasInDoller':
+        return (
+          <table className="table">
+            <THead>
+              <tr>
+                <th>
+                  Marcas
+                </th>
+                <th>
+                  Var. % 2015 - 2016
+                </th>
+                <th>
+                  Var. % 2016 - 2017
+                </th>
+                <th>
+                  CAGR 2015 - 2017
+                </th>
+              </tr>
+            </THead>
+            <tbody>
+              <tr>
+                <th>Las Mulas</th>
+                <td>20,0%</td>
+                <td>8,3%</td>
+                <td>14,0%</td>
+              </tr>
+              <tr>
+                <th>Santa Digna</th>
+                <td>25,0%</td>
+                <td>-20,0%</td>
+                <td>0,0%</td>
+              </tr>
+              <tr>
+                <th>El Gobemador</th>
+                <td>14,3%</td>
+                <td>50,0%</td>
+                <td>30,9%</td>
+              </tr>
+              <TTotal>
+                <th>Total</th>
+                <td>19,4%</td>
+                <td>14,0%</td>
+                <td>16,7%</td>
+              </TTotal>
+            </tbody>
+          </table>
+        );
+        break;
+      case 'mixPercentMg':
         return (
           <table className="table">
             <THead>
@@ -270,7 +274,7 @@ class Card extends React.Component {
           </table>
         );
         break;
-      case 'costosEnElTiempoPercent':
+      case 'metricasDeIngresos':
         return (
           <table className="table">
             <THead>
@@ -318,40 +322,7 @@ class Card extends React.Component {
           </table>
         );
         break;
-      case 'costosAcumulados':
-        return (
-          <table className="table">
-            <THead>
-              <tr>
-                <th>
-                </th>
-                <th>
-                  Las Mulas
-                </th>
-                <th>
-                  Santa Digna
-                </th>
-                <th>
-                  El Gobemador
-                </th>
-                <th>
-                  Total
-                </th>
-              </tr>
-            </THead>
-            <tbody>
-              <tr>
-                <th>% Digna total</th>
-                <td>35%</td>
-                <td>33%</td>
-                <td>32%</td>
-                <td>100%</td>
-              </tr>
-            </tbody>
-          </table>
-        );
-        break;
-      case 'productividad':
+      case 'metricasDeCost':
         return (
           <table className="table">
             <THead>
@@ -399,13 +370,13 @@ class Card extends React.Component {
           </table>
         );
         break;
-      case 'activacionesYDevengo':
+      case 'metricasDeMargenes':
         return (
           <table className="table">
             <THead>
               <tr>
                 <th>
-                  Gasto
+                  Marcas
                 </th>
                 <th>
                   Var. % 2015 - 2016
@@ -420,27 +391,35 @@ class Card extends React.Component {
             </THead>
             <tbody>
               <tr>
-                <th>Gasto corriente</th>
+                <th>Las Mulas</th>
                 <td>5,0%</td>
                 <td>4,8%</td>
                 <td>4,9%</td>
               </tr>
               <tr>
-                <th>Activaciones</th>
+                <th>Santa Digna</th>
                 <td>5,3%</td>
                 <td>5,0%</td>
                 <td>5,1%</td>
               </tr>
               <tr>
-                <th>Devengo</th>
+                <th>El Gobemador</th>
                 <td>5,6%</td>
                 <td>5,3%</td>
                 <td>5,4%</td>
               </tr>
+              <TTotal>
+                <th>Total</th>
+                <td>5,3%</td>
+                <td>5,0%</td>
+                <td>5,1%</td>
+              </TTotal>
             </tbody>
           </table>
         );
         break;
+      
+      
     }
   }
   render() {
@@ -451,35 +430,35 @@ class Card extends React.Component {
             <Header className='row'>
               <div className='col-11'>
                 <DIV
-                  color={ this.state.selectedHeader === 'costosAperturados' ? '#fff' : '#000' }
-                  background={ this.state.selectedHeader === 'costosAperturados' ? '#006e82' : '#fff' }
+                  color={ this.state.selectedHeader === 'métricasOp' ? '#fff' : '#000' }
+                  background={ this.state.selectedHeader === 'métricasOp' ? '#006e82' : '#fff' }
                   onClick={() => {
                     this.setState({
-                      selectedHeader: 'costosAperturados',
-                      selectedSubHeader: 'costosEnElTiempo'
+                      selectedHeader: 'métricasOp',
+                      selectedSubHeader: 'metricasInDoller'
                     })
                   }}
                 >
                   <P
                     borderLeft='0px'
                   >
-                    Costos aperturados
+                    Métricas op
                   </P>
                 </DIV>
                 <DIV
-                  color={ this.state.selectedHeader === 'productividad' ? '#fff' : '#000' }
-                  background={ this.state.selectedHeader === 'productividad' ? '#006e82' : '#fff' }
+                  color={ this.state.selectedHeader === 'metricas' ? '#fff' : '#000' }
+                  background={ this.state.selectedHeader === 'metricas' ? '#006e82' : '#fff' }
                   onClick={() => {
                     this.setState({
-                      selectedHeader: 'productividad',
-                      selectedSubHeader: 'productividad'
+                      selectedHeader: 'metricas',
+                      selectedSubHeader: 'métricasDeIngresos'
                     })
                   }}
                 >
                   <P
                     borderLeft={ this.state.selectedHeader === 'total' ? '0px' : '1px' }
                   >
-                    Productividad
+                    Métricas
                   </P>
                 </DIV>
               </div>
@@ -495,22 +474,36 @@ class Card extends React.Component {
                 <tbody>
                   <tr>
                     <th>
-                      Apertura de negocio
+                      Metrica
                     </th>
                     <th>
-                      Filtro de negocio
+                      Apertura de negocios
+                    </th>
+                    <th>
+                      Flitro de negocios
+                    </th>
+                    <th>
+                      Flitro de costos
                     </th>
                     <th>
                       Plazo
-                    </th>
-                    <th>
-                      Frecuencia
                     </th>
                     <th>
                       Opciones
                     </th>
                   </tr>
                   <tr>
+                    <td className=''>
+                      <div className='row'>
+                        <div className='col-12 row'>
+                          <div className="form-group col-12">
+                            <select className="form-control">
+                              <option>Headcount</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
                     <td className=''>
                       <div className='row'>
                         <div className='col-10 row'>
@@ -542,6 +535,26 @@ class Card extends React.Component {
                           <div className="form-group col-12">
                             <select className="form-control">
                               <option>Chile, Peru</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div className='col-1'>
+                          <img src={Add} />
+                        </div>
+                      </div>
+                    </td>
+
+                    <td className=''>
+                      <div className='row'>
+                        <div className='col-10 row'>
+                          <div className="form-group col-12">
+                            <select className="form-control">
+                              <option>Centro de costos</option>
+                            </select>
+                          </div>
+                          <div className="form-group col-12">
+                            <select className="form-control">
+                              <option>Todos</option>
                             </select>
                           </div>
                         </div>
@@ -598,63 +611,10 @@ class Card extends React.Component {
                       </div>
                     </td>
                   </tr>
-                  <tr>
-                    <th>
-                      Apertura de costos
-                    </th>
-                    <th>
-                      Filtro de costos
-                    </th>
-                    <th>
-                      
-                    </th>
-                    <th>
-                      
-                    </th>
-                    <th>
-                      
-                    </th>
-                  </tr>
-                  <tr>
-                    <td className=''>
-                      <div className='row'>
-                        <div className='col-10 row'>
-                          <div className="form-group col-12">
-                            <select className="form-control">
-                              <option>Centro de costos</option>
-                            </select>
-                          </div>
-                          <div className="form-group col-12">
-                            <select className="form-control">
-                              <option>N/a</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td className=''>
-                      <div className='row'>
-                        <div className='col-10 row'>
-                          <div className="form-group col-12">
-                            <select className="form-control">
-                              <option>Cuenta contable</option>
-                            </select>
-                          </div>
-                          <div className="form-group col-12">
-                            <select className="form-control">
-                              <option>Remuneracio</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                  </tr>
+
+                  
+
+
                 </tbody>
               </table>
             </FilterContainer>
