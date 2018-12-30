@@ -1,7 +1,5 @@
 // import npm packages
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
-import { Bar } from 'react-chartjs-2';
 
 // import local files
 import Button from './Button';
@@ -16,6 +14,7 @@ import TTotal from './TTotal';
 import Add from 'images/icons/add.png';
 import FilterContainer from './FilterContainer';
 import OpcionesContainer from './OpcionesContainer';
+import Graph from '../../Graph';
 
 /* eslint-disable react/prefer-stateless-function */
 class Card extends React.Component {
@@ -984,11 +983,8 @@ class Card extends React.Component {
             <Container>
               {
                 this.renderGraph() ?
-                  <Bar
+                  <Graph
                     data={this.renderGraph()}
-                    options={{
-                      maintainAspectRatio: false
-                    }}
                   />
                 :
                   ''
