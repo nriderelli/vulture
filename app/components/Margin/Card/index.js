@@ -21,6 +21,7 @@ import TTotal from './TTotal';
 import Add from 'images/icons/add.png';
 import FilterContainer from './FilterContainer';
 import OpcionesContainer from './OpcionesContainer';
+import TD from './TD';
 
 /* eslint-disable react/prefer-stateless-function */
 class Card extends React.Component {
@@ -549,123 +550,99 @@ class Card extends React.Component {
               <table className="table">
                 <tbody>
                   <tr>
-                    <th>
-                      Tipo de Mg.
-                    </th>
-                    <th>
-                      Apertura de negocios
-                    </th>
-                    <th>
-                      Flitro de negocios
-                    </th>
-                    <th>
-                      Flitro de costos
-                    </th>
-                    <th>
-                      Plazo
-                    </th>
-                    <th>
-                      Opciones
-                    </th>
-                  </tr>
-                  <tr>
-                    <td className=''>
+                    <TD width='250px' >
                       <div className='row'>
+                        <strong className='col-8'> Tipo de Mg.</strong>
                         <div className='col-12 row'>
                           <div className="form-group col-12">
-                            <select className="form-control">
+                            <Select className="form-control">
                               <option>EBITDA</option>
-                            </select>
+                            </Select>
                           </div>
                         </div>
                       </div>
-                    </td>
-                    <td className=''>
+                    </TD>
+                    <TD width='250px' >
                       <div className='row'>
-                        <div className='col-10 row'>
+                        <strong className='col-8'>Apertura de negocios</strong>
+                        <div className='col-8 row'>
                           <div className="form-group col-12">
-                            <select className="form-control">
+                            <Select className="form-control">
                               <option>Marca</option>
-                            </select>
+                            </Select>
                           </div>
                           <div className="form-group col-12">
-                            <select className="form-control">
+                            <Select className="form-control">
                               <option>Sel. multiple...</option>
-                            </select>
+                            </Select>
                           </div>
                         </div>
                         <div className='col-1'>
                           <img src={Add} />
                         </div>
                       </div>
-                    </td>
+                    </TD>
                       
-                    <td className=''>
+                    <TD width='250px' >
                       <div className='row'>
-                        <div className='col-10 row'>
+                        <strong className='col-8'>Flitro de costos</strong>
+                        <div className='col-8 row'>
                           <div className="form-group col-12">
-                            <select className="form-control">
+                            <Select className="form-control">
                               <option>Pais</option>
-                            </select>
+                            </Select>
                           </div>
                           <div className="form-group col-12">
-                            <select className="form-control">
+                            <Select className="form-control">
                               <option>Chile, Peru</option>
-                            </select>
+                            </Select>
                           </div>
                         </div>
                         <div className='col-1'>
                           <img src={Add} />
                         </div>
                       </div>
-                    </td>
+                    </TD>
 
-                    <td className=''>
+                    <TD width='250px' >
                       <div className='row'>
-                        <div className='col-10 row'>
+                        <strong className='col-8'>Plazo</strong>
+                        <div className='col-8 row'>
                           <div className="form-group col-12">
-                            <select className="form-control">
+                            <Select className="form-control">
                               <option>Centro de costos</option>
-                            </select>
+                            </Select>
                           </div>
                           <div className="form-group col-12">
-                            <select className="form-control">
+                            <Select className="form-control">
                               <option>Todos</option>
-                            </select>
+                            </Select>
                           </div>
                         </div>
                         <div className='col-1'>
                           <img src={Add} />
                         </div>
                       </div>
-                    </td>
+                    </TD>
 
-                    <td className=''>
+                    <TD width='250px' >
+                      <strong className='col-8'>Opciones</strong>
                       <div className='col-12 row'>
                         <div className="form-group col-12">
-                          <select className="form-control">
+                          <Select className="form-control">
                             <option>Fencha inicio</option>
-                          </select>
+                          </Select>
                         </div>
                         <div className="form-group col-12">
-                          <select className="form-control">
+                          <Select className="form-control">
                             <option>Fencha termino</option>
-                          </select>
+                          </Select>
                         </div>
                       </div>
-                    </td>
+                    </TD>
 
-                    <td className=''>
-                      <div className='col-12 row'>
-                        <div className="form-group col-12">
-                          <select className="form-control">
-                            <option>Mensual</option>
-                          </select>
-                        </div>
-                      </div>
-                    </td>
-
-                     <td className=''>
+                    <TD width='250px' >
+                      <strong className='col-8'>Opciones</strong>
                       <div className='col-12 row'>
                         <OpcionesContainer className="col-5">
                           Exportar PPT
@@ -685,7 +662,7 @@ class Card extends React.Component {
                           Agregar a mi DB
                         </OpcionesContainer>
                       </div>
-                    </td>
+                    </TD>
                   </tr>
 
                   
