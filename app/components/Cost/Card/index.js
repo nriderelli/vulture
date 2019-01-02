@@ -1,7 +1,5 @@
 // import npm packages
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
-import { Bar } from 'react-chartjs-2';
 
 // import local files
 import Button from './Button';
@@ -21,6 +19,8 @@ import TTotal from './TTotal';
 import Add from 'images/icons/add.png';
 import FilterContainer from './FilterContainer';
 import OpcionesContainer from './OpcionesContainer';
+import TD from './TD';
+import Graph from '../../Graph';
 
 /* eslint-disable react/prefer-stateless-function */
 class Card extends React.Component {
@@ -109,6 +109,7 @@ class Card extends React.Component {
           labels: ['2015', '2016', '2017', 'Promedio'],
           datasets: [
             {
+              datasetKeyProvider: '0',
               label: 'Las Mulas',
               backgroundColor: '#1f3764',
               borderColor: '#1f3764',
@@ -117,6 +118,7 @@ class Card extends React.Component {
               // hoverBorderColor: 'rgba(255,99,132,1)',
               data: [4000, 4200, 4400, 4200],
             }, {
+              datasetKeyProvider: '1',
               label: 'Santa Digna',
               backgroundColor: '#8da9db',
               borderColor: '#8da9db',
@@ -125,6 +127,7 @@ class Card extends React.Component {
               // hoverBorderColor: 'rgba(255,99,132,1)',
               data: [3800, 4000, 4200, 4000],
             }, {
+              datasetKeyProvider: '2',
               label: 'El Gobemador',
               backgroundColor: '#a4a4a4',
               borderColor: '#a4a4a4',
@@ -141,6 +144,7 @@ class Card extends React.Component {
           labels: ['2015', '2016', '2017'],
           datasets: [
             {
+              datasetKeyProvider: '0',
               label: 'Las Mulas',
               backgroundColor: '#1f3764',
               borderColor: '#1f3764',
@@ -149,6 +153,7 @@ class Card extends React.Component {
               // hoverBorderColor: 'rgba(255,99,132,1)',
               data: [35, 35, 35],
             }, {
+              datasetKeyProvider: '1',
               label: 'Santa Digna',
               backgroundColor: '#8da9db',
               borderColor: '#8da9db',
@@ -157,6 +162,7 @@ class Card extends React.Component {
               // hoverBorderColor: 'rgba(255,99,132,1)',
               data: [33, 33, 33],
             }, {
+              datasetKeyProvider: '2',
               label: 'Deni Amor',
               backgroundColor: '#a4a4a4',
               borderColor: '#a4a4a4',
@@ -173,6 +179,7 @@ class Card extends React.Component {
           labels: ['Las Mulas', 'Santa Digna', 'El Gobemador', 'Total'],
           datasets: [
             {
+              datasetKeyProvider: '0',
               label: '',
               backgroundColor: '#1f3864',
               borderColor: '#1f3864',
@@ -181,6 +188,7 @@ class Card extends React.Component {
               // hoverBorderColor: 'rgba(255,99,132,1)',
               data: [63000, 60000, 57000, 180000],
             },
+
           ]
         };
         break;
@@ -191,6 +199,7 @@ class Card extends React.Component {
           labels: ['2015', '2016', '2017', 'Promedio'],
           datasets: [
             {
+              datasetKeyProvider: '0',
               label: 'Gasto corriente',
               backgroundColor: '#1f3764',
               borderColor: '#1f3764',
@@ -199,6 +208,7 @@ class Card extends React.Component {
               // hoverBorderColor: 'rgba(255,99,132,1)',
               data: [10000, 11000, 12100, 11033],
             }, {
+              datasetKeyProvider: '1',
               label: 'Devengo',
               backgroundColor: '#8da9db',
               borderColor: '#8da9db',
@@ -207,6 +217,7 @@ class Card extends React.Component {
               // hoverBorderColor: 'rgba(255,99,132,1)',
               data: [5000, 5250, 5513, 5254],
             }, {
+              datasetKeyProvider: '2',
               label: 'Activaciones',
               backgroundColor: '#a4a4a4',
               borderColor: '#a4a4a4',
@@ -494,90 +505,79 @@ class Card extends React.Component {
               <table className="table">
                 <tbody>
                   <tr>
-                    <th>
-                      Apertura de negocio
-                    </th>
-                    <th>
-                      Filtro de negocio
-                    </th>
-                    <th>
-                      Plazo
-                    </th>
-                    <th>
-                      Frecuencia
-                    </th>
-                    <th>
-                      Opciones
-                    </th>
-                  </tr>
-                  <tr>
-                    <td className=''>
+                    <TD width='250px'>
                       <div className='row'>
-                        <div className='col-10 row'>
+                        <strong className='col-8'>Apertura de negocio</strong>
+                        <div className='col-8 row'>
                           <div className="form-group col-12">
-                            <select className="form-control">
+                            <Select className="form-control">
                               <option>Marca</option>
-                            </select>
+                              <option>abc</option>
+                            </Select>
                           </div>
                           <div className="form-group col-12">
-                            <select className="form-control">
+                            <Select className="form-control">
                               <option>Sel. multiple...</option>
-                            </select>
+                            </Select>
                           </div>
                         </div>
                         <div className='col-1'>
                           <img src={Add} />
                         </div>
                       </div>
-                    </td>
+                    </TD>
                       
-                    <td className=''>
+                    <TD width='250px'>
                       <div className='row'>
-                        <div className='col-10 row'>
+                        <strong className='col-8'> Filtro de negocio</strong>
+                        <div className='col-8 row'>
                           <div className="form-group col-12">
-                            <select className="form-control">
+                            <Select className="form-control">
                               <option>Pais</option>
-                            </select>
+                            </Select>
                           </div>
                           <div className="form-group col-12">
-                            <select className="form-control">
+                            <Select className="form-control">
                               <option>Chile, Peru</option>
-                            </select>
+                            </Select>
                           </div>
                         </div>
                         <div className='col-1'>
                           <img src={Add} />
                         </div>
                       </div>
-                    </td>
+                    </TD>
 
-                    <td className=''>
+                    <TD width='250px'>
                       <div className='col-12 row'>
+                        <strong className='col-8'>Plazo</strong>
                         <div className="form-group col-12">
-                          <select className="form-control">
+                          <Select className="form-control">
                             <option>Fencha inicio</option>
-                          </select>
+                          </Select>
                         </div>
                         <div className="form-group col-12">
-                          <select className="form-control">
+                          <Select className="form-control">
                             <option>Fencha termino</option>
-                          </select>
+                          </Select>
                         </div>
                       </div>
-                    </td>
+                    </TD>
 
-                    <td className=''>
+                    <TD width='250px'>
                       <div className='col-12 row'>
+                        <strong className='col-8'>Frecuencia</strong>
                         <div className="form-group col-12">
-                          <select className="form-control">
+                          <Select className="form-control">
                             <option>Mensual</option>
-                          </select>
+                          </Select>
                         </div>
                       </div>
-                    </td>
+                    </TD>
 
-                     <td className=''>
+                     <TD width='250px'>
                       <div className='col-12 row'>
+                        <strong className='col-8'>Opciones</strong>
                         <OpcionesContainer className="col-5">
                           Exportar PPT
                         </OpcionesContainer>
@@ -596,64 +596,49 @@ class Card extends React.Component {
                           Agregar a mi DB
                         </OpcionesContainer>
                       </div>
-                    </td>
+                    </TD>
                   </tr>
                   <tr>
-                    <th>
-                      Apertura de costos
-                    </th>
-                    <th>
-                      Filtro de costos
-                    </th>
-                    <th>
-                      
-                    </th>
-                    <th>
-                      
-                    </th>
-                    <th>
-                      
-                    </th>
-                  </tr>
-                  <tr>
-                    <td className=''>
-                      <div className='row'>
+                    <TD width='250px'>
+                      <strong>Apertura de cost8</strong>
+                      <div className='r8'>
                         <div className='col-10 row'>
                           <div className="form-group col-12">
-                            <select className="form-control">
+                            <Select className="form-control">
                               <option>Centro de costos</option>
-                            </select>
+                            </Select>
                           </div>
                           <div className="form-group col-12">
-                            <select className="form-control">
+                            <Select className="form-control">
                               <option>N/a</option>
-                            </select>
+                            </Select>
                           </div>
                         </div>
                       </div>
-                    </td>
-                    <td className=''>
-                      <div className='row'>
+                    </TD>
+                    <TD width='250px'>
+                      <strong>Filtro de cost8</strong>
+                      <div className='r8'>
                         <div className='col-10 row'>
                           <div className="form-group col-12">
-                            <select className="form-control">
+                            <Select className="form-control">
                               <option>Cuenta contable</option>
-                            </select>
+                            </Select>
                           </div>
                           <div className="form-group col-12">
-                            <select className="form-control">
+                            <Select className="form-control">
                               <option>Remuneracio</option>
-                            </select>
+                            </Select>
                           </div>
                         </div>
                       </div>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
+                    </TD>
+                    <TD>
+                    </TD>
+                    <TD>
+                    </TD>
+                    <TD>
+                    </TD>
                   </tr>
                 </tbody>
               </table>
@@ -664,11 +649,8 @@ class Card extends React.Component {
             <Container>
               {
                 this.renderGraph() ?
-                  <Bar
+                  <Graph
                     data={this.renderGraph()}
-                    options={{
-                      maintainAspectRatio: false
-                    }}
                   />
                 :
                   ''
