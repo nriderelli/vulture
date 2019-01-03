@@ -20,10 +20,10 @@ export default function App() {
   return (
     <div>
       <Helmet
-        titleTemplate="%s - Tekion Automation Portal"
-        defaultTitle="Tekion Automation Portal"
+        titleTemplate="%s - Tribeca Advisor"
+        defaultTitle="Tribeca Advisor"
       >
-        <meta name="description" content="An Automation Portal for Tekion" />
+        <meta name="description" content="An Portal for Tribeca Advisor" />
       </Helmet>
       {/*
         App level Snackbar for error, success and general notifications
