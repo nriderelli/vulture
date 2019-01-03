@@ -11,6 +11,7 @@ import Cost from 'containers/Cost/Loadable';
 import Income from 'containers/Income/Loadable';
 import Margin from 'containers/Margin/Loadable';
 import Metric from 'containers/Metric/Loadable';
+import EERR from 'containers/EERR/Loadable';
 import RightContainer from './RightContainer';
 import LeftContainer from './LeftContainer';
 import AppContainer from './AppContainer';
@@ -55,6 +56,7 @@ class Routes extends React.PureComponent {
                 <Route path="/income" component={Income} />
                 <Route path="/margins" component={Margin} />
                 <Route path="/metrics" component={Metric} />
+                <Route path="/eerr" component={EERR} />
                 <Route path="/upload" component={Upload} />
 
                 <Route path="" component={NotFoundPage} />
