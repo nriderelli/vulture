@@ -97,15 +97,22 @@ class DashboardTable extends React.Component {
                   <TH scope="col">
                     <div
                       style={{
-                        width: '40%',
-                        background: '#006e82',
-                        color: '#fff',
-                        padding: '10px',
-                        fontSize: '18px',
-                        borderRadius: '5px'
+                        width: '50%',
                       }}
                     >
-                      RESULTS
+                      <p
+                        style={{
+                          width: '92%',
+                          textAlign: 'center',
+                          background: '#006e82',
+                          color: '#fff',
+                          padding: '10px',
+                          fontSize: '18px',
+                          borderRadius: '5px'
+                        }}
+                      >
+                        RESULTS
+                      </p>
                     </div>
                   </TH>
                   <TH scope="col">
@@ -380,15 +387,22 @@ class DashboardTable extends React.Component {
                   <TH scope="col">
                     <div
                       style={{
-                        width: '40%',
-                        background: '#006e82',
-                        color: '#fff',
-                        padding: '10px',
-                        fontSize: '18px',
-                        borderRadius: '5px'
+                        width: '50%',
                       }}
                     >
-                      METRICS
+                      <p
+                        style={{
+                          width: '92%',
+                          textAlign: 'center',
+                          background: '#006e82',
+                          color: '#fff',
+                          padding: '10px',
+                          fontSize: '18px',
+                          borderRadius: '5px'
+                        }}
+                      >
+                        METRICS
+                      </p>
                     </div>
                   </TH>
                   <TH scope="col">
