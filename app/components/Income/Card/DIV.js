@@ -8,6 +8,6 @@ export default styled.div`
     background: ${props => props.background};
     padding-top: 10px;
     padding-bottom: 10px;
-    border-radius: 5px;
+    border-radius: 0px;
     cursor: pointer
 `;

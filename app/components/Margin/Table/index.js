@@ -21,18 +21,28 @@ class Table extends React.Component {
     const { data, index } = this.props;
     return (
       <Container className='col-4' key={index}>
-        <CardContainer className="card" key={this.props.index}>
-          <table className="table">
+        <CardContainer className="card" key={this.props.index} style={{padding: '7px'}}>
+          <table style={{width: '100%'}}>
             <thead>
-              <TR>
+              <TR border='1px'>
                 {
                   data.heading
                   && data.heading.length !== 0
                   && data.heading.map((th, i) => (
                     <TH scope="col" key={i}>
-                      <Button left="0" background="#006e82">
+                      <div
+                        style={{
+                          background: '#006e82',
+                          textAlign: 'center',
+                          color: '#fff',
+                          padding: '10px',
+                          fontSize: '12px',
+                          borderRadius: i === 0 ? '10px 5px 5px 5px' : i === data.heading.length-1 ? '5px 10px 5px 5px' : '5px',
+                          marginBottom: '25px'
+                        }}
+                      >
                         {th.toUpperCase()}
-                      </Button>
+                      </div>
                     </TH>
                   ))
                 }
@@ -42,7 +52,7 @@ class Table extends React.Component {
               {data.data &&
                 data.data.length !== 0 &&
                 data.data.map((val, i) => (
-                    <TR key={i}>
+                     <TR border={i !== data.data.length-1 ?'1px' : '0px'} key={i}>
                       <th>
                         {val[data.heading[0]]}
                       </th>
@@ -82,16 +92,48 @@ class Table extends React.Component {
 
                     </TR>
                   ))}
+              {
+                data && (
+                  <TR border='0px'>
+                    <TD style={{paddingBottom: '0px'}}>
+                    </TD>
+                    <TD style={{paddingBottom: '0px'}}>
+                    </TD>
+                    <TD style={{paddingBottom: '0px'}}>
+                    </TD>
+                    <TD style={{paddingBottom: '0px'}}>
+                      {
+                        data.isSeeAll ?
+                          <p
+                            style={{
+                              float: 'right',
+                              color: '#000',
+                              fontSize: '15px',
+                              marginBottom: '0px'
+                            }}
+                          >
+                            See All
+                            &nbsp;
+                            <Img src={See} />
+                          </p>
+                        : 
+                          <p
+                            style={{
+                              float: 'right',
+                              color: '#000',
+                              fontSize: '15px',
+                              marginBottom: '0px'
+                            }}
+                          >
+                            <Img src={Add} />
+                          </p>
+                      }
+                    </TD>
+                  </TR>
+                )
+              }
             </tbody>
           </table>
-          <div>
-            {
-              data.isSeeAll ?
-                <Img src={See} />
-              : 
-                <Img src={Add} />
-            }
-          </div>
         </CardContainer>
       </Container>
     );

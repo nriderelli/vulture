@@ -11,6 +11,8 @@ import TextTD from './TextTD';
 import Icon from './Icon';
 import IconContainer from './IconContainer';
 import Edit from 'images/icons/edit.png';
+import TH from './TH';
+import TR from './TR';
 
 /* eslint-disable react/prefer-stateless-function */
 class DashboardTable extends React.Component {
@@ -87,45 +89,49 @@ class DashboardTable extends React.Component {
             ''
         }
         <CardContainer className="card">
-          <div className="card-body">
-            {
-              this.props.index === 0 ?
-                  <h5 className="card-title">Values in M CLP</h5>
-              :
-                ''
-            }
-            <IconContainer>
-              <img src={Edit} />
-            </IconContainer>
-            <table className="table">
+          <div style={{padding: '25px'}}>
+            <h5 className="card-title">Values in M CLP</h5>
+            <table style={{width: '100%'}}>
               <thead>
-                <tr>
-                  <th scope="col">
-                    <Button left="0" background="#006e82">
+                <TR border='1px'>
+                  <TH scope="col">
+                    <div
+                      style={{
+                        width: '40%',
+                        background: '#006e82',
+                        color: '#fff',
+                        padding: '10px',
+                        fontSize: '18px',
+                        borderRadius: '5px'
+                      }}
+                    >
                       RESULTS
-                    </Button>
-                  </th>
-                  <th scope="col">
+                    </div>
+                  </TH>
+                  <TH scope="col">
                     <TextHead>YTD</TextHead>
                     <TextHead>Ago-2018</TextHead>
-                  </th>
-                  <th scope="col">
+                  </TH>
+                  <TH scope="col">
                     <TextHead>FORECAST</TextHead>
                     <TextHead>2018</TextHead>
-                  </th>
-                  <th scope="col">
+                  </TH>
+                  <TH scope="col">
                     <TextHead>MONTHLY</TextHead>
                     <TextHead>TREND</TextHead>
-                  </th>
-                  <th scope="col">
+                  </TH>
+                  <TH scope="col">
                     <TextHead>ANNUAL</TextHead>
                     <TextHead>TREND</TextHead>
-                  </th>
-                </tr>
+                    <IconContainer>
+                      <img src={Edit} />
+                    </IconContainer>
+                  </TH>
+                </TR>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">Income</th>
+                <TR border='1px'>
+                  <TH scope="row">Income</TH>
                   <TextTD>
                     <div className='row'>
                       <div className='col-6'>
@@ -201,10 +207,10 @@ class DashboardTable extends React.Component {
                     </p>
                   </TextTD>
 
-                </tr>
+                </TR>
 
-                <tr>
-                  <th scope="row">Mg. Contribution</th>
+                <TR border='1px'>
+                  <TH scope="row">Mg. Contribution</TH>
                   <TextTD>
                     <div className='row'>
                       <div className='col-6'>
@@ -280,10 +286,10 @@ class DashboardTable extends React.Component {
                     </p>
                   </TextTD>
 
-                </tr>
+                </TR>
 
-                <tr>
-                  <th scope="row">EBIDA</th>
+                <TR border='0px'>
+                  <TH scope="row">EBIDA</TH>
                   <TextTD>
                     <div className='row'>
                       <div className='col-6'>
@@ -359,46 +365,56 @@ class DashboardTable extends React.Component {
                     </p>
                   </TextTD>
 
-                </tr>
+                </TR>
               </tbody>
             </table>
           </div>
+            
         </CardContainer>
 
-        <CardContainer className="card">
-          <div className="card-body">
-            <IconContainer>
-              <img src={Edit} />
-            </IconContainer>
-            <table className="table">
+         <CardContainer className="card">
+          <div style={{padding: '25px'}}>
+            <table style={{width: '100%'}}>
               <thead>
-                <tr>
-                  <th scope="col">
-                    <Button left="0" background="#006e82">
+                <TR border='1px'>
+                  <TH scope="col">
+                    <div
+                      style={{
+                        width: '40%',
+                        background: '#006e82',
+                        color: '#fff',
+                        padding: '10px',
+                        fontSize: '18px',
+                        borderRadius: '5px'
+                      }}
+                    >
                       METRICS
-                    </Button>
-                  </th>
-                  <th scope="col">
+                    </div>
+                  </TH>
+                  <TH scope="col">
                     <TextHead>YTD</TextHead>
                     <TextHead>Ago-2018</TextHead>
-                  </th>
-                  <th scope="col">
+                  </TH>
+                  <TH scope="col">
                     <TextHead>FORECAST</TextHead>
                     <TextHead>2018</TextHead>
-                  </th>
-                  <th scope="col">
+                  </TH>
+                  <TH scope="col">
                     <TextHead>MONTHLY</TextHead>
                     <TextHead>TREND</TextHead>
-                  </th>
-                  <th scope="col">
+                  </TH>
+                  <TH scope="col">
                     <TextHead>ANNUAL</TextHead>
                     <TextHead>TREND</TextHead>
-                  </th>
-                </tr>
+                    <IconContainer>
+                      <img src={Edit} />
+                    </IconContainer>
+                  </TH>
+                </TR>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">Boxes</th>
+                <TR border='0px'>
+                  <TH scope="row">Boxes</TH>
                   <TextTD>
                     <div className='row'>
                       <div className='col-6'>
@@ -473,11 +489,14 @@ class DashboardTable extends React.Component {
                       Check Graph
                     </p>
                   </TextTD>
-                </tr>
+
+                </TR>
               </tbody>
             </table>
           </div>
+            
         </CardContainer>
+        
       </div>
     );
   }

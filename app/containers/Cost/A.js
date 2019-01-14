@@ -8,7 +8,7 @@ export default styled.a`
   float: ${props => props.float};
   cursor: pointer;
   padding: 5px;
-  font-size: 1em;
+  font-size: 18px;
   &:focus {
     outline: none;
   }

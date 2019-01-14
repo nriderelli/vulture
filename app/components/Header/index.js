@@ -92,15 +92,6 @@ class Header extends React.Component {
             Metrics
           </HeaderLink>
           <HeaderLink
-            color={location.pathname === '/benchmark' ? '#187e90' : '#646464'}
-            to="/benchmark"
-          >
-            <IconContainer>
-              <img src={location.pathname === '/benchmark' ? DashboardBlue : DashboardBlack} />
-            </IconContainer>
-            Benchmark
-          </HeaderLink>
-          <HeaderLink
             color={location.pathname === '/eerr' ? '#187e90' : '#646464'}
             to="/eerr"
           >
@@ -127,7 +118,7 @@ class Header extends React.Component {
             </IconContainer>
             Upload
           </HeaderLink>
-          <Button left="20px" background="#006e82">
+          <Button left="45px" background="#006e82" width='60px' fontSize='18px'>
             Test
           </Button>
         </NavBar>

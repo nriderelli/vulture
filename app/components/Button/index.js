@@ -13,6 +13,7 @@ export default styled.button`
   float: ${props => props.float};
   padding-left: ${props => props.paddingLeft};
   width: ${props => props.width};
+  font-size: ${props => props.fontSize};
   cursor: pointer;
   &:focus {
     outline: none;

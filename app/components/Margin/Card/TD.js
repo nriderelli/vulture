@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 export default styled.td`
   &&& {
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 0px;
-    width: ${props => props.width};
+    padding: 10px;
+  	border-left: ${props => props.border} solid #ebebeb;
+  	&:nth-child(1) {
+  		border-left: ${props => props.border} solid;
+  	}
   }
 `;
