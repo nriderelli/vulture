@@ -28,7 +28,7 @@ class Errors extends React.Component {
           }
         </div>
         <div className="col-2">
-          <Button float='right' height="100%" background="#006e82">
+          <Button float='right' height="100%" background="#006e82" padding='10px' fontSize='18px'>
             <IMG src={Refresh} alt="refresh" />
             &nbsp;&nbsp; My Dashboard
           </Button>

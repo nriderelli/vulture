@@ -5,6 +5,6 @@ export default styled.p`
   	padding: 10px;
 	font-weight: bold;
     font-size: 12px;
-	border-left: ${props => props.borderLeft} solid #006e82;
+	border-left: ${props => props.borderLeft} solid #bed5d9;
     
 `;

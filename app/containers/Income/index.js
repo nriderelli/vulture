@@ -204,7 +204,7 @@ export class Income extends React.PureComponent {
               }
             </A>
           </Header>
-          <div className={`collapse row ${this.state.isOpen ? 'show' : ''}`} id='collapsePannel'>
+          <div className={`collapse row ${this.state.isOpen ? 'show' : ''}`} id='collapsePannel' style={{width: '100%'}}>
             { this.table
               && this.table.length !== 0
               && this.table.map((value, index) => (

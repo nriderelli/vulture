@@ -19,160 +19,157 @@ class Card extends React.Component {
   render() {
     return (
       <CardContainer className="card" key={this.props.index}>
-        <div className="card-body">
-          <MainSection className=''>
-            <div className='row'>
-              <Section className='col-1'>
-                <strong>BUSINESS LINE</strong>
-                <div>
-                  <Select className="form-control">
-                    <option>All Selected (5)</option>
-                  </Select>
+        <MainSection className=''>
+          <div className='row'>
+            <Section className='col-1'>
+              <strong>BUSINESS LINE</strong>
+              <div>
+                <Select className="form-control">
+                  <option>All Selected (5)</option>
+                </Select>
+              </div>
+            </Section>
+            <Section className='col-1'>
+              <strong>INDUSTRY</strong>
+              <div>
+                <Select className="form-control">
+                  <option>All Selected (6)</option>
+                </Select>
+              </div>
+            </Section>
+            <Section className='col-1'>
+              <strong>CUSTOMERS</strong>
+              <div>
+                <Select className="form-control">
+                  <option>All Selected (31)</option>
+                </Select>
+              </div>
+            </Section>
+            <Section className='col-1'>
+              <strong>COMPANY</strong>
+              <div>
+                <Select className="form-control">
+                  <option>None Selected</option>
+                </Select>
+              </div>
+            </Section>
+            <Section className='col-1'>
+              <strong>RESULT CENTER</strong>
+              <div>
+                <Select className="form-control">
+                  <option>All Selected (147)</option>
+                </Select>
+              </div>
+            </Section>
+            <Section className='col-7'>
+              
+              <div style={{float: 'left'}}>
+                <strong>ACCOUNT GROUP</strong>
+                <Select className="form-control" width='175px'>
+                  <option>All Selected (203)</option>
+                </Select>
+              </div>
+              <Button
+                float='right'
+                height='50px'
+                width='50px'
+                background='#dde7e9'
+                color='#2b6d81'
+              >
+                <i className="fa fa-filter" aria-hidden="true"></i>
+              </Button>
+            </Section>
+          </div>
+        </MainSection>
+
+        <MainSection className=''>
+          <div className='row'>
+            <Section className='col-1'>
+              <strong>YEAR</strong>
+              <div>
+                <Select className="form-control">
+                  <option>2015</option>
+                </Select>
+              </div>
+            </Section>
+            <Section className='col-1'>
+              <strong>MONTH</strong>
+              <div>
+                <Select className="form-control">
+                  <option>None Selected</option>
+                </Select>
+              </div>
+            </Section>
+            <Section className='col-1'>
+              <strong>EXECUTIVE</strong>
+              <div>
+                <Select className="form-control">
+                  <option>None Selected</option>
+                </Select>
+              </div>
+            </Section>
+            <Section className='col-1'>
+              <strong>METRICS</strong>
+              <div>
+                <Select className="form-control">
+                  <option>Select</option>
+                </Select>
+              </div>
+            </Section>
+            <Section className='col-1'>
+              <strong>COMPARISON</strong>
+              <div>
+                <Select className="form-control">
+                  <option>Select</option>
+                </Select>
+              </div>
+            </Section>
+            <Section className='col-7'>
+              <strong></strong>
+              <div style={{paddingTop: '15px'}}>
+                <div className="custom-control custom-checkbox" style={{display: 'inline'}}>
+                  <input type="checkbox" className="custom-control-input" id="customCheck1" />
+                  <label className="custom-control-label" for="customCheck1">MARGINS</label>
                 </div>
-              </Section>
-              <Section className='col-1'>
-                <strong>INDUSTRY</strong>
-                <div>
-                  <Select className="form-control">
-                    <option>All Selected (6)</option>
-                  </Select>
-                </div>
-              </Section>
-              <Section className='col-1'>
-                <strong>CUSTOMERS</strong>
-                <div>
-                  <Select className="form-control">
-                    <option>All Selected (31)</option>
-                  </Select>
-                </div>
-              </Section>
-              <Section className='col-1'>
-                <strong>COMPANY</strong>
-                <div>
-                  <Select className="form-control">
-                    <option>None Selected</option>
-                  </Select>
-                </div>
-              </Section>
-              <Section className='col-1'>
-                <strong>RESULT CENTER</strong>
-                <div>
-                  <Select className="form-control">
-                    <option>All Selected (147)</option>
-                  </Select>
-                </div>
-              </Section>
-              <Section className='col-7'>
-                
-                <div style={{float: 'left'}}>
-                  <strong>ACCOUNT GROUP</strong>
-                  <Select className="form-control" width='175px'>
-                    <option>All Selected (203)</option>
-                  </Select>
-                </div>
+                &nbsp;&nbsp;&nbsp;&nbsp;
                 <Button
-                  float='right'
+                  background='#2b6d81'
+                  color='#fff'
                   height='50px'
-                  width='50px'
+                >
+                  Generate
+                </Button>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <Button
+                  background='#2b6d81'
+                  color='#fff'
+                  height='50px'
+                >
+                  save
+                  <i className="fa fa-floppy" aria-hidden="true"></i>
+                </Button>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <Button
                   background='#dde7e9'
                   color='#2b6d81'
+                  height='50px'
+                  width='50px'
                 >
-                  <i className="fa fa-filter" aria-hidden="true"></i>
+                  <i className="fa fa-file-excel" aria-hidden="true"></i>
                 </Button>
-              </Section>
-            </div>
-          </MainSection>
-
-          <MainSection className=''>
-            <div className='row'>
-              <Section className='col-1'>
-                <strong>YEAR</strong>
-                <div>
-                  <Select className="form-control">
-                    <option>2015</option>
-                  </Select>
-                </div>
-              </Section>
-              <Section className='col-1'>
-                <strong>MONTH</strong>
-                <div>
-                  <Select className="form-control">
-                    <option>None Selected</option>
-                  </Select>
-                </div>
-              </Section>
-              <Section className='col-1'>
-                <strong>EXECUTIVE</strong>
-                <div>
-                  <Select className="form-control">
-                    <option>None Selected</option>
-                  </Select>
-                </div>
-              </Section>
-              <Section className='col-1'>
-                <strong>METRICS</strong>
-                <div>
-                  <Select className="form-control">
-                    <option>Select</option>
-                  </Select>
-                </div>
-              </Section>
-              <Section className='col-1'>
-                <strong>COMPARISON</strong>
-                <div>
-                  <Select className="form-control">
-                    <option>Select</option>
-                  </Select>
-                </div>
-              </Section>
-              <Section className='col-7'>
-                <strong></strong>
-                <div style={{paddingTop: '15px'}}>
-                  <div className="custom-control custom-checkbox" style={{display: 'inline'}}>
-                    <input type="checkbox" className="custom-control-input" id="customCheck1" />
-                    <label className="custom-control-label" for="customCheck1">MARGINS</label>
-                  </div>
-                  &nbsp;&nbsp;&nbsp;&nbsp;
-                  <Button
-                    background='#2b6d81'
-                    color='#fff'
-                    height='50px'
-                  >
-                    Generate
-                  </Button>
-                  &nbsp;&nbsp;&nbsp;&nbsp;
-                  <Button
-                    background='#2b6d81'
-                    color='#fff'
-                    height='50px'
-                  >
-                    save
-                    <i className="fa fa-floppy" aria-hidden="true"></i>
-                  </Button>
-                  &nbsp;&nbsp;&nbsp;&nbsp;
-                  <Button
-                    background='#dde7e9'
-                    color='#2b6d81'
-                    height='50px'
-                    width='50px'
-                  >
-                    <i className="fa fa-file-excel" aria-hidden="true"></i>
-                  </Button>
-                  &nbsp;&nbsp;&nbsp;&nbsp;
-                  <Button
-                    background='#dde7e9'
-                    color='#2b6d81'
-                    height='50px'
-                    width='50px'
-                  >
-                    <i className="fa fa-star" aria-hidden="true"></i>
-                  </Button>
-                </div>
-              </Section>
-            </div>
-          </MainSection>
-          
-        </div>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <Button
+                  background='#dde7e9'
+                  color='#2b6d81'
+                  height='50px'
+                  width='50px'
+                >
+                  <i className="fa fa-star" aria-hidden="true"></i>
+                </Button>
+              </div>
+            </Section>
+          </div>
+        </MainSection>
       </CardContainer>
     );
   }
