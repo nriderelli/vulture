@@ -118,7 +118,7 @@ class Header extends React.Component {
             </IconContainer>
             Upload
           </HeaderLink>
-          <Button left="45px" background="#006e82" width='60px' fontSize='18px'>
+          <Button left="45px" background="#006e82" width='75px' fontSize='18px' right='25px'>
             Test
           </Button>
         </NavBar>
