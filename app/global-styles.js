@@ -65,7 +65,6 @@ ul{margin: 0; padding: 0;}
   }
   @font-face {
     font-family: 'Conv_barth';
-    src: url('fonts/barth.eot');
     src: local('☺'), url('fonts/barth.woff') format('woff'), url('fonts/barth.ttf') format('truetype'), url('fonts/barth.svg') format('svg');
     font-weight: normal;
     font-style: normal;
