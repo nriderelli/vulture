@@ -2,8 +2,9 @@ import styled from 'styled-components';
 
 export default styled.a`
   background: ${props => props.background};
-  margin-top: 5px;
-  &&&{color: #fff;}
+  &&& {
+    color: #fff;
+  }
   border-radius: 5px;
   float: ${props => props.float};
   cursor: pointer;
@@ -13,7 +14,9 @@ export default styled.a`
     outline: none;
   }
   &:hover {
-    &&&{color: #fff;}
+    &&& {
+      color: #fff;
+    }
     text-decoration: none;
   }
 `;

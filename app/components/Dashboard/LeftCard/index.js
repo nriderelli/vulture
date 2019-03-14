@@ -8,17 +8,18 @@ import Number from './Number';
 import Text from './Text';
 import Container from './Container';
 import CardBody from './CardBody';
+import './ABC.css';
 
 export class LeftCard extends React.PureComponent {
   render() {
     const { data } = this.props;
     return (
-      <CardContainer className="card">
+      <CardContainer className="card asdasd">
         <CardBody className="card-body">
           {data &&
             data.length !== 0 &&
             data.map((val, index) => (
-              <Container className="row" key={index}>
+              <Container className="row">
                 <Icon
                   color={val.color}
                   className="col-1 fa fa-circle col-1"

@@ -1,15 +1,14 @@
-
- /* Dashboard
+/* Dashboard
  *
  * This is the first thing users see of our App, at the '/' route
  */
 
 // imports npm packages
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
-import { connect } from 'react-redux';
-import { compose } from 'redux';
+// import { connect } from 'react-redux';
+// import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 
 // import local files
@@ -49,9 +48,8 @@ export default class Dashboard extends React.PureComponent {
       boxesYtd: {},
       boxesForecast: {},
       boxesMonthlyGraph: {},
-      boxesAnnualGraph: {}
+      boxesAnnualGraph: {},
     };
-    
 
     this.data = [
       {
@@ -86,99 +84,98 @@ export default class Dashboard extends React.PureComponent {
       },
     ];
   }
+
   componentWillMount() {
     // this.props.getDashboardIncome();
-    const currentYear = 12; //new Date().getFullYear();
+    const currentYear = 12; // new Date().getFullYear();
     const currentMonth = new Date().getMonth() + 1;
-    const requestURL = `${url.mainUrl}${url.getDashboard}/${currentMonth === 1? currentYear-1 : currentYear}/${currentMonth}`;
+    // const requestURL = `${url.mainUrl}${url.getDashboard}/${
+    // currentMonth === 1 ? currentYear - 1 : currentYear
+    // }/${currentMonth}`;
     this.setState({
-      isLoading: true,
-    })
-    fetch(
-        requestURL,
-        {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        }
-    )
-    .then(response => response.json())
-    .then(responseData => {
-      if(!responseData) {
-        this.setState({
-          isLoading: false,
-        })
-        this.setState({
-          error:'Data fetching failed'
-        });
-      }else if(responseData.status !== 'success') {
-        this.setState({
-          error: responseData.error || 'Data fetching failed'
-        });
-      } else {
-        this.setState({
-          isLoading: false,
-          error: null,
-          incomeYtd: {
-            value: responseData.data.income.ytd,
-            color: '#44db5f',
-          },
-          incomeForecast: {
-            value: responseData.data.income.forecast,
-            color: '#44db5f',
-          },
-          incomeMonthlyGraph: responseData.data.income.monthlyGraph,
-          incomeAnnualGraph: responseData.data.income.annualGraph,
-          contributionYtd: {
-            value: responseData.data.contribution.ytd,
-            color: '#44db5f',
-          },
-          contributionForecast: {
-            value: responseData.data.contribution.forecast,
-            color: '#44db5f',
-          },
-          contributionMonthlyGraph: responseData.data.contribution.monthlyGraph,
-          contributionAnnualGraph: responseData.data.contribution.annualGraph,
-          ebidaYtd: {
-            value: responseData.data.ebida.ytd,
-            color: '#44db5f',
-          },
-          ebidaForecast: {
-            value: responseData.data.ebida.forecast,
-            color: '#44db5f',
-          },
-          ebidaMonthlyGraph: responseData.data.ebida.monthlyGraph,
-          ebidaAnnualGraph: responseData.data.ebida.annualGraph,
-          boxesYtd: {
-            value: responseData.data.boxes.ytd,
-            color: '#44db5f',
-          },
-          boxesForecast: {
-            value: responseData.data.boxes.forecast,
-            color: '#44db5f',
-          },
-          boxesMonthlyGraph: responseData.data.boxes.monthlyGraph,
-          boxesAnnualGraph: responseData.data.boxes.annualGraph
-        })
-      }
-
-    })
-    .catch(err => {
-      this.setState({
-        error: responseData.error || 'Data fetching failed'
-      });
+      isLoading: false,
     });
+    // fetch(
+    //     requestURL,
+    //     {
+    //         method: 'GET',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //         },
+    //     }
+    // )
+    // .then(response => response.json())
+    // .then(responseData => {
+    //   if(!responseData) {
+    //     this.setState({
+    //       isLoading: false,
+    //     })
+    //     this.setState({
+    //       error:'Data fetching failed'
+    //     });
+    //   }else if(responseData.status !== 'success') {
+    //     this.setState({
+    //       error: responseData.error || 'Data fetching failed'
+    //     });
+    //   } else {
+    //     this.setState({
+    //       isLoading: false,
+    //       error: null,
+    //       incomeYtd: {
+    //         value: responseData.data.income.ytd,
+    //         color: '#44db5f',
+    //       },
+    //       incomeForecast: {
+    //         value: responseData.data.income.forecast,
+    //         color: '#44db5f',
+    //       },
+    //       incomeMonthlyGraph: responseData.data.income.monthlyGraph,
+    //       incomeAnnualGraph: responseData.data.income.annualGraph,
+    //       contributionYtd: {
+    //         value: responseData.data.contribution.ytd,
+    //         color: '#44db5f',
+    //       },
+    //       contributionForecast: {
+    //         value: responseData.data.contribution.forecast,
+    //         color: '#44db5f',
+    //       },
+    //       contributionMonthlyGraph: responseData.data.contribution.monthlyGraph,
+    //       contributionAnnualGraph: responseData.data.contribution.annualGraph,
+    //       ebidaYtd: {
+    //         value: responseData.data.ebida.ytd,
+    //         color: '#44db5f',
+    //       },
+    //       ebidaForecast: {
+    //         value: responseData.data.ebida.forecast,
+    //         color: '#44db5f',
+    //       },
+    //       ebidaMonthlyGraph: responseData.data.ebida.monthlyGraph,
+    //       ebidaAnnualGraph: responseData.data.ebida.annualGraph,
+    //       boxesYtd: {
+    //         value: responseData.data.boxes.ytd,
+    //         color: '#44db5f',
+    //       },
+    //       boxesForecast: {
+    //         value: responseData.data.boxes.forecast,
+    //         color: '#44db5f',
+    //       },
+    //       boxesMonthlyGraph: responseData.data.boxes.monthlyGraph,
+    //       boxesAnnualGraph: responseData.data.boxes.annualGraph
+    //     })
+    //   }
+
+    // })
+    // .catch(err => {
+    //   this.setState({
+    //     error: responseData.error || 'Data fetching failed'
+    //   });
+    // });
   }
+
   render() {
     return (
       <div>
-      {
-        this.state.isLoading ?
-          <Loading />
-        :
-          ''
-      }
+        {this.state.isLoading ? <Loading /> : ''}
         <Helmet>
           <title>Dashboard</title>
           <meta name="Dashboard" content="Dashboard of the application" />
@@ -212,7 +209,7 @@ export default class Dashboard extends React.PureComponent {
                     forecast: this.state.boxesForecast,
                     monthly: this.state.boxesMonthlyGraph,
                     annual: this.state.boxesAnnualGraph,
-                  }
+                  },
                 }}
               />
 
@@ -228,7 +225,7 @@ export default class Dashboard extends React.PureComponent {
   }
 }
 
-/*export function mapDispatchToProps(dispatch) {
+/* export function mapDispatchToProps(dispatch) {
   console.log(':: mapDispatchToProps')
   return {
     getDashboardIncome: () => dispatch(dashboardIncome())

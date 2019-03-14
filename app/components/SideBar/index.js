@@ -10,7 +10,7 @@ import Options from './Options';
 import CircleIcon from './CircleIcon';
 import SideBarOptionLabel from './SideBarOptionLabel';
 import CollapseContainer from './CollapseContainer';
-
+import 'utils/assets/css/style.css';
 // component for Sidebar
 class SideBar extends Component {
   constructor(props) {
@@ -91,16 +91,14 @@ class SideBar extends Component {
 
   renderSideBar(val, index) {
     return (
-      <Options className="" key={index}>
+      <li className="" key={index}>
         <SideBarOptionLabel
-          className="row"
-          color="#01b9bf"
+          s
           data-toggle="collapse"
           href={`#collapseExample-${index}`}
           role="button"
           aria-expanded="false"
           aria-controls="collapseExample"
-          fontSize='20px'
           onClick={() => {
             const { isOpen } = this.state;
             const index = isOpen.findIndex(option => option === val.name);
@@ -114,81 +112,83 @@ class SideBar extends Component {
             });
           }}
         >
-          <CircleIcon
+          {/*<CircleIcon
             size="7px"
             className="fa fa-circle col-1"
             aria-hidden="true"
-          />
-
-          <p className="col-9">{val.name}</p>
-          {this.state.isOpen.findIndex(option => option === val.name) !== -1 ? 
+          />*/}
+          {val.name}
+          {/* <p className="col-9">{val.name}</p>*/}
+          {this.state.isOpen.findIndex(option => option === val.name) !== -1 ? (
             <CircleIcon
-              size="10px"
-              className="fa fa-angle-up col-1"
-              aria-hidden="true"
+            // size="10px"
+            // className="fa fa-angle-up col-1"
+            // aria-hidden="true"
             />
-           : 
+          ) : (
             <CircleIcon
-              size="10px"
-              className="fa fa-angle-down col-1"
-              aria-hidden="true"
+            // size="10px"
+            // className="fa fa-angle-down col-1"
+            // aria-hidden="true"
             />
-          }
+          )}
         </SideBarOptionLabel>
-        <CollapseContainer className="collapse"  id={`collapseExample-${index}`}>
+        <ul
+          className="collapse list-unstyled sub-inner"
+          id={`collapseExample-${index}`}
+        >
           {val.options &&
             val.options.length !== 0 &&
             val.options.map((option, i) => (
-              <p key={i}>
-                <SideBarOptionLabel fontSize='18px' color="#fff" href={val.url}>
-                  <CircleIcon
-                    className="fa fa-angle-right"
-                    aria-hidden="true"
-                  />
-                  &nbsp;&nbsp;&nbsp;&nbsp;
+              <li>
+                <SideBarOptionLabel href={val.url}>
+                  {/* <CircleIcon key={i}
+                        className="fa fa-angle-right"
+                        aria-hidden="true"
+                      />
+                      &nbsp;&nbsp;&nbsp;&nbsp;
+                       */}
                   {option.name}
                 </SideBarOptionLabel>
-              </p>
+              </li>
             ))}
-        </CollapseContainer>
-      </Options>
+        </ul>
+      </li>
     );
   }
 
   render() {
     return (
       <SideBarContainer>
-        <LogoContainer>
+        <div className="close_btn">
+          <i className="fa fa-times" aria-hidden="true" />
+        </div>
+        <LogoContainer className="sidebar-header">
           <IMG src={LOGO} alt="site logo" />
         </LogoContainer>
-        <div>
+        <ul className="list-unstyled components">
           {this.sideBarOptions &&
           this.sideBarOptions.dashboard &&
           this.sideBarOptions.dashboard.length !== 0
             ? this.sideBarOptions.dashboard.map((val, index) => {
-                if(val && val.options && val.options.length !== 0) {
-                  return this.renderSideBar(val, index)
-                } 
-                  return (
-                    <Options key={index}>
-                      <SideBarOptionLabel
-                        color='#01b9bf'
-                        href={val.url}
-                        className='row'
-                        fontSize='20px'
-                      >
-                        <CircleIcon size='7px' className="fa fa-circle col-1" aria-hidden="true"></CircleIcon>
-                    
-                        <p className='col-9'>
-                          {val.name}
-                        </p>
-                      </SideBarOptionLabel>
-                    </Options>
-                  )
-                
+                if (val && val.options && val.options.length !== 0) {
+                  return this.renderSideBar(val, index);
+                }
+                return (
+                  <li key={index}>
+                    <SideBarOptionLabel
+                      // color='#01b9bf'
+                      href={val.url}
+                      // className='row'
+                    >
+                      {/* <CircleIcon size='7px' className="fa fa-circle col-1" aria-hidden="true"></CircleIcon> */}
+                      {val.name}
+                    </SideBarOptionLabel>
+                  </li>
+                );
               })
-              : ''}
-        </div>
+            : ''}
+        </ul>
       </SideBarContainer>
     );
   }
