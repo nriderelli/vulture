@@ -112,13 +112,13 @@ class SideBar extends Component {
             });
           }}
         >
-          {/*<CircleIcon
+          {/* <CircleIcon
             size="7px"
             className="fa fa-circle col-1"
             aria-hidden="true"
-          />*/}
+          /> */}
           {val.name}
-          {/* <p className="col-9">{val.name}</p>*/}
+          {/* <p className="col-9">{val.name}</p> */}
           {this.state.isOpen.findIndex(option => option === val.name) !== -1 ? (
             <CircleIcon
             // size="10px"
