@@ -22,9 +22,7 @@ class DashboardCard extends React.Component {
             <thead>
               <tr>
                 <TH scope="col">
-                  <Button background="#006e82">
-                    ALERTS
-                  </Button>
+                  <Button background="#006e82">ALERTS</Button>
                   <TextHead>#</TextHead>
                 </TH>
                 <TH scope="col">

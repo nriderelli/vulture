@@ -140,7 +140,7 @@ class SideBar extends Component {
           {val.options &&
             val.options.length !== 0 &&
             val.options.map((option, i) => (
-              <li>
+              <li key={i}>
                 <SideBarOptionLabel href={val.url}>
                   {/* <CircleIcon key={i}
                         className="fa fa-angle-right"
