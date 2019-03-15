@@ -1,3 +1,4 @@
+main-menubar .navbar-ligh
 a,
 a:hover,
 a:focus {
@@ -65,6 +66,8 @@ p {
 .bar-btn .navbar {
   padding: 0;
 }
+.pnl-20{padding-right:0!important; padding-left:0!important;}
+
 .navbar-light .navbar-nav .active > .nav-link,
 .navbar-light .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .nav-link.show,
@@ -78,7 +81,7 @@ p {
   margin: 0 20px;
   font-family: 'Conv_Barlow-Regular';
   padding-right: 0;
-  padding-left: 25px;
+  padding-left: 0px;
   position: relative;
 }
 .main-menubar .navbar-light .navbar-nav .nav-link:before {
@@ -90,6 +93,8 @@ p {
   background-repeat: no-repeat;
   left: 0px;
   top: 12px;
+  display: none;
+  
 }
 .dark_green {
   background-color: #006e81 !important;
@@ -136,6 +141,7 @@ p {
   background-repeat: no-repeat;
   left: 0px;
   top: 12px;
+  display: none;
 }
 .main-menubar .navbar-light .navbar-nav .nav-item:nth-child(2) a:before {
   background-position: -43px 0px;
@@ -176,10 +182,13 @@ p {
   border-radius: 6px;
   color: #fff !important;
 }
+.mt_tp-5{
+  margin-top:5px;
+}
 .shdow_box {
   position: relative;
   background: #fff;
-  border-radius: 4px;
+  border-radius: 10px!important;
   box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.1);
 }
 .divided-box {
@@ -344,6 +353,10 @@ p {
   border-radius: 4px;
   box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.1);
   overflow: auto;
+  width: 100%;
+}
+.filter_box .acnt_arrow:after {
+  top: 0;
 }
 
 .tbl_op table {
@@ -767,7 +780,7 @@ a.article:hover {
     width: 100%;
   }
   .save-row {
-    margin-top: 30px;
+    margin-top: 94px;
   }
   .divided-box .child_one select {
     margin-top: 5px;

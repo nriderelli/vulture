@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     height: 100%;
     width: 100%;
+    
   }
 
   body {
@@ -202,6 +203,7 @@ ul{margin: 0; padding: 0;}
     background: #006e81;
     border-radius: 6px;
     color: #fff!important;
+        
 }
 .shdow_box{
     position: relative;
@@ -771,14 +773,14 @@ a.article:hover {
     #sidebar.active {margin-left: 0;}
     #sidebarCollapse span {display: block; }
     .divided-box .child_one{width:100%;}
-    .save-row {margin-top: 30px;}
+    .save-row {margin-top: 94px;}
     .divided-box .child_one select{margin-top: 5px;}
     .selec:after {padding: 3px 0px 0px 8px;   right: 10%;}
     .divided-box .child_one{ border-left: none;}
     .bottom_none .child_one { border-bottom: 1px solid #e9e9e9!important;}
     .bottom_none .child_one:last-child {border-bottom: none!important;}
     .shdow_box{padding: 0px;}
-    .hide_panel{  padding: 30px 0px;  flex-flow: column;}
+    .hide_panel{  padding: 30px 0px;  flex-flow: column; margin-bottom: 40px;}
     .hide_panel a{width: 100%; text-align: center; padding: 8px 19px; margin-top: 8px;}
     .save-row ul li { margin: 8px 8px;}
     #sidebar.active{height: 100vh; overflow-y: scroll;}

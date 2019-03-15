@@ -33,31 +33,26 @@ export class EERR extends React.PureComponent {
           <title>EERR</title>
           <meta name="EERR" content="EERR of the application" />
         </Helmet>
-        <Header>
-          <Text>
-            Values in M CLP
-          </Text>
-          <A
-            background="#006e82"
-            float='right'
-            data-toggle="collapse"
-            role="button"
-            aria-expanded="true"
-            aria-controls="collapseExample"
-            onClick={() => {
-              this.setState({
-                isOpen: !this.state.isOpen
-              })
-            }}
-          >
-            {
-              this.state.isOpen?
-                'Hide Panels'
-              :
-                'Show Panels'
-            }
-          </A>
-        </Header>
+        <div className="row">
+          <div className="col-md-12">
+            <Header className="hide_panel pnl-20">
+              <p>Values in M CLP</p>
+              <A
+                data-toggle="collapse"
+                role="button"
+                aria-expanded="true"
+                aria-controls="collapseExample"
+                onClick={() => {
+                  this.setState({
+                    isOpen: !this.state.isOpen,
+                  });
+                }}
+              >
+                {this.state.isOpen ? 'Hide Panels' : 'Show Panels'}
+              </A>
+            </Header>
+          </div>
+        </div>
         <EERRComponent isOpen={this.state.isOpen} />
       </div>
     );
