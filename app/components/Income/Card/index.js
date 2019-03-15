@@ -34,7 +34,7 @@ class Card extends React.Component {
       case 'ingresos':
         return (
           <Container>
-            <Button
+            <Button className="volume_kl"
               background={ this.state.selectedSubHeader === 'ingresos'? "#000" : "#e1e1e1"}
               color={ this.state.selectedSubHeader === 'ingresos'? '#fff' : '#000'}
               onClick={()=>{
@@ -45,7 +45,7 @@ class Card extends React.Component {
             >
               Ingresos
             </Button>
-            <Button
+            <Button className="volume_kl"
               background={ this.state.selectedSubHeader === 'volumen'? "#000" : "#e1e1e1"}
               color={ this.state.selectedSubHeader === 'volumen'? '#fff' : '#000'}
               onClick={()=>{
@@ -56,7 +56,7 @@ class Card extends React.Component {
             >
               Volumen
             </Button>
-            <Button
+            <Button className="volume_kl"
               background={ this.state.selectedSubHeader === 'cantidad'? "#000" : "#e1e1e1"}
               color={ this.state.selectedSubHeader === 'cantidad'? '#fff' : '#000'}
               onClick={()=>{
@@ -67,7 +67,7 @@ class Card extends React.Component {
             >
               Cantidad de “N”
             </Button>
-            <Button
+            <Button className="volume_kl"
               background={ this.state.selectedSubHeader === 'ticket'? "#000" : "#e1e1e1"}
               color={ this.state.selectedSubHeader === 'ticket'? '#fff' : '#000'}
               onClick={()=>{
@@ -84,7 +84,7 @@ class Card extends React.Component {
       case 'mix':
         return (
           <Container>
-            <Button
+            <Button className="volume_kl"
               background={ this.state.selectedSubHeader === 'ingresosAcumulados'? "#000" : "#e1e1e1"}
               color={ this.state.selectedSubHeader === 'ingresosAcumulados'? '#fff' : '#000'}
               onClick={()=>{
@@ -95,7 +95,7 @@ class Card extends React.Component {
             >
               Ingresos acumulados
             </Button>
-            <Button
+            <Button className="volume_kl"
               background={ this.state.selectedSubHeader === 'mixPercentIngresos'? "#000" : "#e1e1e1"}
               color={ this.state.selectedSubHeader === 'mixPercentIngresos'? '#fff' : '#000'}
               onClick={()=>{
@@ -106,7 +106,7 @@ class Card extends React.Component {
             >
               Mix % ingresos
             </Button>
-            <Button
+            <Button className="volume_kl"
               background={ this.state.selectedSubHeader === 'mixPercentVolumen'? "#000" : "#e1e1e1"}
               color={ this.state.selectedSubHeader === 'mixPercentVolumen'? '#fff' : '#000'}
               onClick={()=>{
@@ -117,7 +117,7 @@ class Card extends React.Component {
             >
               Mix % volumen
             </Button>
-            <Button
+            <Button className="volume_kl"
               background={ this.state.selectedSubHeader === 'concentraciónDeIngresos'? "#000" : "#e1e1e1"}
               color={ this.state.selectedSubHeader === 'concentraciónDeIngresos'? '#fff' : '#000'}
               onClick={()=>{
@@ -128,7 +128,7 @@ class Card extends React.Component {
             >
               Concentración de ingresos
             </Button>
-            <Button
+            <Button className="volume_kl"
               background={ this.state.selectedSubHeader === 'concentraciónDeVolumen'? "#000" : "#e1e1e1"}
               color={ this.state.selectedSubHeader === 'concentraciónDeVolumen'? '#fff' : '#000'}
               onClick={()=>{
@@ -145,7 +145,7 @@ class Card extends React.Component {
       case 'comportamiento':
         return (
           <Container>
-            <Button
+            <Button className="volume_kl"
               background={ this.state.selectedSubHeader === 'recurrenciaDeClientes'? "#000" : "#e1e1e1"}
               color={ this.state.selectedSubHeader === 'recurrenciaDeClientes'? '#fff' : '#000'}
               onClick={()=>{
@@ -156,7 +156,7 @@ class Card extends React.Component {
             >
               Recurrencia de clientes
             </Button>
-            <Button
+            <Button className="volume_kl"
               background={ this.state.selectedSubHeader === 'recurrenciaDeIngresos'? "#000" : "#e1e1e1"}
               color={ this.state.selectedSubHeader === 'recurrenciaDeIngresos'? '#fff' : '#000'}
               onClick={()=>{
@@ -167,7 +167,7 @@ class Card extends React.Component {
             >
               Recurrencia de ingresos
             </Button>
-            <Button
+            <Button className="volume_kl"
               background={ this.state.selectedSubHeader === 'estacionalidad'? "#000" : "#e1e1e1"}
               color={ this.state.selectedSubHeader === 'estacionalidad'? '#fff' : '#000'}
               onClick={()=>{
@@ -178,7 +178,7 @@ class Card extends React.Component {
             >
               Estacionalidad
             </Button>
-            <Button
+            <Button className="volume_kl"
               background={ this.state.selectedSubHeader === 'attrition'? "#000" : "#e1e1e1"}
               color={ this.state.selectedSubHeader === 'attrition'? '#fff' : '#000'}
               onClick={()=>{
@@ -195,7 +195,7 @@ class Card extends React.Component {
       case 'backlog':
         return (
           <Container>
-            <Button
+            <Button className="volume_kl"
               background={ this.state.selectedSubHeader === 'backlog'? "#000" : "#e1e1e1"}
               color={ this.state.selectedSubHeader === 'backlog'? '#fff' : '#000'}
               onClick={()=>{
@@ -791,7 +791,7 @@ class Card extends React.Component {
     return (
       <div>
         <CardContainer className="card" key={this.props.index}>
-          <div className="card-body">
+          <div className="card-body shdow_box">
             <Header className=''>
               <div
                 style={{
@@ -810,6 +810,7 @@ class Card extends React.Component {
                 >
                   <P
                     borderLeft='0px'
+                    className="ingross"
                   >
                     Ingresos
                   </P>
@@ -825,6 +826,7 @@ class Card extends React.Component {
                   }}
                 >
                   <P
+                    className="ingross"
                     borderLeft={ this.state.selectedHeader === 'total' ? '0px' : '1px' }
                   >
                     Mix
@@ -841,6 +843,7 @@ class Card extends React.Component {
                   }}
                 >
                   <P
+                    className="ingross"
                     borderLeft={ this.state.selectedHeader === 'total' ? '0px' : '1px' }
                   >
                     Comportamiento
@@ -857,6 +860,7 @@ class Card extends React.Component {
                   }}
                 >
                   <P
+                    className="ingross"
                     borderLeft={ this.state.selectedHeader === 'total' ? '0px' : '1px' }
                   >
                     Backlog
@@ -875,10 +879,10 @@ class Card extends React.Component {
           </div>
         </CardContainer>
 
-        <CardContainer className="card" key={this.props.index} style={{padding: '15px'}}>
+        <CardContainer className="card x-flow" key={this.props.index} style={{padding: '15px'}}>
           
             <table style={{width: '100%'}}>
-              <tbody>
+              <tbody className="aptuera">
                 <TR border='0px'>
                   <TD border='0px' width='250px'>
                     <div className='row'>
@@ -950,23 +954,24 @@ class Card extends React.Component {
                   </TD>
 
                    <TD border='1px' width='250px'>
-                    <div className='col-12 row'>
-                      <strong className='col-12'>Opciones</strong>
-                      <OpcionesContainer className="col-5">
+                   <strong className='wid-100pr'>Opciones</strong>  
+                    <div className='wid-100pr flx_opin'>
+                      
+                      <OpcionesContainer className="wid-50pr ">
                         Exportar PPT
                       </OpcionesContainer>
 
-                      <OpcionesContainer className="col-5">
+                      <OpcionesContainer className="wid-50pr">
                         Guardar como fav.
                       </OpcionesContainer>
                     </div>
 
-                    <div className='col-12 row'>
-                      <OpcionesContainer className="col-5">
+                    <div className='flx_opin wid-100pr'>
+                      <OpcionesContainer className="wid-50pr">
                         Exportar XLS
                       </OpcionesContainer>
 
-                      <OpcionesContainer className="col-5">
+                      <OpcionesContainer className="wid-50pr">
                         Agregar a mi DB
                       </OpcionesContainer>
                     </div>

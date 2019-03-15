@@ -237,50 +237,52 @@ class Card extends React.Component {
     switch(this.state.selectedSubHeader) {
       case 'costosEnElTiempo':
         return (
-          <table className="table">
-            <THead>
-              <TR border='1px'>
-                <th>
-                  Marcas
-                </th>
-                <th>
-                  Var. % 2015 - 2016
-                </th>
-                <th>
-                  Var. % 2016 - 2017
-                </th>
-                <th>
-                  CAGR 2015 - 2017
-                </th>
-              </TR>
-            </THead>
-            <tbody>
-              <TR border='1px'>
-                <th>Las Mulas</th>
-                <TD border='1px'>5,0%</TD>
-                <TD border='1px'>4,8%</TD>
-                <TD border='1px'>4,9%</TD>
-              </TR>
-              <TR border='1px'>
-                <th>Santa Digna</th>
-                <TD border='1px'>5,3%</TD>
-                <TD border='1px'>5,0%</TD>
-                <TD border='1px'>5,1%</TD>
-              </TR>
-              <TR border='1px'>
-                <th>El Gobemador</th>
-                <TD border='1px'>5,6%</TD>
-                <TD border='1px'>5,3%</TD>
-                <TD border='1px'>5,4%</TD>
-              </TR>
-              <TTotal>
-                <th>Total</th>
-                <TD border='1px'>5,3%</TD>
-                <TD border='1px'>5,0%</TD>
-                <TD border='1px'>5,1%</TD>
-              </TTotal>
-            </tbody>
-          </table>
+      
+               <table className="table">
+                  <THead>
+                    <TR border='1px'>
+                      <th>
+                        Marcas
+                      </th>
+                      <th>
+                        Var. % 2015 - 2016
+                      </th>
+                      <th>
+                        Var. % 2016 - 2017
+                      </th>
+                      <th>
+                        CAGR 2015 - 2017
+                      </th>
+                    </TR>
+                  </THead>
+                  <tbody>
+                    <TR border='1px'>
+                      <th>Las Mulas</th>
+                      <TD border='1px'>5,0%</TD>
+                      <TD border='1px'>4,8%</TD>
+                      <TD border='1px'>4,9%</TD>
+                    </TR>
+                    <TR border='1px'>
+                      <th>Santa Digna</th>
+                      <TD border='1px'>5,3%</TD>
+                      <TD border='1px'>5,0%</TD>
+                      <TD border='1px'>5,1%</TD>
+                    </TR>
+                    <TR border='1px'>
+                      <th>El Gobemador</th>
+                      <TD border='1px'>5,6%</TD>
+                      <TD border='1px'>5,3%</TD>
+                      <TD border='1px'>5,4%</TD>
+                    </TR>
+                    <TTotal>
+                      <th>Total</th>
+                      <TD border='1px'>5,3%</TD>
+                      <TD border='1px'>5,0%</TD>
+                      <TD border='1px'>5,1%</TD>
+                    </TTotal>
+                  </tbody>
+                </table>
+          
         );
         break;
       case 'costosEnElTiempoPercent':

@@ -613,7 +613,33 @@ a.article:hover {
 .table-data {
   color: #949090;
 }
-
+.ingross{
+  font-family: 'Conv_Barlow-Light';
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.volume_kl{
+  font-family: 'Conv_Barlow-Light';
+  font-size: 15px;
+}
+.wid-100pr{
+  width: 100%;
+}
+.wid-50pr{
+  width: 50%;
+}
+.x-flow{
+  width: 100%;
+  overflow: auto;
+}
+.flx_opin{
+  display: flex;
+}
+.aptuera,.strong{
+  font-family: 'Conv_Barlow-Light';
+  font-size: 15px;
+  font-weight: bold;
+}
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
