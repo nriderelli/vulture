@@ -181,7 +181,7 @@ export default class Dashboard extends React.PureComponent {
           <meta name="Dashboard" content="Dashboard of the application" />
         </Helmet>
         <div>
-          <Errors error={this.state.error} />
+          {<Errors error={this.state.error} />}
           <div className="row">
             <div className="col-9">
               <DashboardTable

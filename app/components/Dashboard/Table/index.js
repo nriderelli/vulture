@@ -16,7 +16,7 @@ import TR from './TR';
 
 /* eslint-disable react/prefer-stateless-function */
 class DashboardTable extends React.Component {
-   constructor(props) {
+  constructor(props) {
     super(props);
     this.state = {
       graphData: null,
@@ -39,61 +39,52 @@ class DashboardTable extends React.Component {
   }
 
   renderGraph() {
-    return(
-       <div
+    return (
+      <div
         className="modal fade in show"
         role="dialog"
         aria-labelledby="add/edit products"
         aria-hidden="true"
         style={{
-          'background': '#000000b3',
-          display: 'block'
+          background: '#000000b3',
+          display: 'block',
         }}
       >
         <div className="modal-dialog modal-md" role="document">
           <div className="modal-content">
             <div className="modal-body">
-                <button
-                  type="button"
-                  className="close pull-right"
-                  data-dismiss="modal"
-                  aria-label="Close"
-                  onClick={() => {
-                    this.setState({
-                      graphData: null
-                    })
-                  }}
-                >
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <Line
-                  data={this.state.graphData}
-                  height={300}
-                />
+              <button
+                type="button"
+                className="close pull-right"
+                data-dismiss="modal"
+                aria-label="Close"
+                onClick={() => {
+                  this.setState({
+                    graphData: null,
+                  });
+                }}
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <Line data={this.state.graphData} height={300} />
             </div>
           </div>
         </div>
       </div>
-    )
+    );
   }
-  
 
   render() {
     const { results } = this.props;
     return (
       <div>
-        {
-          this.state.graphData ?
-              this.renderGraph()
-          :
-            ''
-        }
+        {this.state.graphData ? this.renderGraph() : ''}
         <CardContainer className="card">
-          <div style={{padding: '25px'}}>
+          <div style={{ padding: '25px' }}>
             <h5 className="card-title">Values in M CLP</h5>
-            <table style={{width: '100%'}}>
+            <table style={{ width: '100%' }}>
               <thead>
-                <TR border='1px'>
+                <TR border="1px">
                   <TH scope="col">
                     <div
                       style={{
@@ -108,7 +99,7 @@ class DashboardTable extends React.Component {
                           color: '#fff',
                           padding: '10px',
                           fontSize: '18px',
-                          borderRadius: '5px'
+                          borderRadius: '5px',
                         }}
                       >
                         RESULTS
@@ -137,63 +128,53 @@ class DashboardTable extends React.Component {
                 </TR>
               </thead>
               <tbody>
-                <TR border='1px'>
+                <TR border="1px">
                   <TH scope="row">Income</TH>
                   <TextTD>
-                    <div className='row'>
-                      <div className='col-6'>
-                        {
-                          results.income.ytd.value
-                          && results.income.ytd.value.value
-                        }
+                    <div className="row">
+                      <div className="col-6">
+                        {results.income.ytd.value &&
+                          results.income.ytd.value.value}
                       </div>
-                      <div className='col-4'>
-                        {
-                          results.income.ytd.value
-                          && results.income.ytd.value.percentage
-                        }
+                      <div className="col-4">
+                        {results.income.ytd.value &&
+                          results.income.ytd.value.percentage}
                       </div>
                       <Icon
                         color={results.income.ytd.color}
                         className="fa fa-circle col-1"
                         aria-hidden="true"
-                        size='8px'
-                      >
-                      </Icon>
+                        size="8px"
+                      />
                     </div>
                   </TextTD>
                   <TextTD>
-                    <div className='row'>
-                      <div className='col-6'>
-                        {
-                          results.income.forecast.value
-                          && results.income.forecast.value.value
-                        }
+                    <div className="row">
+                      <div className="col-6">
+                        {results.income.forecast.value &&
+                          results.income.forecast.value.value}
                       </div>
-                      <div className='col-4'>
-                        {
-                          results.income.forecast.value
-                          && results.income.forecast.value.percentage
-                        }
+                      <div className="col-4">
+                        {results.income.forecast.value &&
+                          results.income.forecast.value.percentage}
                       </div>
                       <Icon
                         color={results.income.forecast.color}
                         className="fa fa-circle col-1"
                         aria-hidden="true"
-                        size='8px'
-                      >
-                      </Icon>
+                        size="8px"
+                      />
                     </div>
                   </TextTD>
                   <TextTD>
                     <p
                       onClick={() => {
                         this.setState({
-                          graphData: this.monthlyGraph(results.income.monthly) 
-                        })
+                          graphData: this.monthlyGraph(results.income.monthly),
+                        });
                       }}
                       style={{
-                        cursor: 'pointer'
+                        cursor: 'pointer',
                       }}
                     >
                       Check Graph
@@ -203,76 +184,67 @@ class DashboardTable extends React.Component {
                     <p
                       onClick={() => {
                         this.setState({
-                          graphData: this.monthlyGraph(results.income.annual) 
-                        })
+                          graphData: this.monthlyGraph(results.income.annual),
+                        });
                       }}
                       style={{
-                        cursor: 'pointer'
+                        cursor: 'pointer',
                       }}
                     >
                       Check Graph
                     </p>
                   </TextTD>
-
                 </TR>
 
-                <TR border='1px'>
+                <TR border="1px">
                   <TH scope="row">Mg. Contribution</TH>
                   <TextTD>
-                    <div className='row'>
-                      <div className='col-6'>
-                        {
-                          results.contribution.ytd.value
-                          && results.contribution.ytd.value.value
-                        }
+                    <div className="row">
+                      <div className="col-6">
+                        {results.contribution.ytd.value &&
+                          results.contribution.ytd.value.value}
                       </div>
-                      <div className='col-4'>
-                        {
-                          results.contribution.ytd.value
-                          && results.contribution.ytd.value.percentage
-                        }
+                      <div className="col-4">
+                        {results.contribution.ytd.value &&
+                          results.contribution.ytd.value.percentage}
                       </div>
                       <Icon
                         color={results.contribution.ytd.color}
                         className="fa fa-circle col-1"
                         aria-hidden="true"
-                        size='8px'
-                      >
-                      </Icon>
+                        size="8px"
+                      />
                     </div>
                   </TextTD>
                   <TextTD>
-                    <div className='row'>
-                      <div className='col-6'>
-                        {
-                          results.contribution.forecast.value
-                          && results.contribution.forecast.value.value
-                        }
+                    <div className="row">
+                      <div className="col-6">
+                        {results.contribution.forecast.value &&
+                          results.contribution.forecast.value.value}
                       </div>
-                      <div className='col-4'>
-                        {
-                          results.contribution.forecast.value
-                          && results.contribution.forecast.value.percentage
-                        }
+                      <div className="col-4">
+                        {results.contribution.forecast.value &&
+                          results.contribution.forecast.value.percentage}
                       </div>
                       <Icon
                         color={results.contribution.forecast.color}
                         className="fa fa-circle col-1"
                         aria-hidden="true"
-                        size='8px'
-                      >
-                      </Icon>
+                        size="8px"
+                      />
                     </div>
                   </TextTD>
                   <TextTD>
                     <p
                       onClick={() => {
                         this.setState({
-                          graphData: this.monthlyGraph(results.contribution.monthly) 
-                        })
+                          graphData: this.monthlyGraph(
+                            results.contribution.monthly,
+                          ),
+                        });
                       }}
                       style={{
-                        cursor: 'pointer'
+                        cursor: 'pointer',
                       }}
                     >
                       Check Graph
@@ -282,76 +254,67 @@ class DashboardTable extends React.Component {
                     <p
                       onClick={() => {
                         this.setState({
-                          graphData: this.monthlyGraph(results.contribution.annual) 
-                        })
+                          graphData: this.monthlyGraph(
+                            results.contribution.annual,
+                          ),
+                        });
                       }}
                       style={{
-                        cursor: 'pointer'
+                        cursor: 'pointer',
                       }}
                     >
                       Check Graph
                     </p>
                   </TextTD>
-
                 </TR>
 
-                <TR border='0px'>
+                <TR border="0px">
                   <TH scope="row">EBIDA</TH>
                   <TextTD>
-                    <div className='row'>
-                      <div className='col-6'>
-                        {
-                          results.ebida.ytd.value
-                          && results.ebida.ytd.value.value
-                        }
+                    <div className="row">
+                      <div className="col-6">
+                        {results.ebida.ytd.value &&
+                          results.ebida.ytd.value.value}
                       </div>
-                      <div className='col-4'>
-                        {
-                          results.ebida.ytd.value
-                          && results.ebida.ytd.value.percentage
-                        }
+                      <div className="col-4">
+                        {results.ebida.ytd.value &&
+                          results.ebida.ytd.value.percentage}
                       </div>
                       <Icon
                         color={results.ebida.ytd.color}
                         className="fa fa-circle col-1"
                         aria-hidden="true"
-                        size='8px'
-                      >
-                      </Icon>
+                        size="8px"
+                      />
                     </div>
                   </TextTD>
                   <TextTD>
-                    <div className='row'>
-                      <div className='col-6'>
-                        {
-                          results.ebida.forecast.value
-                          && results.ebida.forecast.value.value
-                        }
+                    <div className="row">
+                      <div className="col-6">
+                        {results.ebida.forecast.value &&
+                          results.ebida.forecast.value.value}
                       </div>
-                      <div className='col-4'>
-                        {
-                          results.ebida.forecast.value
-                          && results.ebida.forecast.value.percentage
-                        }
+                      <div className="col-4">
+                        {results.ebida.forecast.value &&
+                          results.ebida.forecast.value.percentage}
                       </div>
                       <Icon
                         color={results.ebida.forecast.color}
                         className="fa fa-circle col-1"
                         aria-hidden="true"
-                        size='8px'
-                      >
-                      </Icon>
+                        size="8px"
+                      />
                     </div>
                   </TextTD>
                   <TextTD>
                     <p
                       onClick={() => {
                         this.setState({
-                          graphData: this.monthlyGraph(results.ebida.monthly) 
-                        })
+                          graphData: this.monthlyGraph(results.ebida.monthly),
+                        });
                       }}
                       style={{
-                        cursor: 'pointer'
+                        cursor: 'pointer',
                       }}
                     >
                       Check Graph
@@ -361,29 +324,27 @@ class DashboardTable extends React.Component {
                     <p
                       onClick={() => {
                         this.setState({
-                          graphData: this.monthlyGraph(results.ebida.annual) 
-                        })
+                          graphData: this.monthlyGraph(results.ebida.annual),
+                        });
                       }}
                       style={{
-                        cursor: 'pointer'
+                        cursor: 'pointer',
                       }}
                     >
                       Check Graph
                     </p>
                   </TextTD>
-
                 </TR>
               </tbody>
             </table>
           </div>
-            
         </CardContainer>
 
-         <CardContainer className="card">
-          <div style={{padding: '25px'}}>
-            <table style={{width: '100%'}}>
+        <CardContainer className="card">
+          <div style={{ padding: '25px' }}>
+            <table style={{ width: '100%' }}>
               <thead>
-                <TR border='1px'>
+                <TR border="1px">
                   <TH scope="col">
                     <div
                       style={{
@@ -398,7 +359,7 @@ class DashboardTable extends React.Component {
                           color: '#fff',
                           padding: '10px',
                           fontSize: '18px',
-                          borderRadius: '5px'
+                          borderRadius: '5px',
                         }}
                       >
                         METRICS
@@ -427,63 +388,53 @@ class DashboardTable extends React.Component {
                 </TR>
               </thead>
               <tbody>
-                <TR border='0px'>
+                <TR border="0px">
                   <TH scope="row">Boxes</TH>
                   <TextTD>
-                    <div className='row'>
-                      <div className='col-6'>
-                        {
-                          results.boxes.ytd.value
-                          && results.boxes.ytd.value.value
-                        }
+                    <div className="row">
+                      <div className="col-6">
+                        {results.boxes.ytd.value &&
+                          results.boxes.ytd.value.value}
                       </div>
-                      <div className='col-4'>
-                        {
-                          results.boxes.ytd.value
-                          && results.boxes.ytd.value.percentage
-                        }
+                      <div className="col-4">
+                        {results.boxes.ytd.value &&
+                          results.boxes.ytd.value.percentage}
                       </div>
                       <Icon
                         color={results.boxes.ytd.color}
                         className="fa fa-circle col-1"
                         aria-hidden="true"
-                        size='8px'
-                      >
-                      </Icon>
+                        size="8px"
+                      />
                     </div>
                   </TextTD>
                   <TextTD>
-                    <div className='row'>
-                      <div className='col-6'>
-                        {
-                          results.boxes.forecast.value
-                          && results.boxes.forecast.value.value
-                        }
+                    <div className="row">
+                      <div className="col-6">
+                        {results.boxes.forecast.value &&
+                          results.boxes.forecast.value.value}
                       </div>
-                      <div className='col-4'>
-                        {
-                          results.boxes.forecast.value
-                          && results.boxes.forecast.value.percentage
-                        }
+                      <div className="col-4">
+                        {results.boxes.forecast.value &&
+                          results.boxes.forecast.value.percentage}
                       </div>
                       <Icon
                         color={results.boxes.forecast.color}
                         className="fa fa-circle col-1"
                         aria-hidden="true"
-                        size='8px'
-                      >
-                      </Icon>
+                        size="8px"
+                      />
                     </div>
                   </TextTD>
                   <TextTD>
                     <p
                       onClick={() => {
                         this.setState({
-                          graphData: this.monthlyGraph(results.boxes.monthly) 
-                        })
+                          graphData: this.monthlyGraph(results.boxes.monthly),
+                        });
                       }}
                       style={{
-                        cursor: 'pointer'
+                        cursor: 'pointer',
                       }}
                     >
                       Check Graph
@@ -493,24 +444,21 @@ class DashboardTable extends React.Component {
                     <p
                       onClick={() => {
                         this.setState({
-                          graphData: this.monthlyGraph(results.boxes.annual) 
-                        })
+                          graphData: this.monthlyGraph(results.boxes.annual),
+                        });
                       }}
                       style={{
-                        cursor: 'pointer'
+                        cursor: 'pointer',
                       }}
                     >
                       Check Graph
                     </p>
                   </TextTD>
-
                 </TR>
               </tbody>
             </table>
           </div>
-            
         </CardContainer>
-        
       </div>
     );
   }
