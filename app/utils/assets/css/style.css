@@ -640,6 +640,28 @@ a.article:hover {
   font-size: 15px;
   font-weight: bold;
 }
+
+.new_down_table table thead tr th {
+  font-size: 16px;
+  color: #fff;
+  font-family: 'Conv_Barlow-Regular';
+}
+.new_down_table table tbody{
+  font-size: 16px;
+  
+  font-family: 'Conv_Barlow-Regular';
+}
+.point_not{
+  display: flex;
+  justify-content: space-between;
+}
+.dum_opi table tbody tr th{ 
+  font-size: 16px;
+}
+#rmv-100{
+  width:100%;
+}
+
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
@@ -788,6 +810,9 @@ a.article:hover {
     border-bottom: 1px solid #ebebeb;
     border-top: 1px solid #ebebeb;
   }
+  #rmv-100{
+    width:0;
+  }
 }
 @media (max-width: 479px) {
   #sidebar ul li a {
@@ -843,6 +868,30 @@ a.article:hover {
   #sidebar.active {
     height: 100vh;
     overflow-y: scroll;
+  }
+  .point_not{
+    display:inherit;
+    margin-top: 20px;
+  }
+  .poin_nt_child{
+    width:100%;
+  }
+  .poin_nt_child div{
+    display: flex;
+    width: 100%;
+    flex-flow:column;
+    float: left;
+  }
+  .poin_nt_child div p{
+    border:none;
+  }
+  .volume_kl{
+    margin:5px;
+  }
+  .pencil_bk img{
+    top: 8px;
+    position: absolute;
+    right: 20px
   }
 }
 @media (max-width: 375px) {

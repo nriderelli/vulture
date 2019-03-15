@@ -792,12 +792,8 @@ class Card extends React.Component {
       <div>
         <CardContainer className="card" key={this.props.index}>
           <div className="card-body shdow_box">
-            <Header className=''>
-              <div
-                style={{
-                  float: 'left'
-                }}
-              >
+            <Header className='point_not'>
+              <div className="poin_nt_child">
                 <DIV
                   color={ this.state.selectedHeader === 'ingresos' ? '#fff' : '#000' }
                   background={ this.state.selectedHeader === 'ingresos' ? '#006e82' : '#fff' }
@@ -867,11 +863,7 @@ class Card extends React.Component {
                   </P>
                 </DIV>
               </div>
-              <div
-                style={{
-                  float: 'right'
-                }}
-              >
+              <div className="pencil_bk">
                 <img src={Edit} />
               </div>
             </Header>
@@ -996,7 +988,7 @@ class Card extends React.Component {
               }
             </Container>
 
-            <Container>
+            <Container className="x-flow new_down_table">
               {this.renderTable()}
             </Container>
             

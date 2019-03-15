@@ -21,7 +21,7 @@ class Table extends React.Component {
     const { data, index } = this.props;
     return (
       <Container className='col-md-4' key={index}>
-        <CardContainer className="card table-box" key={this.props.index} style={{padding: '15px 10px 0px 10px'}}>
+        <CardContainer className="table-box dum_opi" key={this.props.index} style={{padding: '15px 10px 0px 10px'}}>
           <table style={{width: '100%'}}>
             <thead>
               <TR border='1px'>
