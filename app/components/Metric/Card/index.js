@@ -482,7 +482,7 @@ class Card extends React.Component {
         </CardContainer>
 
 
-        <CardContainer className="card x-flow shdow_box "  key={this.props.index} style={{padding: '15px'}}>
+        <CardContainer className="card x-flow shdow_box add_img_re"  key={this.props.index} style={{padding: '15px'}}>
           <table style={{width: '100%'}}>
             <tbody className="aptuera">
               <TR border='0px'>

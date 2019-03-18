@@ -729,6 +729,10 @@ a.article:hover {
 .mar-top-0{
   margin-top:0;
 }
+.add_img_re .aptuera img {
+  right: -60px;
+  position: absolute;
+}
 
 /* ---------------------------------------------------
     MEDIAQUERIES
@@ -768,6 +772,10 @@ a.article:hover {
   .dash_rt_cont .Text-sc-1gwdf9u-0{
     font-size: 15px;  
   }
+  .add_img_re .aptuera img {
+    right: -65px;
+    top: -30px;
+}
   
 }
 
@@ -805,6 +813,10 @@ a.article:hover {
     .dash_my0 {
       font-Size: 13px;
   }
+  .add_img_re .aptuera img {
+    right: -65px;
+    top: -30px;
+}
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
@@ -854,6 +866,10 @@ a.article:hover {
 }
 .dash_my0 {
   font-Size: 13px;
+}
+.add_img_re .aptuera img {
+  right: -65px;
+  top: -30px;
 }
 }
 
@@ -939,6 +955,10 @@ a.article:hover {
 }
 .pencilnote{
   margin-top:-70px;
+}
+.add_img_re .aptuera img {
+  right: -65px;
+  top: -30px;
 }
 }
 @media (max-width: 479px) {
