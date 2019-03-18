@@ -77,30 +77,17 @@ class DashboardTable extends React.Component {
   render() {
     const { results } = this.props;
     return (
-      <div>
+      <div className="parent-cls_dash">
         {this.state.graphData ? this.renderGraph() : ''}
-        <CardContainer className="card">
-          <div style={{ padding: '25px' }}>
-            <h5 className="card-title">Values in M CLP</h5>
-            <table style={{ width: '100%' }}>
+        <CardContainer className="card shdow_box x-flow">
+          <div className=" ">
+            <h5 className="card-title fontlt">Values in M CLP</h5>
+            <table className="dassbrd_tble" style={{ width: '100%' }}>
               <thead>
                 <TR border="1px">
                   <TH scope="col">
-                    <div
-                      style={{
-                        width: '50%',
-                      }}
-                    >
-                      <p
-                        style={{
-                          width: '92%',
-                          textAlign: 'center',
-                          background: '#006e82',
-                          color: '#fff',
-                          padding: '10px',
-                          fontSize: '18px',
-                          borderRadius: '5px',
-                        }}
+                    <div className="resp_50">
+                      <p className="rslt_btn_one"
                       >
                         RESULTS
                       </p>
@@ -121,7 +108,7 @@ class DashboardTable extends React.Component {
                   <TH scope="col">
                     <TextHead>ANNUAL</TextHead>
                     <TextHead>TREND</TextHead>
-                    <IconContainer>
+                    <IconContainer className="pencilnote">
                       <img src={Edit} />
                     </IconContainer>
                   </TH>
@@ -340,27 +327,14 @@ class DashboardTable extends React.Component {
           </div>
         </CardContainer>
 
-        <CardContainer className="card">
-          <div style={{ padding: '25px' }}>
-            <table style={{ width: '100%' }}>
+        <CardContainer className="card shdow_box x-flow">
+          <div>
+            <table className="dassbrd_tble" style={{ width: '100%' }}>
               <thead>
                 <TR border="1px">
                   <TH scope="col">
-                    <div
-                      style={{
-                        width: '50%',
-                      }}
-                    >
-                      <p
-                        style={{
-                          width: '92%',
-                          textAlign: 'center',
-                          background: '#006e82',
-                          color: '#fff',
-                          padding: '10px',
-                          fontSize: '18px',
-                          borderRadius: '5px',
-                        }}
+                    <div  className="resp_50">
+                      <p className="rslt_btn_one"
                       >
                         METRICS
                       </p>
@@ -381,7 +355,7 @@ class DashboardTable extends React.Component {
                   <TH scope="col">
                     <TextHead>ANNUAL</TextHead>
                     <TextHead>TREND</TextHead>
-                    <IconContainer>
+                    <IconContainer className="pencilnote">
                       <img src={Edit} />
                     </IconContainer>
                   </TH>

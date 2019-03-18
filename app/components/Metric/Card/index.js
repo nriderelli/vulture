@@ -1,3 +1,4 @@
+
 // import npm packages
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
@@ -40,7 +41,7 @@ class Card extends React.Component {
       case 'métricasOp':
         return (
           <Container>
-            <Button
+            <Button className="volume_kl"
               background={ this.state.selectedSubHeader === 'metricasInDoller'? "#000" : "#e1e1e1"}
               color={ this.state.selectedSubHeader === 'metricasInDoller'? '#fff' : '#000'}
               onClick={()=>{
@@ -51,7 +52,7 @@ class Card extends React.Component {
             >
               Métricas ($)
             </Button>
-            <Button
+            <Button  className="volume_kl"
               background={ this.state.selectedSubHeader === 'mixPercentMg'? "#000" : "#e1e1e1"}
               color={ this.state.selectedSubHeader === 'mixPercentMg'? '#fff' : '#000'}
               onClick={()=>{
@@ -68,7 +69,7 @@ class Card extends React.Component {
       case 'metricas':
         return (
           <Container>
-            <Button
+            <Button className="volume_kl"
               background={ this.state.selectedSubHeader === 'metricasDeIngresos'? "#000" : "#e1e1e1"}
               color={ this.state.selectedSubHeader === 'metricasDeIngresos'? '#fff' : '#000'}
               onClick={()=>{
@@ -79,7 +80,7 @@ class Card extends React.Component {
             >
               Métricas de ingresos
             </Button>
-            <Button
+            <Button className="volume_kl"
               background={ this.state.selectedSubHeader === 'metricasDeCost'? "#000" : "#e1e1e1"}
               color={ this.state.selectedSubHeader === 'metricasDeCost'? '#fff' : '#000'}
               onClick={()=>{
@@ -90,7 +91,7 @@ class Card extends React.Component {
             >
               Métricas de costos
             </Button>
-            <Button
+            <Button className="volume_kl"
               background={ this.state.selectedSubHeader === 'metricasDeMargenes'? "#000" : "#e1e1e1"}
               color={ this.state.selectedSubHeader === 'metricasDeMargenes'? '#fff' : '#000'}
               onClick={()=>{
@@ -430,13 +431,10 @@ class Card extends React.Component {
   render() {
     return (
       <div>
-        <CardContainer className="card" key={this.props.index}>
-          <div className="card-body">
-            <Header>
-              <div
-                style={{
-                  float: 'left'
-                }}
+        <CardContainer className="card mar-top-0" key={this.props.index}>
+          <div className="card-body shdow_box">
+            <Header className='point_not'>
+              <div className="poin_nt_child"
               >
                 <DIV
                   color={ this.state.selectedHeader === 'métricasOp' ? '#fff' : '#000' }
@@ -450,6 +448,7 @@ class Card extends React.Component {
                 >
                   <P
                     borderLeft='0px'
+                    className="ingross"
                   >
                     Métricas op
                   </P>
@@ -465,6 +464,7 @@ class Card extends React.Component {
                   }}
                 >
                   <P
+                     className="ingross"
                     borderLeft={ this.state.selectedHeader === 'total' ? '0px' : '1px' }
                   >
                     Métricas
@@ -472,9 +472,7 @@ class Card extends React.Component {
                 </DIV>
               </div>
                <div
-                style={{
-                  float: 'right'
-                }}
+                 className="pencil_bk"
               >
                 <img src={Edit} />
               </div>
@@ -484,9 +482,9 @@ class Card extends React.Component {
         </CardContainer>
 
 
-        <CardContainer className="card" key={this.props.index} style={{padding: '15px'}}>
+        <CardContainer className="card x-flow" key={this.props.index} style={{padding: '15px'}}>
           <table style={{width: '100%'}}>
-            <tbody>
+            <tbody className="aptuera">
               <TR border='0px'>
                 <TD border='0px' width='250px'>
                   <div className='row'>
@@ -580,23 +578,23 @@ class Card extends React.Component {
                 </TD>
 
                 <TD border='1px' width='250px'>
-                  <strong className='col-8'>Opciones</strong>
-                  <div className='col-12 row'>
-                    <OpcionesContainer className="col-5">
+                  <strong className='wid-100pr'>Opciones</strong>
+                  <div className='wid-100pr flx_opin'>
+                    <OpcionesContainer className="wid-50pr">
                       Exportar PPT
                     </OpcionesContainer>
 
-                    <OpcionesContainer className="col-5">
+                    <OpcionesContainer className="wid-50pr">
                       Guardar como fav.
                     </OpcionesContainer>
                   </div>
 
-                  <div className='col-12 row'>
-                    <OpcionesContainer className="col-5">
+                  <div className='wid-100pr flx_opin'>
+                    <OpcionesContainer className="wid-50pr">
                       Exportar XLS
                     </OpcionesContainer>
 
-                    <OpcionesContainer className="col-5">
+                    <OpcionesContainer className="wid-50pr">
                       Agregar a mi DB
                     </OpcionesContainer>
                   </div>
@@ -623,7 +621,7 @@ class Card extends React.Component {
               }
             </Container>
 
-            <Container>
+            <Container className="x-flow new_down_table">
               {this.renderTable()}
             </Container>
             

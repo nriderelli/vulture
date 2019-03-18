@@ -40,7 +40,7 @@ class Card extends React.Component {
       case 'márgenes':
         return (
           <Container>
-            <Button
+            <Button className="volume_kl"
               background={ this.state.selectedSubHeader === 'márgenesInDoller'? "#000" : "#e1e1e1"}
               color={ this.state.selectedSubHeader === 'márgenesInDoller'? '#fff' : '#000'}
               onClick={()=>{
@@ -51,7 +51,7 @@ class Card extends React.Component {
             >
               Márgenes ($)
             </Button>
-            <Button
+            <Button className="volume_kl"
               background={ this.state.selectedSubHeader === 'márgenesInPercent'? "#000" : "#e1e1e1"}
               color={ this.state.selectedSubHeader === 'márgenesInPercent'? '#fff' : '#000'}
               onClick={()=>{
@@ -68,7 +68,7 @@ class Card extends React.Component {
       case 'mix':
         return (
           <Container>
-            <Button
+            <Button className="volume_kl"
               background={ this.state.selectedSubHeader === 'mgAcumulados'? "#000" : "#e1e1e1"}
               color={ this.state.selectedSubHeader === 'mgAcumulados'? '#fff' : '#000'}
               onClick={()=>{
@@ -79,7 +79,7 @@ class Card extends React.Component {
             >
               Mg. acumulados
             </Button>
-            <Button
+            <Button className="volume_kl"
               background={ this.state.selectedSubHeader === 'mixPercentMg'? "#000" : "#e1e1e1"}
               color={ this.state.selectedSubHeader === 'mixPercentMg'? '#fff' : '#000'}
               onClick={()=>{
@@ -90,7 +90,7 @@ class Card extends React.Component {
             >
               Mix % mg
             </Button>
-            <Button
+            <Button className="volume_kl"
               background={ this.state.selectedSubHeader === 'concentraciónDeMg'? "#000" : "#e1e1e1"}
               color={ this.state.selectedSubHeader === 'concentraciónDeMg'? '#fff' : '#000'}
               onClick={()=>{
@@ -107,7 +107,7 @@ class Card extends React.Component {
       case 'comportamiento':
         return (
           <Container>
-            <Button
+            <Button className="volume_kl"
               background={ this.state.selectedSubHeader === 'recurrenciaDeClientes'? "#000" : "#e1e1e1"}
               color={ this.state.selectedSubHeader === 'recurrenciaDeClientes'? '#fff' : '#000'}
               onClick={()=>{
@@ -118,7 +118,7 @@ class Card extends React.Component {
             >
               Recurrencia de clientes
             </Button>
-            <Button
+            <Button className="volume_kl"
               background={ this.state.selectedSubHeader === 'recurrenciaDeEBITDA'? "#000" : "#e1e1e1"}
               color={ this.state.selectedSubHeader === 'recurrenciaDeEBITDA'? '#fff' : '#000'}
               onClick={()=>{
@@ -489,13 +489,10 @@ class Card extends React.Component {
   render() {
     return (
       <div>
-        <CardContainer className="card" key={this.props.index}>
-          <div className="card-body">
-            <Header className=''>
-              <div
-                style={{
-                  float: 'left'
-                }}
+        <CardContainer className="card mar-top-0" key={this.props.index}>
+          <div className="card-body shdow_box">
+            <Header className='point_not'>
+              <div className="poin_nt_child"
               >
                 <DIV
                   color={ this.state.selectedHeader === 'márgenes' ? '#fff' : '#000' }
@@ -509,6 +506,7 @@ class Card extends React.Component {
                 >
                   <P
                     borderLeft='0px'
+                    className="ingross"
                   >
                     Márgenes
                   </P>
@@ -525,6 +523,7 @@ class Card extends React.Component {
                 >
                   <P
                     borderLeft={ this.state.selectedHeader === 'total' ? '0px' : '1px' }
+                    className="ingross"
                   >
                     Mix
                   </P>
@@ -540,6 +539,7 @@ class Card extends React.Component {
                   }}
                 >
                   <P
+                  className="ingross"
                     borderLeft={ this.state.selectedHeader === 'total' ? '0px' : '1px' }
                   >
                     Comportamiento
@@ -547,10 +547,8 @@ class Card extends React.Component {
                 </DIV>
               </div>
               <div
-                style={{
-                  float: 'right'
-                }}
-              >
+                className="pencil_bk"
+               >
                 <img src={Edit} />
               </div>
             </Header>
@@ -558,9 +556,9 @@ class Card extends React.Component {
           </div>
         </CardContainer>
 
-        <CardContainer className="card" key={this.props.index} style={{padding: '15px'}}>
+        <CardContainer className="card x-flow shdow_box" key={this.props.index} style={{padding: '15px'}}>
           <table style={{width: '100%'}}>
-            <tbody>
+            <tbody className="aptuera">
               <TR border='0px'>
                 <TD border='0px' width='250px' >
                   <div className='row'>
@@ -654,23 +652,23 @@ class Card extends React.Component {
                 </TD>
 
                 <TD border='1px' width='250px' >
-                  <strong className='col-12'>Opciones</strong>
-                  <div className='col-12 row'>
-                    <OpcionesContainer className="col-5">
+                  <strong className='wid-100pr'>Opciones</strong>
+                  <div className='wid-100pr flx_opin'>
+                    <OpcionesContainer className="wid-50pr">
                       Exportar PPT
                     </OpcionesContainer>
 
-                    <OpcionesContainer className="col-5">
+                    <OpcionesContainer className="wid-50pr">
                       Guardar como fav.
                     </OpcionesContainer>
                   </div>
 
-                  <div className='col-12 row'>
-                    <OpcionesContainer className="col-5">
+                  <div className='wid-100pr flx_opin'>
+                    <OpcionesContainer className="wid-50pr">
                       Exportar XLS
                     </OpcionesContainer>
 
-                    <OpcionesContainer className="col-5">
+                    <OpcionesContainer className="wid-50pr">
                       Agregar a mi DB
                     </OpcionesContainer>
                   </div>
@@ -697,7 +695,7 @@ class Card extends React.Component {
               }
             </Container>
 
-            <Container>
+            <Container className="x-flow new_down_table">
               {this.renderTable()}
             </Container>
             

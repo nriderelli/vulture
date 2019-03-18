@@ -20,8 +20,8 @@ class Table extends React.Component {
   render() {
     const { data, index } = this.props;
     return (
-      <Container className='col-4' key={index}>
-        <CardContainer className="card" key={this.props.index} style={{padding: '7px'}}>
+      <Container className='col-md-4' key={index}>
+        <CardContainer className="table-box dum_opi card" key={this.props.index} style={{padding: '15px 10px 0px 10px'}}>
           <table style={{width: '100%'}}>
             <thead>
               <TR border='1px'>
@@ -35,10 +35,9 @@ class Table extends React.Component {
                           background: '#006e82',
                           textAlign: 'center',
                           color: '#fff',
-                          padding: '10px',
-                          fontSize: '12px',
-                          borderRadius: i === 0 ? '10px 5px 5px 5px' : i === data.heading.length-1 ? '5px 10px 5px 5px' : '5px',
-                          marginBottom: '25px'
+                          padding: '10px 6px',
+                          fontSize: '15px',
+                          borderRadius: i === 0 ? '10px 0px 0px 0px' : i === data.heading.length-1 ? '0px 10px 0px 0px' : '5px'
                         }}
                       >
                         {th.toUpperCase()}
@@ -73,7 +72,7 @@ class Table extends React.Component {
                         </Text>
                         <Icon
                           color={val.ytd.color}
-                          className="fa fa-circle col-1"
+                          className="fa fa-circle"
                           aria-hidden="true"
                           size='8px'
                         />
@@ -84,7 +83,7 @@ class Table extends React.Component {
                         </Text>
                         <Icon
                           color={val.forecast.color}
-                          className="fa fa-circle col-1"
+                          className="fa fa-circle"
                           aria-hidden="true"
                           size='8px'
                         />

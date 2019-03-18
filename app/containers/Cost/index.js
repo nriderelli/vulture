@@ -179,10 +179,10 @@ export class Cost extends React.PureComponent {
           <meta name="Costs" content="Costs of the application" />
         </Helmet>
         <div>
-          <Header>
-            <Text>
+          <Header className="hide_panel">
+            <p>
               Values in M CLP
-            </Text>
+            </p>
             <A
               background="#006e82"
               float='right'
@@ -204,7 +204,7 @@ export class Cost extends React.PureComponent {
               }
             </A>
           </Header>
-          <div className={`collapse row ${this.state.isOpen ? 'show' : ''}`} id='collapsePannel' style={{width: '100%'}}>
+          <div className={`collapse row ${this.state.isOpen ? 'show' : ''}`} id='collapsePannel' >
             { this.table
               && this.table.length !== 0
               && this.table.map((value, index) => (

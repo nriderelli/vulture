@@ -5,5 +5,6 @@ export default styled.p`
   background: ${props => props.background};
   padding: 5px;
   width: 30px;
+  text-align:center;
   border-radius: 5px;
 `;

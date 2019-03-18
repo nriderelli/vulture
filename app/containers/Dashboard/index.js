@@ -183,7 +183,7 @@ export default class Dashboard extends React.PureComponent {
         <div>
           {<Errors error={this.state.error} />}
           <div className="row">
-            <div className="col-9">
+            <div className="col-lg-9 col-md-12">
               <DashboardTable
                 results={{
                   income: {
@@ -215,7 +215,7 @@ export default class Dashboard extends React.PureComponent {
 
               <DashboardCard />
             </div>
-            <div className="col-3">
+            <div className="col-lg-3 col-md-12 dash_rt_cont">
               <LeftCard data={this.data} />
             </div>
           </div>

@@ -16,13 +16,13 @@ import TH from './TH';
 class DashboardCard extends React.Component {
   render() {
     return (
-      <CardContainer className="card" key={this.props.index}>
+      <CardContainer className="card shdow_box x-flow" key={this.props.index}>
         <div className="card-body">
-          <table className="table">
+          <table className="table dassbrd_tble alert_tbl_dash">
             <thead>
               <tr>
                 <TH scope="col">
-                  <Button background="#006e82">ALERTS</Button>
+                  <Button className="rslt_btn_one" background="#006e82">ALERTS</Button>
                   <TextHead>#</TextHead>
                 </TH>
                 <TH scope="col">

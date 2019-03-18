@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 
 export default styled.img`
-	width: 20px;
+		float: right;
+		margin-right: 10px;
+		width: 20px;
+		margin-bottom: 10px;
 `;
