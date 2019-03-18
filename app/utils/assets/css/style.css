@@ -588,6 +588,10 @@ a.article:hover {
   font-weight: 600;
   font-size: 13px;
 }
+.dash_my0{
+  font-family: 'Conv_Barlow-Regular';
+  font-Size:18px;
+} 
 
 .drop-caert img {
   margin-left: 17px;
@@ -798,6 +802,9 @@ a.article:hover {
     font-size: 12px;
     padding: 14px 2px;
   }
+    .dash_my0 {
+      font-Size: 13px;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
@@ -844,6 +851,9 @@ a.article:hover {
   padding: 0 0 20px 0;
   border-bottom: 1px solid #ebebeb;
   border-top: 1px solid #ebebeb;
+}
+.dash_my0 {
+  font-Size: 13px;
 }
 }
 

@@ -14,7 +14,7 @@ class Errors extends React.Component {
 	render() {
 		return (
 			<div className="row">
-				<div className="col-10">
+				<div className="col-lg-10 col-md-9">
 					{this.props.error ? (
 						<ErrorContainer>
 							<ErrorText>{this.props.error}</ErrorText>
@@ -29,13 +29,13 @@ class Errors extends React.Component {
 						''
 					)}
 				</div>
-				<div className="col-2">
-					<Button
+				<div className="col-lg-2 col-md-3">
+					<Button className="dash_my0"
 						float="right"
 						height="100%"
 						background="#006e82"
 						padding="10px"
-						fontSize="18px"
+						
 					>
 						<IMG src={Refresh} alt="refresh" />
 						&nbsp;&nbsp; My Dashboard
